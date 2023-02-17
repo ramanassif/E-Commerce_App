@@ -2,7 +2,7 @@ import 'package:ecommerce_app/constants.dart';
 import 'package:ecommerce_app/core/basics_widgets/app_logo.dart';
 import 'package:ecommerce_app/core/basics_widgets/custom_button.dart';
 import 'package:ecommerce_app/core/basics_widgets/home_Indicator.dart';
-import 'package:ecommerce_app/features/login_screen/widgets/form_error.dart';
+import 'package:ecommerce_app/core/basics_widgets/form_error.dart';
 import 'package:ecommerce_app/features/login_screen/widgets/login_way.dart';
 import 'package:ecommerce_app/features/register_screen/register_screen.dart';
 import 'package:flutter/material.dart';
@@ -15,8 +15,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final formKey = GlobalKey<FormState>();
-  final List<String> errors = [];
+  final signInFormKey = GlobalKey<FormState>();
+  final List<String> signInErrors = [];
   String? email;
   String? password;
 
@@ -64,35 +64,39 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   Form(
-                    key: formKey,
+                    key: signInFormKey,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         buildEmailTextField(),
                         buildPasswordTextField(),
                         Visibility(
-                          visible: errors.isEmpty ? false : true,
+                          visible: signInErrors.isEmpty ? false : true,
                           child: Padding(
                             padding: const EdgeInsets.only(
                               top: 4.0,
                               left: 16.0,
                             ),
                             child: FormError(
-                              errors: errors,
+                              errors: signInErrors,
                             ),
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
                   GestureDetector(
                     onTap: () {
-                      if (formKey.currentState!.validate()) {
-                        formKey.currentState!.save();
+                      if (signInFormKey.currentState!.validate()) {
+                        signInFormKey.currentState!.save();
                       }
                     },
-                    child: const CustomButton(
-                      title: 'Sign in',
+                    child: const Padding(
+                      padding:
+                          EdgeInsets.only(top: 8.0, left: 16.0, right: 16.0),
+                      child: CustomButton(
+                        title: 'Sign in',
+                      ),
                     ),
                   ),
                   Padding(
@@ -191,9 +195,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                      top: errors.isEmpty
+                      top: signInErrors.isEmpty
                           ? 60
-                          : errors.length == 1
+                          : signInErrors.length == 1
                               ? 40
                               : 20,
                     ),
@@ -265,28 +269,28 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
         onSaved: (newValue) => email = newValue,
         onChanged: (value) {
-          if (value.isNotEmpty && errors.contains(kEmailNullError)) {
+          if (value.isNotEmpty && signInErrors.contains(kEmailNullError)) {
             setState(() {
-              errors.remove(kEmailNullError);
+              signInErrors.remove(kEmailNullError);
             });
           } else if (emailValidatorRegExp.hasMatch(value) &&
-              errors.contains(kInvalidEmailError)) {
+              signInErrors.contains(kInvalidEmailError)) {
             setState(() {
-              errors.remove(kInvalidEmailError);
+              signInErrors.remove(kInvalidEmailError);
             });
           }
           return;
         },
         validator: (value) {
-          if (value!.isEmpty && !errors.contains(kEmailNullError)) {
+          if (value!.isEmpty && !signInErrors.contains(kEmailNullError)) {
             setState(() {
-              errors.add(kEmailNullError);
+              signInErrors.add(kEmailNullError);
             });
             return '';
           } else if (!emailValidatorRegExp.hasMatch(value) &&
-              !errors.contains(kInvalidEmailError)) {
+              !signInErrors.contains(kInvalidEmailError)) {
             setState(() {
-              errors.add(kInvalidEmailError);
+              signInErrors.add(kInvalidEmailError);
             });
             return '';
           }
@@ -350,26 +354,28 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
         onSaved: (newValue) => password = newValue,
         onChanged: (value) {
-          if (value.isNotEmpty && errors.contains(kPassNullError)) {
+          if (value.isNotEmpty && signInErrors.contains(kPassNullError)) {
             setState(() {
-              errors.remove(kPassNullError);
+              signInErrors.remove(kPassNullError);
             });
-          } else if (value.length >= 8 && errors.contains(kShortPassError)) {
+          } else if (value.length >= 8 &&
+              signInErrors.contains(kShortPassError)) {
             setState(() {
-              errors.remove(kShortPassError);
+              signInErrors.remove(kShortPassError);
             });
           }
-          return null;
+          return;
         },
         validator: (value) {
-          if (value!.isEmpty && !errors.contains(kPassNullError)) {
+          if (value!.isEmpty && !signInErrors.contains(kPassNullError)) {
             setState(() {
-              errors.add(kPassNullError);
+              signInErrors.add(kPassNullError);
             });
             return '';
-          } else if (value.length < 8 && !errors.contains(kShortPassError)) {
+          } else if (value.length < 8 &&
+              !signInErrors.contains(kShortPassError)) {
             setState(() {
-              errors.add(kShortPassError);
+              signInErrors.add(kShortPassError);
             });
             return '';
           }
@@ -377,21 +383,5 @@ class _LoginScreenState extends State<LoginScreen> {
         },
       ),
     );
-  }
-
-  void addError({String? error}) {
-    if (!errors.contains(error)) {
-      setState(() {
-        errors.add(error!);
-      });
-    }
-  }
-
-  void removeError({String? error}) {
-    if (errors.contains(error)) {
-      setState(() {
-        errors.remove(error);
-      });
-    }
   }
 }

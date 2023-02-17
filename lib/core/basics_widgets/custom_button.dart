@@ -10,27 +10,27 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(
-        left: 16.0,
-        right: 16.0,
-        top: 8.0,
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      height: 57,
+      decoration: BoxDecoration(
+        color: kPrimaryColor,
+        borderRadius: BorderRadius.circular(5.0),
+        boxShadow: const [
+          BoxShadow(
+            offset: Offset(0, 4),
+            blurRadius: 5.0,
+            color: kPrimaryColor,
+          ),
+        ],
       ),
-      child: Container(
-        width: MediaQuery.of(context).size.width,
-        height: 57,
-        decoration: BoxDecoration(
-          color: kPrimaryColor,
-          borderRadius: BorderRadius.circular(5.0),
-        ),
-        child: Center(
-          child: Text(
-            title,
-            style: const TextStyle(
-              fontWeight: FontWeight.w700,
-              fontSize: 14,
-              color: kSecondaryColor,
-            ),
+      child: Center(
+        child: Text(
+          title,
+          style: const TextStyle(
+            fontWeight: FontWeight.w700,
+            fontSize: 14,
+            color: kSecondaryColor,
           ),
         ),
       ),
