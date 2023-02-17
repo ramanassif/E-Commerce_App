@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:ecommerce_app/constants.dart';
 import 'package:ecommerce_app/core/basics_widgets/app_logo.dart';
 import 'package:ecommerce_app/core/basics_widgets/generic_loader.dart';
+import 'package:ecommerce_app/core/basics_widgets/home_Indicator.dart';
+import 'package:ecommerce_app/features/login_screen/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -36,13 +38,8 @@ class _SplashScreenState extends State<SplashScreen> {
           Padding(
             padding:
                 EdgeInsets.only(top: MediaQuery.of(context).size.height / 4.3),
-            child: Container(
-              width: 134,
-              height: 5,
-              decoration: BoxDecoration(
-                color: kSecondaryColor,
-                borderRadius: BorderRadius.circular(100.0),
-              ),
+            child: const HomeIndicator(
+              color: kSecondaryColor,
             ),
           ),
         ],
@@ -58,11 +55,7 @@ class _SplashScreenState extends State<SplashScreen> {
       () => Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => Scaffold(
-            body: Container(
-              color: kSecondaryColor,
-            ),
-          ),
+          builder: (context) => const LoginScreen(),
         ),
       ),
     );
