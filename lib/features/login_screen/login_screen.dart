@@ -3,6 +3,7 @@ import 'package:ecommerce_app/core/basics_widgets/app_logo.dart';
 import 'package:ecommerce_app/core/basics_widgets/custom_button.dart';
 import 'package:ecommerce_app/core/basics_widgets/home_Indicator.dart';
 import 'package:ecommerce_app/core/basics_widgets/form_error.dart';
+import 'package:ecommerce_app/features/home_screen/home_screen.dart';
 import 'package:ecommerce_app/features/login_screen/widgets/login_way.dart';
 import 'package:ecommerce_app/features/register_screen/register_screen.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
             padding: EdgeInsets.only(
                 bottom: MediaQuery.of(context).viewInsets.bottom),
             child: Container(
-              color: kSecondaryColor,
+              color: kWhiteColor,
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
               child: Column(
@@ -39,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   const AppLogo(
                     firstColor: kPrimaryColor,
-                    secondColor: kSecondaryColor,
+                    secondColor: kWhiteColor,
                   ),
                   const Padding(
                     padding: EdgeInsets.only(top: 16.0),
@@ -87,9 +88,15 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      if (signInFormKey.currentState!.validate()) {
-                        signInFormKey.currentState!.save();
-                      }
+                      // if (signInFormKey.currentState!.validate()) {
+                      //   signInFormKey.currentState!.save();
+                      // }
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomeScreen(),
+                        ),
+                      );
                     },
                     child: const Padding(
                       padding:

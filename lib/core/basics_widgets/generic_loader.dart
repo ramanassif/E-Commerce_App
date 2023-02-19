@@ -9,8 +9,8 @@ class GenericLoader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
         child: LoadingAnimationWidget.threeArchedCircle(
-          color: kSecondaryColor,
-          size: 24,
-        ));
+      color: kWhiteColor,
+      size: 24,
+    ));
   }
 }

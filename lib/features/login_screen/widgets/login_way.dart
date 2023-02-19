@@ -27,7 +27,7 @@ class _LoginWayState extends State<LoginWay> {
         width: MediaQuery.of(context).size.width,
         height: 57,
         decoration: BoxDecoration(
-          color: kSecondaryColor,
+          color: kWhiteColor,
           border: Border.all(
             color: const Color(0xffEBF0FF),
           ),

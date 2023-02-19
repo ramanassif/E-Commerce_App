@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 const kPrimaryColor = Color(0xff40BFFF);
-const kSecondaryColor = Color(0xffFFFFFF);
+const kWhiteColor = Color(0xffFFFFFF);
+const kLightColor = Color(0xffEBF0FF);
+const kSecondaryColor = Color(0xff223263);
 
 //Form Error
 final RegExp emailValidatorRegExp =

@@ -1,6 +1,7 @@
 import 'package:ecommerce_app/constants.dart';
 import 'package:ecommerce_app/core/basics_widgets/app_logo.dart';
 import 'package:ecommerce_app/core/basics_widgets/custom_button.dart';
+import 'package:ecommerce_app/features/home_screen/home_screen.dart';
 import 'package:ecommerce_app/features/login_screen/login_screen.dart';
 import 'package:ecommerce_app/core/basics_widgets/form_error.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +29,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           child: Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
-            color: kSecondaryColor,
+            color: kWhiteColor,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Column(
@@ -38,7 +39,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   const AppLogo(
                     firstColor: kPrimaryColor,
-                    secondColor: kSecondaryColor,
+                    secondColor: kWhiteColor,
                   ),
                   const Padding(
                     padding: EdgeInsets.only(top: 16.0),
@@ -102,9 +103,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      if (registerFormKey.currentState!.validate()) {
-                        registerFormKey.currentState!.save();
-                      }
+                      // if (registerFormKey.currentState!.validate()) {
+                      //   registerFormKey.currentState!.save();
+                      // }
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomeScreen(),
+                        ),
+                      );
                     },
                     child: const CustomButton(title: 'Sign Up'),
                   ),
