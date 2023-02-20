@@ -1,5 +1,5 @@
 import 'package:ecommerce_app/constants.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/recommended_product_grid_view/five_stars.dart';
+import 'package:ecommerce_app/features/home_screen/widgets/five_stars.dart';
 import 'package:flutter/material.dart';
 
 class FavoriteProductItem extends StatelessWidget {

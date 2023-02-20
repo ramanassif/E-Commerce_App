@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/features/home_screen/favorite_screen.dart';
+import 'package:ecommerce_app/features/home_screen/screens/favorite_screen.dart';
 import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/search_text_field.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

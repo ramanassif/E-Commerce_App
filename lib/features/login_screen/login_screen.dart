@@ -3,7 +3,7 @@ import 'package:ecommerce_app/core/basics_widgets/app_logo.dart';
 import 'package:ecommerce_app/core/basics_widgets/custom_button.dart';
 import 'package:ecommerce_app/core/basics_widgets/home_Indicator.dart';
 import 'package:ecommerce_app/core/basics_widgets/form_error.dart';
-import 'package:ecommerce_app/features/home_screen/home_screen.dart';
+import 'package:ecommerce_app/features/home_screen/screens/home_screen.dart';
 import 'package:ecommerce_app/features/login_screen/widgets/login_way.dart';
 import 'package:ecommerce_app/features/register_screen/register_screen.dart';
 import 'package:flutter/material.dart';

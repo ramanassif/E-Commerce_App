@@ -1,5 +1,5 @@
 import 'package:ecommerce_app/constants.dart';
-import 'package:ecommerce_app/features/home_screen/super_flash_sale.dart';
+import 'package:ecommerce_app/features/home_screen/screens/super_flash_sale_screen.dart';
 import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/offer_banner/offer_time_container.dart';
 import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/offer_banner/two_dots.dart';
 import 'package:flutter/material.dart';

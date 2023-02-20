@@ -1,7 +1,7 @@
 import 'package:ecommerce_app/constants.dart';
 import 'package:ecommerce_app/core/data/data.dart';
 import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/category_list/category_list_view.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/five_dots.dart';
+import 'package:ecommerce_app/features/home_screen/widgets/five_dots.dart';
 import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/home_screen_header.dart';
 import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/bottom_navigation_bar.dart';
 import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/offer_banner/offer_banner.dart';
@@ -47,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               const OfferBanner(),
               const SizedBox(
-                height: 10,
+                height: 5,
               ),
               const FiveDots(),
               const SizedBox(

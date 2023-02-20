@@ -14,23 +14,23 @@ class FiveDots extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: const [
             CircleAvatar(
-              radius: 5,
+              radius: 4,
               backgroundColor: kLightColor,
             ),
             CircleAvatar(
-              radius: 5,
+              radius: 4,
               backgroundColor: kLightColor,
             ),
             CircleAvatar(
-              radius: 5,
+              radius: 4,
               backgroundColor: kPrimaryColor,
             ),
             CircleAvatar(
-              radius: 5,
+              radius: 4,
               backgroundColor: kLightColor,
             ),
             CircleAvatar(
-              radius: 5,
+              radius: 4,
               backgroundColor: kLightColor,
             ),
           ],
