@@ -1,14 +1,14 @@
 import 'package:ecommerce_app/constants.dart';
 import 'package:ecommerce_app/core/data/data.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/bottom_navigation_bar.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/category_list_view.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/five_dots.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/header.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/offer_banner.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/recomended_product_banner.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/recomended_product_grid_view.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/sale_list_view.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/title_and_more.dart';
+import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/category_list/category_list_view.dart';
+import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/five_dots.dart';
+import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/home_screen_header.dart';
+import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/bottom_navigation_bar.dart';
+import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/offer_banner/offer_banner.dart';
+import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/recommended_product_banner/recommended_product_banner.dart';
+import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/recommended_product_grid_view/recommended_product_grid_view.dart';
+import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/sale_list_view/sale_list_view.dart';
+import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/title_and_more.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        bottomNavigationBar: const BottomNavigatioBar(),
+        bottomNavigationBar: const BottomNavigationBarWidget(),
         body: Container(
           color: kWhiteColor,
           width: MediaQuery.of(context).size.width,
@@ -34,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.02,
               ),
-              const Header(),
+              const HomeScreenHeader(),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.005,
               ),
@@ -92,13 +92,13 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.02,
               ),
-              const RcomendedProductBanner(),
+              const RecommendedProductBanner(),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.05,
               ),
-              RecomendedProductGridView(
-                listName: recomendedProduct,
-                listImage: recomendedProductImage,
+              RecommendedProductGridView(
+                listName: recommendedProduct,
+                listImage: recommendedProductImage,
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.01,

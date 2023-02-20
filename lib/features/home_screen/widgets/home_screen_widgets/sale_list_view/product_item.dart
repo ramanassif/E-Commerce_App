@@ -6,14 +6,14 @@ class ProductItem extends StatelessWidget {
   final String productImage;
   final String newPrice;
   final String oldPrice;
-  final String offerPrecentValue;
+  final String offerPercentValue;
   const ProductItem({
     super.key,
     required this.productName,
     required this.productImage,
     required this.newPrice,
     required this.oldPrice,
-    required this.offerPrecentValue,
+    required this.offerPercentValue,
   });
 
   @override
@@ -84,7 +84,7 @@ class ProductItem extends StatelessWidget {
                     width: 15,
                   ),
                   Text(
-                    offerPrecentValue,
+                    offerPercentValue,
                     style: const TextStyle(
                         color: Colors.red,
                         fontSize: 10,

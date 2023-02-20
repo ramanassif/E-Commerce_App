@@ -1,9 +1,10 @@
-import 'package:ecommerce_app/features/home_screen/widgets/search_text_field.dart';
+import 'package:ecommerce_app/features/home_screen/favorite_screen.dart';
+import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/search_text_field.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Header extends StatelessWidget {
-  const Header({super.key});
+class HomeScreenHeader extends StatelessWidget {
+  const HomeScreenHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,14 @@ class Header extends StatelessWidget {
             child: const SearchTextField(),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const FavoriteScreen(),
+                ),
+              );
+            },
             icon: const Icon(
               CupertinoIcons.heart,
               color: Colors.grey,

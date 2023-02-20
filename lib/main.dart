@@ -1,7 +1,15 @@
+import 'dart:io';
+
+import 'package:desktop_window/desktop_window.dart';
 import 'package:ecommerce_app/features/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // SharedPreferences.setMockInitialValues({});
+  if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
+    await DesktopWindow.setWindowSize(const Size(400, 650));
+  }
   runApp(const MyApp());
 }
 

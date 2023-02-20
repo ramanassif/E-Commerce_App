@@ -1,8 +1,8 @@
 import 'package:ecommerce_app/constants.dart';
 import 'package:flutter/material.dart';
 
-class RcomendedProductBanner extends StatelessWidget {
-  const RcomendedProductBanner({super.key});
+class RecommendedProductBanner extends StatelessWidget {
+  const RecommendedProductBanner({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class RcomendedProductBanner extends StatelessWidget {
         child: Stack(
           children: [
             Image.asset(
-              'assets/images/recomended_product.png',
+              'assets/images/recommended_product.png',
             ),
             Padding(
               padding: const EdgeInsets.only(left: 16.0),
@@ -30,7 +30,7 @@ class RcomendedProductBanner extends StatelessWidget {
                     width: 200,
                     height: 100,
                     child: Text(
-                      'Recomended Product',
+                      'Recommended Product',
                       style: TextStyle(
                         color: kWhiteColor,
                         fontSize: 24,

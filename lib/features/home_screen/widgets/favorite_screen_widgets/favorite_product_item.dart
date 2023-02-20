@@ -1,27 +1,28 @@
 import 'package:ecommerce_app/constants.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/five_stars.dart';
+import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/recommended_product_grid_view/five_stars.dart';
 import 'package:flutter/material.dart';
 
-class RecomendedProductItem extends StatelessWidget {
+class FavoriteProductItem extends StatelessWidget {
   final String productName;
   final String productImage;
   final String newPrice;
   final String oldPrice;
-  final String offerPrecentValue;
-  const RecomendedProductItem({
-    super.key,
+  final String offerPercentValue;
+
+  const FavoriteProductItem({
+    Key? key,
     required this.productName,
     required this.productImage,
     required this.newPrice,
     required this.oldPrice,
-    required this.offerPrecentValue,
-  });
+    required this.offerPercentValue,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 170,
-      height: 450,
+      height: 480,
       alignment: Alignment.center,
       decoration: BoxDecoration(
         border: Border.all(
@@ -82,28 +83,44 @@ class RecomendedProductItem extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 8,
+              height: 5,
             ),
-            Row(
-              children: [
-                Text(
-                  oldPrice,
-                  style: const TextStyle(
-                      color: Colors.grey,
-                      fontSize: 10,
-                      fontWeight: FontWeight.w400),
+            SizedBox(
+              height: 20,
+              child: Center(
+                child: Row(
+                  children: [
+                    Text(
+                      oldPrice,
+                      style: const TextStyle(
+                          color: Colors.grey,
+                          fontSize: 10,
+                          fontWeight: FontWeight.w400),
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      offerPercentValue,
+                      style: const TextStyle(
+                          color: Colors.red,
+                          fontSize: 10,
+                          fontWeight: FontWeight.w700),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    GestureDetector(
+                      onTap: () {},
+                      child: const Icon(
+                        Icons.delete_outline,
+                        size: 25,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
                 ),
-                const SizedBox(
-                  width: 15,
-                ),
-                Text(
-                  offerPrecentValue,
-                  style: const TextStyle(
-                      color: Colors.red,
-                      fontSize: 10,
-                      fontWeight: FontWeight.w700),
-                ),
-              ],
+              ),
             ),
           ],
         ),

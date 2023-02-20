@@ -17,32 +17,36 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: kPrimaryColor,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Padding(
-            padding:
-                EdgeInsets.only(top: MediaQuery.of(context).size.height / 2.1),
-            child: const AppLogo(
-              firstColor: kWhiteColor,
-              secondColor: kPrimaryColor,
-            ),
+    return SafeArea(
+      child: Scaffold(
+        body: Container(
+          color: kPrimaryColor,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Padding(
+                padding:
+                    EdgeInsets.only(top: MediaQuery.of(context).size.height / 2.8),
+                child: const AppLogo(
+                  firstColor: kWhiteColor,
+                  secondColor: kPrimaryColor,
+                ),
+              ),
+              Padding(
+                padding:
+                    EdgeInsets.only(top: MediaQuery.of(context).size.height / 4.2),
+                child: const GenericLoader(),
+              ),
+              Padding(
+                padding:
+                    EdgeInsets.only(top: MediaQuery.of(context).size.height / 4.2),
+                child: const HomeIndicator(
+                  color: kWhiteColor,
+                ),
+              ),
+            ],
           ),
-          Padding(
-            padding:
-                EdgeInsets.only(top: MediaQuery.of(context).size.height / 6.3),
-            child: const GenericLoader(),
-          ),
-          Padding(
-            padding:
-                EdgeInsets.only(top: MediaQuery.of(context).size.height / 4.3),
-            child: const HomeIndicator(
-              color: kWhiteColor,
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }

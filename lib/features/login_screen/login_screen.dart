@@ -25,46 +25,49 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.only(
-                bottom: MediaQuery.of(context).viewInsets.bottom),
-            child: Container(
-              color: kWhiteColor,
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height / 7,
-                  ),
-                  const AppLogo(
-                    firstColor: kPrimaryColor,
-                    secondColor: kWhiteColor,
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(top: 16.0),
-                    child: Text(
-                      'Welcome to Lafyuu',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                      ),
+        body: Padding(
+          padding: EdgeInsets.only(
+              bottom: MediaQuery.of(context).viewInsets.bottom),
+          child: Container(
+            color: kWhiteColor,
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            child: ListView(
+              scrollDirection: Axis.vertical,
+              children: [
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 7,
+                ),
+                const AppLogo(
+                  firstColor: kPrimaryColor,
+                  secondColor: kWhiteColor,
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 16.0),
+                  child: Text(
+                    'Welcome to Lafyuu',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
-                  const Padding(
-                    padding: EdgeInsets.only(top: 8.0),
-                    child: Text(
-                      'Sign in to continue',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 12,
-                        color: Colors.grey,
-                      ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 8.0),
+                  child: Text(
+                    'Sign in to continue',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 12,
+                      color: Colors.grey,
                     ),
                   ),
-                  Form(
+                ),
+                Center(
+                  child: Form(
                     key: signInFormKey,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -86,7 +89,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       ],
                     ),
                   ),
-                  GestureDetector(
+                ),
+                Center(
+                  child: GestureDetector(
                     onTap: () {
                       // if (signInFormKey.currentState!.validate()) {
                       //   signInFormKey.currentState!.save();
@@ -106,77 +111,81 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      left: 16.0,
-                      right: 16.0,
-                      top: 16.0,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: const [
-                        SizedBox(
-                          width: 137,
-                          child: Divider(
-                            thickness: 2,
-                            color: Color(0xffEBF0FF),
-                          ),
-                        ),
-                        Text(
-                          'OR',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            fontSize: 14,
-                            color: Colors.grey,
-                          ),
-                        ),
-                        SizedBox(
-                          width: 137,
-                          child: Divider(
-                            thickness: 2,
-                            color: Color(0xffEBF0FF),
-                          ),
-                        ),
-                      ],
-                    ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 16.0,
+                    right: 16.0,
+                    top: 16.0,
                   ),
-                  const LoginWay(
-                    wayName: 'Login with Google',
-                    wayImage: 'assets/images/google.png',
-                  ),
-                  const LoginWay(
-                    wayName: 'Login with facebook',
-                    wayImage: 'assets/images/facebook.png',
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      top: 16.0,
-                    ),
-                    child: GestureDetector(
-                      onTap: () {},
-                      child: const Text(
-                        'Forgot Password?',
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: const [
+                      SizedBox(
+                        width: 137,
+                        child: Divider(
+                          thickness: 2,
+                          color: Color(0xffEBF0FF),
+                        ),
+                      ),
+                      Text(
+                        'OR',
                         style: TextStyle(
-                          color: kPrimaryColor,
-                          fontSize: 12,
                           fontWeight: FontWeight.w700,
+                          fontSize: 14,
+                          color: Colors.grey,
                         ),
+                      ),
+                      SizedBox(
+                        width: 137,
+                        child: Divider(
+                          thickness: 2,
+                          color: Color(0xffEBF0FF),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const LoginWay(
+                  wayName: 'Login with Google',
+                  wayImage: 'assets/images/google.png',
+                ),
+                const LoginWay(
+                  wayName: 'Login with facebook',
+                  wayImage: 'assets/images/facebook.png',
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    top: 16.0,
+                  ),
+                  child: GestureDetector(
+                    onTap: () {},
+                    child: const Text(
+                      'Forgot Password?',
+                      textAlign: TextAlign.center,
+
+                      style: TextStyle(
+                        color: kPrimaryColor,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      top: 12.0,
-                    ),
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const RegisterScreen(),
-                          ),
-                        );
-                      },
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    top: 12.0,
+                  ),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const RegisterScreen(),
+                        ),
+                      );
+                    },
+                    child: Center(
                       child: RichText(
                         text: const TextSpan(
                           style: TextStyle(
@@ -187,7 +196,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 style: TextStyle(
                                   color: Colors.grey,
                                 ),
-                                text: 'Don\'t have a account? '),
+                                text: 'Don\'t have a account? ',),
                             TextSpan(
                               style: TextStyle(
                                 color: kPrimaryColor,
@@ -200,20 +209,20 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.only(
-                      top: signInErrors.isEmpty
-                          ? 60
-                          : signInErrors.length == 1
-                              ? 40
-                              : 20,
-                    ),
-                    child: const HomeIndicator(
-                      color: Color(0xffD1D6E8),
-                    ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(
+                    top: signInErrors.isEmpty
+                        ? 60
+                        : signInErrors.length == 1
+                            ? 40
+                            : 20,
                   ),
-                ],
-              ),
+                  child: const HomeIndicator(
+                    color: Color(0xffD1D6E8),
+                  ),
+                ),
+              ],
             ),
           ),
         ),

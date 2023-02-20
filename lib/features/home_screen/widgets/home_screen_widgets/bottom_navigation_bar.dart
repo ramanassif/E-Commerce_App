@@ -2,8 +2,8 @@ import 'package:ecommerce_app/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class BottomNavigatioBar extends StatelessWidget {
-  const BottomNavigatioBar({super.key});
+class BottomNavigationBarWidget extends StatelessWidget {
+  const BottomNavigationBarWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

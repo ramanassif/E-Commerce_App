@@ -1,5 +1,5 @@
 import 'package:ecommerce_app/core/data/data.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/category_item.dart';
+import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/category_list/category_item.dart';
 import 'package:flutter/material.dart';
 
 class CategoryListView extends StatelessWidget {
@@ -14,7 +14,7 @@ class CategoryListView extends StatelessWidget {
       ),
       child: SizedBox(
         width: double.infinity,
-        height: MediaQuery.of(context).size.height * 0.13,
+        height: 100,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) => CategoryItem(

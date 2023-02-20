@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/features/home_screen/widgets/product_item.dart';
+import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/sale_list_view/product_item.dart';
 import 'package:flutter/material.dart';
 
 class SaleListView extends StatelessWidget {
@@ -19,7 +19,7 @@ class SaleListView extends StatelessWidget {
       ),
       child: SizedBox(
         width: double.infinity,
-        height: MediaQuery.of(context).size.height * 0.3,
+        height: 250,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) => ProductItem(
@@ -27,7 +27,7 @@ class SaleListView extends StatelessWidget {
             productImage: listImage[index],
             newPrice: '\$299,43',
             oldPrice: '\$534,33',
-            offerPrecentValue: '24% Off',
+            offerPercentValue: '24% Off',
           ),
           itemCount: listName.length,
         ),
