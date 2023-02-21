@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 List<String> categoryName = [
   'Man Shirt',
   'Dress',
@@ -71,4 +73,13 @@ List<String> favoriteProductImage = [
   'assets/images/product5.png',
   'assets/images/product1.png',
   'assets/images/product2.png',
+];
+
+List<Color> colorList = const [
+  Color(0xffFFC833),
+  Color(0xff40BFFF),
+  Color(0xffFB7181),
+  Color(0xff53D1B6),
+  Color(0xff5C61F4),
+  Color(0xff223263),
 ];

@@ -8,7 +8,7 @@ import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/o
 import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/recommended_product_banner/recommended_product_banner.dart';
 import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/recommended_product_grid_view/recommended_product_grid_view.dart';
 import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/sale_list_view/sale_list_view.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/title_and_more.dart';
+import 'package:ecommerce_app/features/home_screen/widgets/title_and_more.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -56,6 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
               const TitleAndMore(
                 title: 'Category',
                 more: 'More Category',
+                horizontalValue: 24.0,
               ),
               const SizedBox(
                 height: 10,
@@ -67,6 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
               const TitleAndMore(
                 title: 'Flash Sale',
                 more: 'See More',
+                horizontalValue: 24.0,
               ),
               const SizedBox(
                 height: 10,
@@ -81,6 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
               const TitleAndMore(
                 title: 'Mega Sale',
                 more: 'See More',
+                horizontalValue: 24.0,
               ),
               const SizedBox(
                 height: 10,

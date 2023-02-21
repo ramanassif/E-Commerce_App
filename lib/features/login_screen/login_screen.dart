@@ -217,6 +217,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         : signInErrors.length == 1
                             ? 40
                             : 20,
+                    left: 115,
+                    right: 115,
                   ),
                   child: const HomeIndicator(
                     color: Color(0xffD1D6E8),

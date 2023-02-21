@@ -4,18 +4,20 @@ import 'package:flutter/material.dart';
 class TitleAndMore extends StatelessWidget {
   final String title;
   final String more;
+  final double horizontalValue;
+
   const TitleAndMore({
     super.key,
     required this.title,
     required this.more,
+    required this.horizontalValue,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(
-        left: 24.0,
-        right: 24.0,
+      padding: EdgeInsets.symmetric(
+        horizontal: horizontalValue,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
