@@ -1,9 +1,9 @@
 import 'package:ecommerce_app/constants.dart';
 import 'package:ecommerce_app/core/basics_widgets/custom_button.dart';
 import 'package:ecommerce_app/core/basics_widgets/home_indicator.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/helper_widgets/person_review.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/review_screen_widgets/review_screen_header.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/review_screen_widgets/reviews_list.dart';
+import 'package:ecommerce_app/features/helper_widgets/person_review.dart';
+import 'package:ecommerce_app/features/review_screen/widgets/review_screen_header.dart';
+import 'package:ecommerce_app/features/review_screen/widgets/reviews_list.dart';
 import 'package:flutter/material.dart';
 
 class ReviewScreen extends StatefulWidget {

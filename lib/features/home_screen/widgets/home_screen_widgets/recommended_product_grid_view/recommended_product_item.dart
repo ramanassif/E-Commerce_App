@@ -1,5 +1,5 @@
 import 'package:ecommerce_app/constants.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/helper_widgets/review_star.dart';
+import 'package:ecommerce_app/features/helper_widgets/review_star.dart';
 import 'package:flutter/material.dart';
 
 class RecommendedProductItem extends StatelessWidget {

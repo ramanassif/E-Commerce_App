@@ -1,5 +1,5 @@
 import 'package:ecommerce_app/constants.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/review_screen_widgets/review_item.dart';
+import 'package:ecommerce_app/features/review_screen/widgets/review_item.dart';
 import 'package:flutter/material.dart';
 
 class ReviewsList extends StatelessWidget {

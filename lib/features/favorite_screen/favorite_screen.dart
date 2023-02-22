@@ -1,7 +1,7 @@
 import 'package:ecommerce_app/constants.dart';
 import 'package:ecommerce_app/core/data/data.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/favorite_screen_widgets/favorite_grid_view.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/favorite_screen_widgets/favorite_screen_header.dart';
+import 'package:ecommerce_app/features/favorite_screen/widgets/favorite_grid_view.dart';
+import 'package:ecommerce_app/features/favorite_screen/widgets/favorite_screen_header.dart';
 import 'package:flutter/material.dart';
 
 class FavoriteScreen extends StatelessWidget {

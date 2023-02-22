@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/features/home_screen/widgets/favorite_screen_widgets/favorite_product_item.dart';
+import 'package:ecommerce_app/features/favorite_screen/widgets/favorite_product_item.dart';
 import 'package:flutter/material.dart';
 
 class FavoriteGridView extends StatelessWidget {

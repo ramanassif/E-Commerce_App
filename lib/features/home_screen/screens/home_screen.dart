@@ -1,7 +1,7 @@
 import 'package:ecommerce_app/constants.dart';
 import 'package:ecommerce_app/core/data/data.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/helper_widgets/five_dots.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/helper_widgets/title_and_more.dart';
+import 'package:ecommerce_app/features/helper_widgets/five_dots.dart';
+import 'package:ecommerce_app/features/helper_widgets/title_and_more.dart';
 import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/category_list/category_list_view.dart';
 import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/home_screen_header.dart';
 import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/bottom_navigation_bar.dart';

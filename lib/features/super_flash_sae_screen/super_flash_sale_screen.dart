@@ -2,7 +2,7 @@ import 'package:ecommerce_app/constants.dart';
 import 'package:ecommerce_app/core/data/data.dart';
 import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/offer_banner/offer_banner.dart';
 import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/recommended_product_grid_view/recommended_product_grid_view.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/super_flash_sale_screen_widgets/super_flash_sale_header.dart';
+import 'package:ecommerce_app/features/super_flash_sae_screen/widgets/super_flash_sale_header.dart';
 import 'package:flutter/material.dart';
 
 class SuperFlashSale extends StatelessWidget {
