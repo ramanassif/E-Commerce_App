@@ -14,12 +14,9 @@ class OfferBanner extends StatelessWidget {
       child: Center(
         child: GestureDetector(
           onTap: (){
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const SuperFlashSale(),
-              ),
-            );
+            Navigator.pushNamed(
+                context,
+                'superFlashSaleScreen');
           },
           child: Container(
             width: 343,

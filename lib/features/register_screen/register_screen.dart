@@ -106,12 +106,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       // if (registerFormKey.currentState!.validate()) {
                       //   registerFormKey.currentState!.save();
                       // }
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const HomeScreen(),
-                        ),
-                      );
+                      Navigator.pushNamed(
+                          context,
+                          'homeScreen');
                     },
                     child: const CustomButton(title: 'Sign Up'),
                   ),
@@ -121,12 +118,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     ),
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const LoginScreen(),
-                          ),
-                        );
+                        Navigator.pushNamed(
+                            context,
+                            'loginScreen');
                       },
                       child: RichText(
                         text: const TextSpan(

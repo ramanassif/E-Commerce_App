@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:desktop_window/desktop_window.dart';
+import 'package:ecommerce_app/core/routing_services/routing_services.dart';
 import 'package:ecommerce_app/features/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Poppins',
       ),
-      home: const SplashScreen(),
+      onGenerateRoute: AppRoute.generateRoute,
+      initialRoute: 'splashScreen',
     );
   }
 }

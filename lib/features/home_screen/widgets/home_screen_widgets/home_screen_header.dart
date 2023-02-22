@@ -22,12 +22,9 @@ class HomeScreenHeader extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const FavoriteScreen(),
-                ),
-              );
+              Navigator.pushNamed(
+                  context,
+                  'favoriteScreen');
             },
             icon: const Icon(
               CupertinoIcons.heart,

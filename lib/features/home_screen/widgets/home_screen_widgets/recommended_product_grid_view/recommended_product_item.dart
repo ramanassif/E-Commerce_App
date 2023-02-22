@@ -22,12 +22,9 @@ class RecommendedProductItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const ProductDetailsScreen(),
-          ),
-        );
+        Navigator.pushNamed(
+            context,
+            'productDetailsScreen');
       },
       child: Container(
         width: 170,

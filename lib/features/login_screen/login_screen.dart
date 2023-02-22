@@ -96,12 +96,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       // if (signInFormKey.currentState!.validate()) {
                       //   signInFormKey.currentState!.save();
                       // }
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const HomeScreen(),
-                        ),
-                      );
+                      Navigator.pushNamed(
+                          context,
+                          'homeScreen');
                     },
                     child: const Padding(
                       padding:
@@ -178,12 +175,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const RegisterScreen(),
-                        ),
-                      );
+                      Navigator.pushNamed(
+                          context,
+                          'registerScreen');
                     },
                     child: Center(
                       child: RichText(
