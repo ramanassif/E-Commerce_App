@@ -44,11 +44,11 @@ class PersonReview extends StatelessWidget {
                 ),
                 Row(
                   children: const [
-                    ReviewStar(color: Colors.yellow),
-                    ReviewStar(color: Colors.yellow),
-                    ReviewStar(color: Colors.yellow),
-                    ReviewStar(color: Colors.yellow),
-                    ReviewStar(color: kLightColor),
+                    ReviewStar(color: Colors.yellow,size: 16,),
+                    ReviewStar(color: Colors.yellow,size: 16,),
+                    ReviewStar(color: Colors.yellow,size: 16,),
+                    ReviewStar(color: Colors.yellow,size: 16,),
+                    ReviewStar(color: kLightColor,size: 16,),
                   ],
                 )
               ],

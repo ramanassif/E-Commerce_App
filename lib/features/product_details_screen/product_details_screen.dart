@@ -88,11 +88,11 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Row(
                   children: const [
-                    ReviewStar(color: Colors.yellow),
-                    ReviewStar(color: Colors.yellow),
-                    ReviewStar(color: Colors.yellow),
-                    ReviewStar(color: Colors.yellow),
-                    ReviewStar(color: kLightColor),
+                    ReviewStar(color: Colors.yellow,size: 16,),
+                    ReviewStar(color: Colors.yellow,size: 16,),
+                    ReviewStar(color: Colors.yellow,size: 16,),
+                    ReviewStar(color: Colors.yellow,size: 16,),
+                    ReviewStar(color: kLightColor,size: 16,),
                   ],
                 ),
               ),
@@ -297,11 +297,11 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                   height: 20,
                   child: Row(
                     children: const [
-                      ReviewStar(color: Colors.yellow),
-                      ReviewStar(color: Colors.yellow),
-                      ReviewStar(color: Colors.yellow),
-                      ReviewStar(color: Colors.yellow),
-                      ReviewStar(color: kLightColor),
+                      ReviewStar(color: Colors.yellow,size: 16,),
+                      ReviewStar(color: Colors.yellow,size: 16,),
+                      ReviewStar(color: Colors.yellow,size: 16,),
+                      ReviewStar(color: Colors.yellow,size: 16,),
+                      ReviewStar(color: kLightColor,size: 16,),
                       SizedBox(
                         width: 5,
                       ),

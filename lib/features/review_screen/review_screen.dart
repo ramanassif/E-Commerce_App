@@ -260,12 +260,19 @@ class _ReviewScreenState extends State<ReviewScreen> {
               const SizedBox(
                 height: 20,
               ),
-              const Padding(
-                padding: EdgeInsets.symmetric(
+              Padding(
+                padding: const EdgeInsets.symmetric(
                   horizontal: 16.0,
                 ),
-                child: CustomButton(
-                  title: 'Write Review',
+                child: GestureDetector(
+                  onTap: (){
+                    Navigator.pushNamed(
+                        context,
+                        'writeReview');
+                  },
+                  child: const CustomButton(
+                    title: 'Write Review',
+                  ),
                 ),
               ),
               const SizedBox(

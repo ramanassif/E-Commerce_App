@@ -43,7 +43,7 @@ class ReviewItem extends StatelessWidget {
               : Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const ReviewStar(color: Colors.yellow),
+                    const ReviewStar(color: Colors.yellow,size: 16,),
                     const SizedBox(
                       width: 10,
                     ),

@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 
 class ReviewStar extends StatelessWidget {
   final Color color;
+  final double size;
   const ReviewStar({
     super.key,
     required this.color,
+    required this.size,
   });
 
   @override
@@ -16,7 +18,7 @@ class ReviewStar extends StatelessWidget {
       child: Icon(
         Icons.star,
         color: color,
-        size: 16,
+        size: size,
       ),
     );
   }
