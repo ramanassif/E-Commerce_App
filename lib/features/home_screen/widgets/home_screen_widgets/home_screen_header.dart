@@ -32,23 +32,28 @@ class HomeScreenHeader extends StatelessWidget {
               size: 30,
             ),
           ),
-          Stack(
-            clipBehavior: Clip.none,
-            alignment: Alignment.topRight,
-            children: const [
-              Icon(
-                Icons.notifications_outlined,
-                color: Colors.grey,
-                size: 30,
-              ),
-              Padding(
-                padding: EdgeInsets.only(right: 2.0),
-                child: CircleAvatar(
-                  backgroundColor: Colors.red,
-                  radius: 5,
+          GestureDetector(
+            onTap: (){
+              Navigator.pushNamed(context, 'notificationScreen');
+            },
+            child: Stack(
+              clipBehavior: Clip.none,
+              alignment: Alignment.topRight,
+              children: const [
+                Icon(
+                  Icons.notifications_outlined,
+                  color: Colors.grey,
+                  size: 30,
                 ),
-              ),
-            ],
+                Padding(
+                  padding: EdgeInsets.only(right: 2.0),
+                  child: CircleAvatar(
+                    backgroundColor: Colors.red,
+                    radius: 5,
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),

@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/features/favorite_screen/favorite_screen.dart';
 import 'package:ecommerce_app/features/home_screen/home_screen.dart';
+import 'package:ecommerce_app/features/notification_screen/notification_screen.dart';
 import 'package:ecommerce_app/features/product_details_screen/product_details_screen.dart';
 import 'package:ecommerce_app/features/review_screen/review_screen.dart';
 import 'package:ecommerce_app/features/super_flash_sae_screen/super_flash_sale_screen.dart';
@@ -30,6 +31,8 @@ class AppRoute {
         return MaterialPageRoute(builder: (_) => const ReviewScreen());
       case 'writeReview':
         return MaterialPageRoute(builder: (_) => const WriteReview());
+      case 'notificationScreen':
+        return MaterialPageRoute(builder: (_) => const NotificationScreen());
     }
     return null;
   }
