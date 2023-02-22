@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class FiveStars extends StatelessWidget {
+class ReviewStar extends StatelessWidget {
   final Color color;
-  const FiveStars({
+  const ReviewStar({
     super.key,
     required this.color,
   });

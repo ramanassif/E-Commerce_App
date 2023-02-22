@@ -1,5 +1,5 @@
 import 'package:ecommerce_app/constants.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/five_stars.dart';
+import 'package:ecommerce_app/features/home_screen/widgets/helper_widgets/review_star.dart';
 import 'package:flutter/material.dart';
 
 class FavoriteProductItem extends StatelessWidget {
@@ -63,11 +63,11 @@ class FavoriteProductItem extends StatelessWidget {
             ),
             Row(
               children: const [
-                FiveStars(color: Colors.yellow),
-                FiveStars(color: Colors.yellow),
-                FiveStars(color: Colors.yellow),
-                FiveStars(color: Colors.yellow),
-                FiveStars(color: kLightColor),
+                ReviewStar(color: Colors.yellow),
+                ReviewStar(color: Colors.yellow),
+                ReviewStar(color: Colors.yellow),
+                ReviewStar(color: Colors.yellow),
+                ReviewStar(color: kLightColor),
               ],
             ),
             const SizedBox(

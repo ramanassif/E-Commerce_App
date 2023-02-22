@@ -1,13 +1,15 @@
 import 'package:ecommerce_app/constants.dart';
+import 'package:ecommerce_app/core/basics_widgets/custom_button.dart';
 import 'package:ecommerce_app/core/basics_widgets/home_indicator.dart';
 import 'package:ecommerce_app/core/data/data.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/five_dots.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/five_stars.dart';
+import 'package:ecommerce_app/features/home_screen/widgets/helper_widgets/five_dots.dart';
+import 'package:ecommerce_app/features/home_screen/widgets/helper_widgets/person_review.dart';
+import 'package:ecommerce_app/features/home_screen/widgets/helper_widgets/review_star.dart';
+import 'package:ecommerce_app/features/home_screen/widgets/helper_widgets/title_and_more.dart';
 import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/sale_list_view/product_item.dart';
 import 'package:ecommerce_app/features/home_screen/widgets/product_details_screen_widgets/color_list.dart';
 import 'package:ecommerce_app/features/home_screen/widgets/product_details_screen_widgets/product_details_header.dart';
 import 'package:ecommerce_app/features/home_screen/widgets/product_details_screen_widgets/size_circle.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/title_and_more.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -86,11 +88,11 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Row(
                   children: const [
-                    FiveStars(color: Colors.yellow),
-                    FiveStars(color: Colors.yellow),
-                    FiveStars(color: Colors.yellow),
-                    FiveStars(color: Colors.yellow),
-                    FiveStars(color: kLightColor),
+                    ReviewStar(color: Colors.yellow),
+                    ReviewStar(color: Colors.yellow),
+                    ReviewStar(color: Colors.yellow),
+                    ReviewStar(color: Colors.yellow),
+                    ReviewStar(color: kLightColor),
                   ],
                 ),
               ),
@@ -274,10 +276,17 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
               const SizedBox(
                 height: 15,
               ),
-              const TitleAndMore(
-                title: 'Review Product',
-                more: 'See More',
-                horizontalValue: 16,
+              GestureDetector(
+                onTap: (){
+                  Navigator.pushNamed(
+                      context,
+                      'reviewsScreen');
+                },
+                child: const TitleAndMore(
+                  title: 'Review Product',
+                  more: 'See More',
+                  horizontalValue: 16,
+                ),
               ),
               const SizedBox(
                 height: 5,
@@ -288,11 +297,11 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                   height: 20,
                   child: Row(
                     children: const [
-                      FiveStars(color: Colors.yellow),
-                      FiveStars(color: Colors.yellow),
-                      FiveStars(color: Colors.yellow),
-                      FiveStars(color: Colors.yellow),
-                      FiveStars(color: kLightColor),
+                      ReviewStar(color: Colors.yellow),
+                      ReviewStar(color: Colors.yellow),
+                      ReviewStar(color: Colors.yellow),
+                      ReviewStar(color: Colors.yellow),
+                      ReviewStar(color: kLightColor),
                       SizedBox(
                         width: 5,
                       ),
@@ -322,49 +331,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
               const SizedBox(
                 height: 10,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16.0,
-                ),
-                child: SizedBox(
-                  height: 48,
-                  child: Row(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(50),
-                        child: Image.asset('assets/images/profile_picture.png'),
-                      ),
-                      const SizedBox(
-                        width: 15,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            'James Lawson',
-                            style: TextStyle(
-                              color: kSecondaryColor,
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Row(
-                            children: const [
-                              FiveStars(color: Colors.yellow),
-                              FiveStars(color: Colors.yellow),
-                              FiveStars(color: Colors.yellow),
-                              FiveStars(color: Colors.yellow),
-                              FiveStars(color: kLightColor),
-                            ],
-                          )
-                        ],
-                      )
-                    ],
-                  ),
-                ),
-              ),
+              const PersonReview(personName: 'James Lawson',personImage: 'assets/images/profile_picture.png',),
               const SizedBox(
                 height: 10,
               ),
@@ -463,26 +430,9 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
               const SizedBox(
                 height: 15,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0,),
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 57,
-                  decoration: BoxDecoration(
-                    color: kPrimaryColor,
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  child: const Center(
-                    child: Text(
-                      'Add To Cart',
-                      style: TextStyle(
-                        color: kWhiteColor,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-                ),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0,),
+                child: CustomButton(title: 'Add To Cart',),
               ),
               const SizedBox(height: 25,),
               const Padding(
