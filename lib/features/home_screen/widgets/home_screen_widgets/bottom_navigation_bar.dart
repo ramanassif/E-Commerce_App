@@ -21,39 +21,49 @@ class BottomNavigationBarWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Column(
-                children: const [
-                  Icon(
-                    Icons.home_outlined,
-                    size: 30,
-                    color: kPrimaryColor,
-                  ),
-                  Text(
-                    'Home',
-                    style: TextStyle(
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, 'homeScreen');
+                },
+                child: Column(
+                  children: const [
+                    Icon(
+                      Icons.home_outlined,
+                      size: 30,
                       color: kPrimaryColor,
-                      fontSize: 10,
-                      fontWeight: FontWeight.w700,
                     ),
-                  ),
-                ],
+                    Text(
+                      'Home',
+                      style: TextStyle(
+                        color: kPrimaryColor,
+                        fontSize: 10,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-              Column(
-                children: const [
-                  Icon(
-                    CupertinoIcons.search,
-                    size: 30,
-                    color: Colors.grey,
-                  ),
-                  Text(
-                    'Explore',
-                    style: TextStyle(
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, 'exploreScreen');
+                },
+                child: Column(
+                  children: const [
+                    Icon(
+                      CupertinoIcons.search,
+                      size: 30,
                       color: Colors.grey,
-                      fontSize: 10,
-                      fontWeight: FontWeight.w700,
                     ),
-                  ),
-                ],
+                    Text(
+                      'Explore',
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 10,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ],
+                ),
               ),
               Column(
                 children: [

@@ -36,14 +36,15 @@ class _NotificationScreenState extends State<NotificationScreen> {
                 height: 10,
               ),
               GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(context, 'notificationOfferScreen');
-                  },
-                  child: const NotificationItem(
-                    icon: Icons.local_offer_outlined,
-                    title: 'Offer',
-                    numberOfNotification: '3',
-                  )),
+                onTap: () {
+                  Navigator.pushNamed(context, 'notificationOfferScreen');
+                },
+                child: const NotificationItem(
+                  icon: Icons.local_offer_outlined,
+                  title: 'Offer',
+                  numberOfNotification: '3',
+                ),
+              ),
               GestureDetector(
                 onTap: () {
                   Navigator.pushNamed(context, 'notificationFeedScreen');
