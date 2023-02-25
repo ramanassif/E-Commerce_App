@@ -1,14 +1,7 @@
 import 'package:ecommerce_app/constants.dart';
-import 'package:ecommerce_app/core/data/data.dart';
-import 'package:ecommerce_app/features/helper_widgets/five_dots.dart';
-import 'package:ecommerce_app/features/helper_widgets/title_and_more.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/category_list/category_list_view.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/home_screen_header.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/bottom_navigation_bar.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/offer_banner/offer_banner.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/recommended_product_banner/recommended_product_banner.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/recommended_product_grid_view/recommended_product_grid_view.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/sale_list_view/sale_list_view.dart';
+import 'package:ecommerce_app/features/explore_screen/widgets/explore_screen_body.dart';
+import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/home_screen_body.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -19,96 +12,179 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int selectedTab = 0;
+  List pages = [
+    const HomeScreenBody(),
+    const ExploreScreenBody(),
+    Container(),
+    Container(),
+    Container(),
+  ];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        bottomNavigationBar: const BottomNavigationBarWidget(),
-        body: Container(
+        bottomNavigationBar: Container(
           color: kWhiteColor,
+          height: MediaQuery.of(context).size.height * 0.1,
           width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          child: ListView(
-            scrollDirection: Axis.vertical,
-            children: [
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.02,
+          child: Column(children: [
+            const Divider(
+              color: kLightColor,
+              thickness: 1,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  GestureDetector(
+                    onTap: (){
+                      setState(() {
+                        selectedTab = 0;
+                      });
+                    },
+                    child: Column(
+                      children: [
+                        Icon(
+                          Icons.home_outlined,
+                          size: 30,
+                          color: selectedTab==0? kPrimaryColor : Colors.grey,
+                        ),
+                        Text(
+                          'Home',
+                          style: TextStyle(
+                            color: selectedTab==0? kPrimaryColor : Colors.grey,
+                            fontSize: 10,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      setState(() {
+                        selectedTab = 1;
+                      });
+                    },
+                    child: Column(
+                      children: [
+                        Icon(
+                          CupertinoIcons.search,
+                          size: 30,
+                          color: selectedTab==1? kPrimaryColor : Colors.grey,
+                        ),
+                        Text(
+                          'Explore',
+                          style: TextStyle(
+                            color: selectedTab==1? kPrimaryColor : Colors.grey,
+                            fontSize: 10,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      setState(() {
+                        selectedTab = 2;
+                      });
+                    },
+                    child: Column(
+                      children: [
+                        Stack(
+                          clipBehavior: Clip.none,
+                          alignment: Alignment.topRight,
+                          children: [
+                            Icon(
+                              CupertinoIcons.cart,
+                              size: 30,
+                              color: selectedTab==2? kPrimaryColor : Colors.grey,
+                            ),
+                            const Positioned(
+                              top: -5,
+                              right: -5,
+                              child: CircleAvatar(
+                                radius: 10,
+                                backgroundColor: Colors.red,
+                                child: Text(
+                                  '2',
+                                  style: TextStyle(
+                                      color: kWhiteColor,
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.w700),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Text(
+                          'Cart',
+                          style: TextStyle(
+                            color: selectedTab==2? kPrimaryColor : Colors.grey,
+                            fontSize: 10,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      setState(() {
+                        selectedTab = 3;
+                      });
+                    },
+                    child: Column(
+                      children: [
+                        Icon(
+                          Icons.local_offer_outlined,
+                          size: 30,
+                          color: selectedTab==3? kPrimaryColor : Colors.grey,
+                        ),
+                        Text(
+                          'Offer',
+                          style: TextStyle(
+                            color: selectedTab==3? kPrimaryColor : Colors.grey,
+                            fontSize: 10,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      setState(() {
+                        selectedTab = 4;
+                      });
+                    },
+                    child: Column(
+                      children: [
+                        Icon(
+                          Icons.person_2_outlined,
+                          size: 30,
+                          color: selectedTab==4? kPrimaryColor : Colors.grey,
+                        ),
+                        Text(
+                          'Account',
+                          style: TextStyle(
+                            color: selectedTab==4? kPrimaryColor : Colors.grey,
+                            fontSize: 10,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
-              const HomeScreenHeader(),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.005,
-              ),
-              const Divider(
-                thickness: 1,
-                color: Color(0xffEBF0FF),
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.005,
-              ),
-              const OfferBanner(),
-              const SizedBox(
-                height: 5,
-              ),
-              const FiveDots(),
-              const SizedBox(
-                height: 20,
-              ),
-              const TitleAndMore(
-                title: 'Category',
-                more: 'More Category',
-                horizontalValue: 24.0,
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              const CategoryListView(),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.03,
-              ),
-              const TitleAndMore(
-                title: 'Flash Sale',
-                more: 'See More',
-                horizontalValue: 24.0,
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              SaleListView(
-                listName: productNameFlashSale,
-                listImage: productImageFlashSale,
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.03,
-              ),
-              const TitleAndMore(
-                title: 'Mega Sale',
-                more: 'See More',
-                horizontalValue: 24.0,
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              SaleListView(
-                listName: productNameMegaSale,
-                listImage: productImageMegaSale,
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.02,
-              ),
-              const RecommendedProductBanner(),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.05,
-              ),
-              RecommendedProductGridView(
-                listName: recommendedProduct,
-                listImage: recommendedProductImage,
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.01,
-              ),
-            ],
-          ),
+            ),
+          ]),
         ),
+        body: pages[selectedTab],
       ),
     );
   }

@@ -83,3 +83,34 @@ List<Color> colorList = const [
   Color(0xff5C61F4),
   Color(0xff223263),
 ];
+
+List<String> categoryList = [
+  'Shirt',
+  'Bikini',
+  'Dress',
+  'Work Equipment',
+  'Man Pants',
+  'Man Shoes',
+  'Man Underwear',
+  'Man T-Shirt',
+  'Woman Bag',
+  'Woman Pants',
+  'High Heels',
+  'Woman T-Shirt',
+  'Skirt',
+];
+List<String> categoryListIcon = [
+  'assets/icons/shirt_man.svg',
+  'assets/icons/bikini.svg',
+  'assets/icons/dress.svg',
+  'assets/icons/work_bag_man.svg',
+  'assets/icons/man_pants.svg',
+  'assets/icons/man_shoes.svg',
+  'assets/icons/man_underwear.svg',
+  'assets/icons/t-shirt_man.svg',
+  'assets/icons/woman_bag.svg',
+  'assets/icons/woman_pants.svg',
+  'assets/icons/woman_shoes.svg',
+  'assets/icons/t-shirt_man.svg',
+  'assets/icons/skirt.svg',
+];

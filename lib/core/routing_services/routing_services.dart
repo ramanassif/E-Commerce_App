@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/features/explore_screen/explore_screen.dart';
+import 'package:ecommerce_app/features/category_screen/category_screen.dart';
 import 'package:ecommerce_app/features/favorite_screen/favorite_screen.dart';
 import 'package:ecommerce_app/features/home_screen/home_screen.dart';
 import 'package:ecommerce_app/features/notification_screen/screens/notification_activity_screen.dart';
@@ -43,8 +43,8 @@ class AppRoute {
         return MaterialPageRoute(builder: (_) => const NotificationFeedScreen());
       case 'notificationActivityScreen':
         return MaterialPageRoute(builder: (_) => const NotificationActivityScreen());
-      case 'exploreScreen':
-        return MaterialPageRoute(builder: (_) => const ExploreScreen());
+      case 'categoryScreen':
+        return MaterialPageRoute(builder: (_) => const CategoryScreen());
     }
     return null;
   }
