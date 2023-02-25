@@ -96,7 +96,7 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.02,
           ),
-          const RecommendedProductBanner(),
+          const RecommendedProductBanner(title: 'Recommended Product',description: 'We recommend the best for you'),
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.05,
           ),

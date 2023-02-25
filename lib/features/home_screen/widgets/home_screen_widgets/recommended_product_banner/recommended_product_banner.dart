@@ -2,7 +2,9 @@ import 'package:ecommerce_app/constants.dart';
 import 'package:flutter/material.dart';
 
 class RecommendedProductBanner extends StatelessWidget {
-  const RecommendedProductBanner({super.key});
+  final String title;
+  final String description;
+  const RecommendedProductBanner({super.key,required this.title,required this.description,});
 
   @override
   Widget build(BuildContext context) {
@@ -22,28 +24,28 @@ class RecommendedProductBanner extends StatelessWidget {
               padding: const EdgeInsets.only(left: 16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  SizedBox(
+                children: [
+                  const SizedBox(
                     height: 40,
                   ),
                   SizedBox(
                     width: 200,
                     height: 100,
                     child: Text(
-                      'Recommended Product',
-                      style: TextStyle(
+                      title,
+                      style: const TextStyle(
                         color: kWhiteColor,
                         fontSize: 24,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   Text(
-                    'We recommend the best for you',
-                    style: TextStyle(
+                    description,
+                    style: const TextStyle(
                       color: kWhiteColor,
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
