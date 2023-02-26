@@ -11,73 +11,71 @@ class OfferBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 24,right: 24),
-      child: Center(
-        child: GestureDetector(
-          onTap: (){
-            Navigator.pushNamed(
-                context,
-                'superFlashSaleScreen');
-          },
-          child: Container(
-            width: 343,
-            height: 206,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(5),
-            ),
-            child: Stack(
-              children: [
-                Image.asset(
-                  'assets/images/Promotion_Image.png',
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 16.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const SizedBox(
-                        height: 25,
-                      ),
-                      const SizedBox(
-                        width: 200,
-                        height: 100,
-                        child: Text(
-                          'Super Flash Sale 50% Off',
-                          style: TextStyle(
-                            color: kWhiteColor,
-                            fontSize: 24,
-                            fontWeight: FontWeight.w700,
-                          ),
+      child: GestureDetector(
+        onTap: (){
+          Navigator.pushNamed(
+              context,
+              'superFlashSaleScreen');
+        },
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          height: 206,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(5),
+          ),
+          child: Stack(
+            children: [
+              Image.asset(
+                'assets/images/Promotion_Image.png',
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(
+                      height: 25,
+                    ),
+                    const SizedBox(
+                      width: 200,
+                      height: 100,
+                      child: Text(
+                        'Super Flash Sale 50% Off',
+                        style: TextStyle(
+                          color: kWhiteColor,
+                          fontSize: 24,
+                          fontWeight: FontWeight.w700,
                         ),
                       ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        children: const [
-                          OfferTimeContainer(time: '08'),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          TwoDots(),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          OfferTimeContainer(time: '34'),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          TwoDots(),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          OfferTimeContainer(time: '52'),
-                        ],
-                      ),
-                    ],
-                  ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      children: const [
+                        OfferTimeContainer(time: '08'),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        TwoDots(),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        OfferTimeContainer(time: '34'),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        TwoDots(),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        OfferTimeContainer(time: '52'),
+                      ],
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

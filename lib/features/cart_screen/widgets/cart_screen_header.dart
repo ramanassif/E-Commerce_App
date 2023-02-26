@@ -1,9 +1,8 @@
 import 'package:ecommerce_app/constants.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class OfferScreenHeader extends StatelessWidget {
-  const OfferScreenHeader({Key? key}) : super(key: key);
+class CartScreenHeader extends StatelessWidget {
+  const CartScreenHeader({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +11,7 @@ class OfferScreenHeader extends StatelessWidget {
       child: Row(
         children: const [
           Text(
-            'Offer',
+            'Your Cart',
             style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w700,
