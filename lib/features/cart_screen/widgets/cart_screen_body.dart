@@ -166,13 +166,18 @@ class _CartScreenBodyState extends State<CartScreenBody> {
               ),
             ),
             const TotalPrice(),
-            const Padding(
-              padding: EdgeInsets.symmetric(
+            Padding(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 16.0,
                 vertical: 16,
               ),
-              child: CustomButton(
-                title: 'Check Out',
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, 'shipToScreen');
+                },
+                child: const CustomButton(
+                  title: 'Check Out',
+                ),
               ),
             ),
           ],

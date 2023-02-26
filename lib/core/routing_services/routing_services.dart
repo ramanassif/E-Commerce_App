@@ -7,6 +7,7 @@ import 'package:ecommerce_app/features/notification_screen/screens/notification_
 import 'package:ecommerce_app/features/notification_screen/screens/notification_screen.dart';
 import 'package:ecommerce_app/features/product_details_screen/product_details_screen.dart';
 import 'package:ecommerce_app/features/review_screen/review_screen.dart';
+import 'package:ecommerce_app/features/ship_to_screen/ship_to_screen.dart';
 import 'package:ecommerce_app/features/super_flash_sae_screen/super_flash_sale_screen.dart';
 import 'package:ecommerce_app/features/login_screen/login_screen.dart';
 import 'package:ecommerce_app/features/register_screen/register_screen.dart';
@@ -45,6 +46,8 @@ class AppRoute {
         return MaterialPageRoute(builder: (_) => const NotificationActivityScreen());
       case 'categoryScreen':
         return MaterialPageRoute(builder: (_) => const CategoryScreen());
+      case 'shipToScreen':
+        return MaterialPageRoute(builder: (_) => const ShipToScreen());
     }
     return null;
   }
