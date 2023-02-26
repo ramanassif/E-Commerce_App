@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/constants.dart';
 import 'package:ecommerce_app/core/basics_widgets/custom_button.dart';
+import 'package:ecommerce_app/core/basics_widgets/form_error.dart';
 import 'package:ecommerce_app/features/cart_screen/widgets/cart_screen_header.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,11 @@ class CartScreenBody extends StatefulWidget {
 }
 
 class _CartScreenBodyState extends State<CartScreenBody> {
+  final cuponFormKey = GlobalKey<FormState>();
+  String cuponCode = 'XzOp014524BDH';
+  bool wrongCupon = false;
+  List<String> errors = ['* Your Cupon Is Not Correct '];
+  TextEditingController textEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -368,78 +374,111 @@ class _CartScreenBodyState extends State<CartScreenBody> {
                 horizontal: 16.0,
                 vertical: 16.0,
               ),
-              child: Row(
+              child: Column(
                 children: [
-                  Expanded(
-                    flex: 3,
-                    child: SizedBox(
-                      height: 56,
-                      child: TextField(
-                        maxLines: 1,
-                        decoration: InputDecoration(
-                          hintText: 'Enter Your Cupon',
-                          hintStyle: const TextStyle(
-                            color: Colors.grey,
-                            fontWeight: FontWeight.w400,
-                            fontSize: 12,
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(5.0),
-                            borderSide: const BorderSide(
-                              color: Color(0xffEBF0FF),
+                  Row(
+                    children: [
+                      Expanded(
+                        flex: 3,
+                        child: SizedBox(
+                          height: 56,
+                          child: Form(
+                            key: cuponFormKey,
+                            child: TextField(
+                              controller: textEditingController,
+                              maxLines: 1,
+                              style: const TextStyle(
+                                color: Colors.grey,
+                                fontWeight: FontWeight.w700,
+                              ),
+                              decoration: InputDecoration(
+                                hintText: 'Enter Your Cupon',
+                                hintStyle: const TextStyle(
+                                  color: Colors.grey,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 12,
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(5.0),
+                                  borderSide: const BorderSide(
+                                    color: Color(0xffEBF0FF),
+                                  ),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(5.0),
+                                  borderSide: const BorderSide(
+                                    color: kPrimaryColor,
+                                  ),
+                                ),
+                                errorBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(5.0),
+                                  borderSide: const BorderSide(
+                                    color: Colors.red,
+                                  ),
+                                ),
+                                focusedErrorBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(5.0),
+                                  borderSide: const BorderSide(
+                                    color: Colors.red,
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(5.0),
-                            borderSide: const BorderSide(
+                        ),
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: GestureDetector(
+                          onTap: (){
+                            if(textEditingController.text != cuponCode){
+                              setState(() {
+                                wrongCupon = true;
+                              });
+                            }
+                          },
+                          child: Container(
+                            height: 56,
+                            decoration: BoxDecoration(
                               color: kPrimaryColor,
+                              border: Border.all(
+                                color: kPrimaryColor,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topRight: Radius.circular(5),
+                                bottomRight: Radius.circular(5),
+                              ),
                             ),
-                          ),
-                          errorBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(5.0),
-                            borderSide: const BorderSide(
-                              color: Colors.red,
-                            ),
-                          ),
-                          focusedErrorBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(5.0),
-                            borderSide: const BorderSide(
-                              color: Colors.red,
+                            child: const Center(
+                              child: Text(
+                                'Apply',
+                                style: TextStyle(
+                                  color: kWhiteColor,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
+                    ],
                   ),
-                  Expanded(
-                    flex: 1,
-                    child: Container(
-                      height: 56,
-                      decoration: BoxDecoration(
-                        color: kPrimaryColor,
-                        border: Border.all(
-                          color: kPrimaryColor,
-                        ),
-                        borderRadius: const BorderRadius.only(
-                          topRight: Radius.circular(5),
-                          bottomRight: Radius.circular(5),
-                        ),
+                  Visibility(
+                    visible: wrongCupon? true : false,
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                        top: 4.0,
                       ),
-                      child: const Center(
-                        child: Text(
-                          'Apply',
-                          style: TextStyle(
-                            color: kWhiteColor,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
+                      child: FormError(
+                        errors: errors,
                       ),
                     ),
                   ),
                 ],
               ),
             ),
+
             Padding(
               padding: const EdgeInsets.symmetric(
                 horizontal: 16.0,
