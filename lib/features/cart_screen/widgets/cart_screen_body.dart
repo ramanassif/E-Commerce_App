@@ -2,6 +2,8 @@ import 'package:ecommerce_app/constants.dart';
 import 'package:ecommerce_app/core/basics_widgets/custom_button.dart';
 import 'package:ecommerce_app/core/basics_widgets/form_error.dart';
 import 'package:ecommerce_app/features/cart_screen/widgets/cart_screen_header.dart';
+import 'package:ecommerce_app/features/cart_screen/widgets/product_details.dart';
+import 'package:ecommerce_app/features/cart_screen/widgets/total_price.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -18,6 +20,7 @@ class _CartScreenBodyState extends State<CartScreenBody> {
   bool wrongCupon = false;
   List<String> errors = ['* Your Cupon Is Not Correct '];
   TextEditingController textEditingController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -41,333 +44,17 @@ class _CartScreenBodyState extends State<CartScreenBody> {
               thickness: 1,
               color: Color(0xffEBF0FF),
             ),
+            const ProductDetails(
+                productImage: 'assets/images/product3.png',
+                favoriteIcon: CupertinoIcons.heart_fill,
+                color: Color(0xffFB7181)),
+            const ProductDetails(
+              productImage: 'assets/images/product6.png',
+              favoriteIcon: CupertinoIcons.heart,
+              color: Colors.grey,
+            ),
             const SizedBox(
-              height: 12,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: 104,
-                decoration: BoxDecoration(
-                  color: kWhiteColor,
-                  borderRadius: BorderRadius.circular(5),
-                  border: Border.all(
-                    color: kLightColor,
-                  ),
-                ),
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(
-                        left: 16.0,
-                      ),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                        child: Image.asset('assets/images/product3.png',
-                            width: 72, height: 72),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 16.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(
-                              left: 16.0,
-                              right: 16.0,
-                            ),
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const SizedBox(
-                                  width: 138,
-                                  child: Text(
-                                    'Nike Air Zoom Pegasus 36 Miami',
-                                    style: TextStyle(
-                                        color: kSecondaryColor,
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w700),
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 30,
-                                ),
-                                GestureDetector(
-                                  onTap: () {},
-                                  child: const Icon(
-                                    CupertinoIcons.heart_fill,
-                                    color: Color(0xffFB7181),
-                                    size: 30,
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 5,
-                                ),
-                                GestureDetector(
-                                  onTap: () {},
-                                  child: const Icon(
-                                    Icons.delete_outline,
-                                    color: Colors.grey,
-                                    size: 30,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Padding(
-                            padding:
-                                const EdgeInsets.only(left: 16.0, right: 16.0),
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                const Text(
-                                  '\$299,43',
-                                  style: TextStyle(
-                                    color: kPrimaryColor,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w700,
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 90,
-                                ),
-                                Container(
-                                  width: 32,
-                                  height: 24,
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: kLightColor,
-                                    ),
-                                    borderRadius: const BorderRadius.only(
-                                      topLeft: Radius.circular(5),
-                                      bottomLeft: Radius.circular(5),
-                                    ),
-                                  ),
-                                  child: const Center(
-                                    child: Icon(
-                                      CupertinoIcons.minus,
-                                      color: Colors.grey,
-                                      size: 15,
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  width: 32,
-                                  height: 24,
-                                  decoration: const BoxDecoration(
-                                    color: kLightColor,
-                                  ),
-                                  child: const Center(
-                                    child: Text(
-                                      '1',
-                                      style: TextStyle(
-                                        color: kSecondaryColor,
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  width: 32,
-                                  height: 24,
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: kLightColor,
-                                    ),
-                                    borderRadius: const BorderRadius.only(
-                                      topRight: Radius.circular(5),
-                                      bottomRight: Radius.circular(5),
-                                    ),
-                                  ),
-                                  child: const Center(
-                                    child: Icon(
-                                      CupertinoIcons.plus,
-                                      color: Colors.grey,
-                                      size: 15,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 16.0,
-                vertical: 16.0,
-              ),
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: 104,
-                decoration: BoxDecoration(
-                  color: kWhiteColor,
-                  borderRadius: BorderRadius.circular(5),
-                  border: Border.all(
-                    color: kLightColor,
-                  ),
-                ),
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(
-                        left: 16.0,
-                      ),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                        child: Image.asset('assets/images/product6.png',
-                            width: 72, height: 72),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 16.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(
-                              left: 16.0,
-                              right: 16.0,
-                            ),
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const SizedBox(
-                                  width: 138,
-                                  child: Text(
-                                    'Nike Air Zoom Pegasus 36 Miami',
-                                    style: TextStyle(
-                                        color: kSecondaryColor,
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w700),
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 30,
-                                ),
-                                GestureDetector(
-                                  onTap: () {},
-                                  child: const Icon(
-                                    CupertinoIcons.heart,
-                                    color: Colors.grey,
-                                    size: 30,
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 5,
-                                ),
-                                GestureDetector(
-                                  onTap: () {},
-                                  child: const Icon(
-                                    Icons.delete_outline,
-                                    color: Colors.grey,
-                                    size: 30,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Padding(
-                            padding:
-                                const EdgeInsets.only(left: 16.0, right: 16.0),
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                const Text(
-                                  '\$299,43',
-                                  style: TextStyle(
-                                    color: kPrimaryColor,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w700,
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 90,
-                                ),
-                                Container(
-                                  width: 32,
-                                  height: 24,
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: kLightColor,
-                                    ),
-                                    borderRadius: const BorderRadius.only(
-                                      topLeft: Radius.circular(5),
-                                      bottomLeft: Radius.circular(5),
-                                    ),
-                                  ),
-                                  child: const Center(
-                                    child: Icon(
-                                      CupertinoIcons.minus,
-                                      color: Colors.grey,
-                                      size: 15,
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  width: 32,
-                                  height: 24,
-                                  decoration: const BoxDecoration(
-                                    color: kLightColor,
-                                  ),
-                                  child: const Center(
-                                    child: Text(
-                                      '1',
-                                      style: TextStyle(
-                                        color: kSecondaryColor,
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w400,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  width: 32,
-                                  height: 24,
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: kLightColor,
-                                    ),
-                                    borderRadius: const BorderRadius.only(
-                                      topRight: Radius.circular(5),
-                                      bottomRight: Radius.circular(5),
-                                    ),
-                                  ),
-                                  child: const Center(
-                                    child: Icon(
-                                      CupertinoIcons.plus,
-                                      color: Colors.grey,
-                                      size: 15,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              height: 10,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(
@@ -430,8 +117,8 @@ class _CartScreenBodyState extends State<CartScreenBody> {
                       Expanded(
                         flex: 1,
                         child: GestureDetector(
-                          onTap: (){
-                            if(textEditingController.text != cuponCode){
+                          onTap: () {
+                            if (textEditingController.text != cuponCode) {
                               setState(() {
                                 wrongCupon = true;
                               });
@@ -465,10 +152,10 @@ class _CartScreenBodyState extends State<CartScreenBody> {
                     ],
                   ),
                   Visibility(
-                    visible: wrongCupon? true : false,
+                    visible: wrongCupon ? true : false,
                     child: Padding(
                       padding: const EdgeInsets.only(
-                        top: 4.0,
+                        top: 8.0,
                       ),
                       child: FormError(
                         errors: errors,
@@ -478,123 +165,7 @@ class _CartScreenBodyState extends State<CartScreenBody> {
                 ],
               ),
             ),
-
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 16.0,
-              ),
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                height: 164,
-                decoration: BoxDecoration(
-                  color: kWhiteColor,
-                  borderRadius: BorderRadius.circular(5),
-                  border: Border.all(
-                    color: kLightColor,
-                  ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Row(
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text(
-                            'Items (3)',
-                            style: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 12,
-                          ),
-                          Text(
-                            'Shipping',
-                            style: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 12,
-                          ),
-                          Text(
-                            'Import charges',
-                            style: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 24,
-                          ),
-                          Text(
-                            'Total Price',
-                            style: TextStyle(
-                              color: kSecondaryColor,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                        ],
-                      ),
-                      const Spacer(),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: const [
-                          Text(
-                            '\$598.86',
-                            style: TextStyle(
-                              color: kSecondaryColor,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 12,
-                          ),
-                          Text(
-                            '\$40.00',
-                            style: TextStyle(
-                              color: kSecondaryColor,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 12,
-                          ),
-                          Text(
-                            '\$128.00',
-                            style: TextStyle(
-                              color: kSecondaryColor,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 24,
-                          ),
-                          Text(
-                            '\$766.86',
-                            style: TextStyle(
-                              color: kPrimaryColor,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
+            const TotalPrice(),
             const Padding(
               padding: EdgeInsets.symmetric(
                 horizontal: 16.0,

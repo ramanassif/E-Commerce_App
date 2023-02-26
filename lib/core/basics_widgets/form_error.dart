@@ -27,7 +27,7 @@ class FormError extends StatelessWidget {
           error!,
           style: const TextStyle(
             fontSize: 12,
-            color: Colors.red,
+            color: Color(0xffFB7181),
             fontWeight: FontWeight.w700,
           ),
         ),
