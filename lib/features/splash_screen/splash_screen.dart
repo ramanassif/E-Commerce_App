@@ -26,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
             children: [
               Padding(
                 padding:
-                    EdgeInsets.only(top: MediaQuery.of(context).size.height / 2.8),
+                    EdgeInsets.only(top: MediaQuery.of(context).size.height / 2.9),
                 child: const AppLogo(
                   firstColor: kWhiteColor,
                   secondColor: kPrimaryColor,

@@ -24,128 +24,133 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-        body: SingleChildScrollView(
-          child: Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
-            color: kWhiteColor,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height / 7,
-                  ),
-                  const AppLogo(
-                    firstColor: kPrimaryColor,
-                    secondColor: kWhiteColor,
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(top: 16.0),
-                    child: Text(
-                      'Let\'s Get Started',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
+      child: GestureDetector(
+        onTap: (){
+          FocusManager.instance.primaryFocus?.unfocus();
+        },
+        child: Scaffold(
+          body: SingleChildScrollView(
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              color: kWhiteColor,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height / 7,
+                    ),
+                    const AppLogo(
+                      firstColor: kPrimaryColor,
+                      secondColor: kWhiteColor,
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(top: 16.0),
+                      child: Text(
+                        'Let\'s Get Started',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
                     ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(top: 8.0),
-                    child: Text(
-                      'Create an new account',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 12,
-                        color: Colors.grey,
+                    const Padding(
+                      padding: EdgeInsets.only(top: 8.0),
+                      child: Text(
+                        'Create an new account',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 12,
+                          color: Colors.grey,
+                        ),
                       ),
                     ),
-                  ),
-                  Form(
-                    key: registerFormKey,
-                    child: Column(
-                      children: [
-                        const SizedBox(
-                          height: 16.0,
-                        ),
-                        buildUserNameTextField(),
-                        const SizedBox(
-                          height: 8.0,
-                        ),
-                        buildEmailTextField(),
-                        const SizedBox(
-                          height: 8.0,
-                        ),
-                        buildPasswordTextField(),
-                        const SizedBox(
-                          height: 8.0,
-                        ),
-                        buildPasswordAgainTextField(),
-                      ],
-                    ),
-                  ),
-                  Visibility(
-                    visible: registerErrors.isEmpty ? false : true,
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                        top: 4.0,
-                        left: 16.0,
-                      ),
-                      child: FormError(
-                        errors: registerErrors,
+                    Form(
+                      key: registerFormKey,
+                      child: Column(
+                        children: [
+                          const SizedBox(
+                            height: 16.0,
+                          ),
+                          buildUserNameTextField(),
+                          const SizedBox(
+                            height: 8.0,
+                          ),
+                          buildEmailTextField(),
+                          const SizedBox(
+                            height: 8.0,
+                          ),
+                          buildPasswordTextField(),
+                          const SizedBox(
+                            height: 8.0,
+                          ),
+                          buildPasswordAgainTextField(),
+                        ],
                       ),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 8.0,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      // if (registerFormKey.currentState!.validate()) {
-                      //   registerFormKey.currentState!.save();
-                      // }
-                      Navigator.pushNamed(
-                          context,
-                          'homeScreen');
-                    },
-                    child: const CustomButton(title: 'Sign Up'),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      top: 18.0,
+                    Visibility(
+                      visible: registerErrors.isEmpty ? false : true,
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                          top: 4.0,
+                          left: 16.0,
+                        ),
+                        child: FormError(
+                          errors: registerErrors,
+                        ),
+                      ),
                     ),
-                    child: GestureDetector(
+                    const SizedBox(
+                      height: 8.0,
+                    ),
+                    GestureDetector(
                       onTap: () {
+                        // if (registerFormKey.currentState!.validate()) {
+                        //   registerFormKey.currentState!.save();
+                        // }
                         Navigator.pushNamed(
                             context,
-                            'loginScreen');
+                            'homeScreen');
                       },
-                      child: RichText(
-                        text: const TextSpan(
-                          style: TextStyle(
-                            fontSize: 12,
-                          ),
-                          children: [
-                            TextSpan(
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                ),
-                                text: 'Have a account? '),
-                            TextSpan(
-                              style: TextStyle(
-                                color: kPrimaryColor,
-                                fontWeight: FontWeight.w700,
-                              ),
-                              text: 'Sign In',
+                      child: const CustomButton(title: 'Sign Up'),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        top: 18.0,
+                      ),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(
+                              context,
+                              'loginScreen');
+                        },
+                        child: RichText(
+                          text: const TextSpan(
+                            style: TextStyle(
+                              fontSize: 12,
                             ),
-                          ],
+                            children: [
+                              TextSpan(
+                                  style: TextStyle(
+                                    color: Colors.grey,
+                                  ),
+                                  text: 'Have a account? '),
+                              TextSpan(
+                                style: TextStyle(
+                                  color: kPrimaryColor,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                                text: 'Sign In',
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
