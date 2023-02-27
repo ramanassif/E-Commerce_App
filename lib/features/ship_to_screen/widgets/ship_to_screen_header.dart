@@ -24,7 +24,7 @@ class ShipToScreenHeader extends StatelessWidget {
             onTap: () {},
             child: const Icon(
               Icons.add,
-              size: 15,
+              size: 24,
               color: kPrimaryColor,
             ),
           ),
