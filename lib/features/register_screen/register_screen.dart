@@ -1,8 +1,6 @@
 import 'package:ecommerce_app/constants.dart';
 import 'package:ecommerce_app/core/basics_widgets/app_logo.dart';
 import 'package:ecommerce_app/core/basics_widgets/custom_button.dart';
-import 'package:ecommerce_app/features/home_screen/home_screen.dart';
-import 'package:ecommerce_app/features/login_screen/login_screen.dart';
 import 'package:ecommerce_app/core/basics_widgets/form_error.dart';
 import 'package:flutter/material.dart';
 

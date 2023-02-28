@@ -9,6 +9,8 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String firstName = 'Maximus';
+    String lastName = 'Gold';
     return SafeArea(
       child: Scaffold(
         body: Container(
@@ -20,7 +22,7 @@ class ProfileScreen extends StatelessWidget {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.05,
               ),
-              const ProfileScreenHeader(),
+              const ProfileScreenHeader(title: 'Profile'),
               const SizedBox(
                 height: 10,
               ),
@@ -46,19 +48,31 @@ class ProfileScreen extends StatelessWidget {
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text(
-                          'Maximus Gold',
-                          style: TextStyle(
-                            color: kSecondaryColor,
-                            fontWeight: FontWeight.w700,
-                            fontSize: 14,
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(
+                              context,
+                              'changeNameProfile',
+                              arguments: {
+                                'First_name': firstName,
+                                'last_name': lastName,
+                              },
+                            );
+                          },
+                          child: Text(
+                            firstName + lastName,
+                            style: const TextStyle(
+                              color: kSecondaryColor,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 14,
+                            ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
-                        Text(
+                        const Text(
                           '@derlaxy',
                           style: TextStyle(
                             color: Colors.grey,
