@@ -24,6 +24,117 @@ class AccountScreenBody extends StatelessWidget {
             thickness: 1,
             color: Color(0xffEBF0FF),
           ),
+          Padding(
+            padding: const EdgeInsets.only(
+              left: 16.0,
+              right: 16.0,
+              top: 12,
+              bottom: 16.0,
+            ),
+            child: Row(
+              children: const [
+                Icon(
+                  Icons.person_2_outlined,
+                  size: 20,
+                  color: kPrimaryColor,
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  'Profile',
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w700,
+                    color: kSecondaryColor,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(
+              left: 16.0,
+              right: 16.0,
+              top: 12,
+              bottom: 16.0,
+            ),
+            child: Row(
+              children: const [
+                Icon(
+                  Icons.shopping_basket_outlined,
+                  size: 20,
+                  color: kPrimaryColor,
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  'Order',
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w700,
+                    color: kSecondaryColor,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(
+              left: 16.0,
+              right: 16.0,
+              top: 12,
+              bottom: 16.0,
+            ),
+            child: Row(
+              children: const [
+                Icon(
+                  Icons.location_on_outlined,
+                  size: 20,
+                  color: kPrimaryColor,
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  'Address',
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w700,
+                    color: kSecondaryColor,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(
+              left: 16.0,
+              right: 16.0,
+              top: 12,
+            ),
+            child: Row(
+              children: const [
+                Icon(
+                  Icons.credit_card,
+                  size: 20,
+                  color: kPrimaryColor,
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  'Payment',
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w700,
+                    color: kSecondaryColor,
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
