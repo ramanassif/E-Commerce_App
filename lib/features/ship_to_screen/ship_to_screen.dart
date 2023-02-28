@@ -63,7 +63,9 @@ class _ShipToScreenState extends State<ShipToScreen> {
                   horizontal: 16.0,
                 ),
                 child: GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, 'paymentScreen');
+                  },
                   child: const CustomButton(
                     title: 'Next',
                   ),
