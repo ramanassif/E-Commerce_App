@@ -2,8 +2,8 @@ import 'package:ecommerce_app/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class PaymentScreenHeader extends StatelessWidget {
-  const PaymentScreenHeader({Key? key}) : super(key: key);
+class CreditCardPaymentHeader extends StatelessWidget {
+  const CreditCardPaymentHeader({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,11 +27,21 @@ class PaymentScreenHeader extends StatelessWidget {
             width: 10,
           ),
           const Text(
-            'Payment',
+            'Choose Card',
             style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w700,
-                color: kSecondaryColor),
+              fontSize: 16,
+              fontWeight: FontWeight.w700,
+              color: kSecondaryColor,
+            ),
+          ),
+          const Spacer(),
+          GestureDetector(
+            onTap: () {},
+            child: const Icon(
+              Icons.add,
+              size: 24,
+              color: kPrimaryColor,
+            ),
           ),
         ],
       ),

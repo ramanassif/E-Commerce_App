@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/features/category_screen/category_screen.dart';
+import 'package:ecommerce_app/features/credit_card_payment_screen/credit_card_payment_screen.dart';
 import 'package:ecommerce_app/features/favorite_screen/favorite_screen.dart';
 import 'package:ecommerce_app/features/home_screen/home_screen.dart';
 import 'package:ecommerce_app/features/notification_screen/screens/notification_activity_screen.dart';
@@ -51,6 +52,8 @@ class AppRoute {
         return MaterialPageRoute(builder: (_) => const ShipToScreen());
       case 'paymentScreen':
         return MaterialPageRoute(builder: (_) => const PaymentScreen());
+      case 'creditCardPaymentScreen':
+        return MaterialPageRoute(builder: (_) => const CreditCardPaymentScreen());
     }
     return null;
   }

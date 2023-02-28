@@ -31,27 +31,32 @@ class PaymentScreen extends StatelessWidget {
               const SizedBox(
                 height: 19,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Row(
-                  children: const [
-                    Icon(
-                      Icons.credit_card,
-                      size: 20,
-                      color: kPrimaryColor,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      'Credit Card Or Debit',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w700,
-                        color: kSecondaryColor,
+              GestureDetector(
+                onTap: (){
+                  Navigator.pushNamed(context, 'creditCardPaymentScreen');
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Row(
+                    children: const [
+                      Icon(
+                        Icons.credit_card,
+                        size: 20,
+                        color: kPrimaryColor,
                       ),
-                    ),
-                  ],
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        'Credit Card Or Debit',
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w700,
+                          color: kSecondaryColor,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               const SizedBox(height: 38,),
