@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/constants.dart';
+import 'package:ecommerce_app/features/account_screen/widgets/account_screen_body.dart';
 import 'package:ecommerce_app/features/cart_screen/widgets/cart_screen_body.dart';
 import 'package:ecommerce_app/features/explore_screen/widgets/explore_screen_body.dart';
 import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/home_screen_body.dart';
@@ -20,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
     const ExploreScreenBody(),
     const CartScreenBody(),
     const OfferScreen(),
-    Container(),
+    const AccountScreenBody(),
   ];
   @override
   Widget build(BuildContext context) {
