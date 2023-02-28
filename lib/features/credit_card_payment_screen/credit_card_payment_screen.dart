@@ -147,7 +147,7 @@ class CreditCardPaymentScreen extends StatelessWidget {
                 ),
                 child: GestureDetector(
                   onTap: () {
-
+                    Navigator.pushNamed(context, 'successScreen');
                   },
                   child: const CustomButton(
                     title: 'Pay \$766.86',
