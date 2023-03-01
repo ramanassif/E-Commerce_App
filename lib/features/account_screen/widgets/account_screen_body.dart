@@ -7,6 +7,7 @@ class AccountScreenBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String title = 'Profile';
     return Container(
       color: kWhiteColor,
       width: MediaQuery.of(context).size.width,
@@ -32,8 +33,14 @@ class AccountScreenBody extends StatelessWidget {
               bottom: 16.0,
             ),
             child: GestureDetector(
-              onTap: (){
-                Navigator.pushNamed(context, 'profileScreen');
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  'profileScreen',
+                  arguments: {
+                    'profile': title,
+                  },
+                );
               },
               child: Row(
                 children: const [

@@ -4,9 +4,16 @@ import 'package:ecommerce_app/features/profile_screen/widgets/profile_screen_hea
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+class ProfileScreen extends StatefulWidget {
+  final Map<String, dynamic>? mapArguments;
 
+  const ProfileScreen({Key? key, this.mapArguments}) : super(key: key);
+
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     String firstName = 'Maximus';
@@ -85,11 +92,22 @@ class ProfileScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              const ProfileDetailsItem(
-                leadingIcon: Icons.male,
-                trailingIcon: CupertinoIcons.forward,
-                title: 'Gender',
-                description: 'Male',
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    'changeGenderScreen',
+                    arguments: {
+                      'Gender': widget.mapArguments!['Gender'] ?? 'Male',
+                    },
+                  );
+                },
+                child: ProfileDetailsItem(
+                  leadingIcon: Icons.male,
+                  trailingIcon: CupertinoIcons.forward,
+                  title: 'Gender',
+                  description: widget.mapArguments!['Gender'] ?? 'Male',
+                ),
               ),
               const SizedBox(
                 height: 24,

@@ -8,6 +8,7 @@ import 'package:ecommerce_app/features/notification_screen/screens/notification_
 import 'package:ecommerce_app/features/notification_screen/screens/notification_screen.dart';
 import 'package:ecommerce_app/features/payment_screen/payment_screen.dart';
 import 'package:ecommerce_app/features/product_details_screen/product_details_screen.dart';
+import 'package:ecommerce_app/features/profile_screen/change_gender_screen.dart';
 import 'package:ecommerce_app/features/profile_screen/change_name_screen.dart';
 import 'package:ecommerce_app/features/profile_screen/profile_screen.dart';
 import 'package:ecommerce_app/features/review_screen/review_screen.dart';
@@ -44,11 +45,14 @@ class AppRoute {
       case 'notificationScreen':
         return MaterialPageRoute(builder: (_) => const NotificationScreen());
       case 'notificationOfferScreen':
-        return MaterialPageRoute(builder: (_) => const NotificationOfferScreen());
+        return MaterialPageRoute(
+            builder: (_) => const NotificationOfferScreen());
       case 'notificationFeedScreen':
-        return MaterialPageRoute(builder: (_) => const NotificationFeedScreen());
+        return MaterialPageRoute(
+            builder: (_) => const NotificationFeedScreen());
       case 'notificationActivityScreen':
-        return MaterialPageRoute(builder: (_) => const NotificationActivityScreen());
+        return MaterialPageRoute(
+            builder: (_) => const NotificationActivityScreen());
       case 'categoryScreen':
         return MaterialPageRoute(builder: (_) => const CategoryScreen());
       case 'shipToScreen':
@@ -56,14 +60,22 @@ class AppRoute {
       case 'paymentScreen':
         return MaterialPageRoute(builder: (_) => const PaymentScreen());
       case 'creditCardPaymentScreen':
-        return MaterialPageRoute(builder: (_) => const CreditCardPaymentScreen());
+        return MaterialPageRoute(
+            builder: (_) => const CreditCardPaymentScreen());
       case 'successScreen':
         return MaterialPageRoute(builder: (_) => const SuccessScreen());
       case 'profileScreen':
-        return MaterialPageRoute(builder: (_) => const ProfileScreen());
+        var data = settings.arguments as Map<String, dynamic>;
+        return MaterialPageRoute(
+            builder: (_) => ProfileScreen(mapArguments: data));
       case 'changeNameProfile':
         var data = settings.arguments as Map<String, dynamic>;
-        return MaterialPageRoute(builder: (_) => ChangeNameProfile(mapArguments: data));
+        return MaterialPageRoute(
+            builder: (_) => ChangeNameProfile(mapArguments: data));
+      case 'changeGenderScreen':
+        var data = settings.arguments as Map<String, dynamic>;
+        return MaterialPageRoute(
+            builder: (_) => ChangeGenderScreen(mapArguments: data));
     }
     return null;
   }
