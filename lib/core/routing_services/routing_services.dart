@@ -12,6 +12,7 @@ import 'package:ecommerce_app/features/profile_screen/change_birthday_screen.dar
 import 'package:ecommerce_app/features/profile_screen/change_email_screen.dart';
 import 'package:ecommerce_app/features/profile_screen/change_gender_screen.dart';
 import 'package:ecommerce_app/features/profile_screen/change_name_screen.dart';
+import 'package:ecommerce_app/features/profile_screen/change_phone_number_screen.dart';
 import 'package:ecommerce_app/features/profile_screen/profile_screen.dart';
 import 'package:ecommerce_app/features/review_screen/review_screen.dart';
 import 'package:ecommerce_app/features/ship_to_screen/ship_to_screen.dart';
@@ -86,6 +87,10 @@ class AppRoute {
         var data = settings.arguments as Map<String, dynamic>;
         return MaterialPageRoute(
             builder: (_) => ChangeEmailScreen(mapArguments: data));
+      case 'changePhoneNumberScreen':
+        var data = settings.arguments as Map<String, dynamic>;
+        return MaterialPageRoute(
+            builder: (_) => ChangePhoneNumberScreen(mapArguments: data));
     }
     return null;
   }

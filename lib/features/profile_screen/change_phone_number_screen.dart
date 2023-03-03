@@ -3,22 +3,22 @@ import 'package:ecommerce_app/core/basics_widgets/custom_button.dart';
 import 'package:ecommerce_app/features/profile_screen/widgets/profile_screen_header.dart';
 import 'package:flutter/material.dart';
 
-class ChangeEmailScreen extends StatefulWidget {
+class ChangePhoneNumberScreen extends StatefulWidget {
   final Map<String, dynamic> mapArguments;
 
-  const ChangeEmailScreen({
+  const ChangePhoneNumberScreen({
     Key? key,
     required this.mapArguments,
   }) : super(key: key);
 
   @override
-  State<ChangeEmailScreen> createState() => _ChangeEmailScreenState();
+  State<ChangePhoneNumberScreen> createState() =>
+      _ChangePhoneNumberScreenState();
 }
 
-class _ChangeEmailScreenState extends State<ChangeEmailScreen> {
+class _ChangePhoneNumberScreenState extends State<ChangePhoneNumberScreen> {
   bool isSelected = false;
-  TextEditingController emailController = TextEditingController();
-
+  TextEditingController phoneNumberController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -36,7 +36,7 @@ class _ChangeEmailScreenState extends State<ChangeEmailScreen> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.05,
                 ),
-                const ProfileScreenHeader(title: 'Email'),
+                const ProfileScreenHeader(title: 'Phone Number'),
                 const SizedBox(
                   height: 10,
                 ),
@@ -66,7 +66,7 @@ class _ChangeEmailScreenState extends State<ChangeEmailScreen> {
                     right: 16.0,
                   ),
                   child: TextFormField(
-                    controller: emailController,
+                    controller: phoneNumberController,
                     keyboardType: TextInputType.name,
                     style: const TextStyle(
                       color: Colors.grey,
@@ -92,28 +92,13 @@ class _ChangeEmailScreenState extends State<ChangeEmailScreen> {
                           color: kPrimaryColor,
                         ),
                       ),
-                      prefixIcon: const Icon(Icons.email_outlined),
+                      prefixIcon: const Icon(Icons.phone_android),
                     ),
                     onEditingComplete: (){
                       setState(() {
-                        widget.mapArguments['Email'] = emailController.text;
+                        widget.mapArguments['phone_number'] = phoneNumberController.text;
                       });
                     },
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(
-                    left: 16.0,
-                    right: 16.0,
-                    top: 8.0,
-                  ),
-                  child: Text(
-                    'We Will Send verification to your New Email',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12,
-                      color: kPrimaryColor,
-                    ),
                   ),
                 ),
                 const SizedBox(height: 420),
@@ -128,12 +113,12 @@ class _ChangeEmailScreenState extends State<ChangeEmailScreen> {
                         context,
                         'profileScreen',
                         arguments: {
-                          'Email': widget.mapArguments['Email'],
+                          'phone_number': widget.mapArguments['phone_number'],
                         },
                       );
                     },
                     child: const CustomButton(
-                      title: 'Change Email',
+                      title: 'Save',
                     ),
                   ),
                 ),
@@ -147,7 +132,7 @@ class _ChangeEmailScreenState extends State<ChangeEmailScreen> {
 
   @override
   void initState() {
-    emailController.text = widget.mapArguments['Email'];
+    phoneNumberController.text = widget.mapArguments['phone_number'];
     super.initState();
   }
 }

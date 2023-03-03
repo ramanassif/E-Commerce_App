@@ -5,9 +5,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatefulWidget {
-  final Map<String, dynamic>? mapArguments;
+  final Map<String, dynamic> mapArguments;
 
-  const ProfileScreen({Key? key, this.mapArguments}) : super(key: key);
+  const ProfileScreen({Key? key,required this.mapArguments}) : super(key: key);
 
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
@@ -98,7 +98,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     context,
                     'changeGenderScreen',
                     arguments: {
-                      'Gender': widget.mapArguments!['Gender'] ?? 'Male',
+                      'Gender': widget.mapArguments['Gender'] ?? 'Male',
                     },
                   );
                 },
@@ -106,7 +106,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   leadingIcon: Icons.male,
                   trailingIcon: CupertinoIcons.forward,
                   title: 'Gender',
-                  description: widget.mapArguments!['Gender'] ?? 'Male',
+                  description: widget.mapArguments['Gender'] ?? 'Male',
                 ),
               ),
               const SizedBox(
@@ -118,7 +118,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     context,
                     'changeBirthDayScreen',
                     arguments: {
-                      'birthday': widget.mapArguments!['birthday'] ?? '2012-12-12',
+                      'birthday': widget.mapArguments['birthday'] ?? '2012-12-12',
                     },
                   );
                 },
@@ -126,7 +126,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   leadingIcon: Icons.date_range,
                   trailingIcon: CupertinoIcons.forward,
                   title: 'Birthday',
-                  description: widget.mapArguments!['birthday'] ?? '2012-12-12',
+                  description: widget.mapArguments['birthday'] ?? '2012-12-12',
                 ),
               ),
               const SizedBox(
@@ -138,7 +138,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     context,
                     'changeEmailScreen',
                     arguments: {
-                      'Email': widget.mapArguments!['Email'] ?? 'Derlaxy@yahoo.com',
+                      'Email': widget.mapArguments['Email'] ?? 'Derlaxy@yahoo.com',
                     },
                   );
                 },
@@ -146,17 +146,28 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   leadingIcon: Icons.email_outlined,
                   trailingIcon: CupertinoIcons.forward,
                   title: 'Email',
-                  description: widget.mapArguments!['Email'] ?? 'Derlaxy@yahoo.com',
+                  description: widget.mapArguments['Email'] ?? 'Derlaxy@yahoo.com',
                 ),
               ),
               const SizedBox(
                 height: 24,
               ),
-              const ProfileDetailsItem(
-                leadingIcon: Icons.phone_android,
-                trailingIcon: CupertinoIcons.forward,
-                title: 'Phone Number',
-                description: '(307) 555-0133',
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    'changePhoneNumberScreen',
+                    arguments: {
+                      'phone_number': widget.mapArguments['phone_number'] ?? '(307) 555-0133',
+                    },
+                  );
+                },
+                child: ProfileDetailsItem(
+                  leadingIcon: Icons.phone_android,
+                  trailingIcon: CupertinoIcons.forward,
+                  title: 'Phone Number',
+                  description: widget.mapArguments['phone_number'] ?? '(307) 555-0133',
+                ),
               ),
               const SizedBox(
                 height: 24,
