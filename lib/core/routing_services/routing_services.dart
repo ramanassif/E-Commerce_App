@@ -8,6 +8,8 @@ import 'package:ecommerce_app/features/notification_screen/screens/notification_
 import 'package:ecommerce_app/features/notification_screen/screens/notification_screen.dart';
 import 'package:ecommerce_app/features/payment_screen/payment_screen.dart';
 import 'package:ecommerce_app/features/product_details_screen/product_details_screen.dart';
+import 'package:ecommerce_app/features/profile_screen/change_birthday_screen.dart';
+import 'package:ecommerce_app/features/profile_screen/change_email_screen.dart';
 import 'package:ecommerce_app/features/profile_screen/change_gender_screen.dart';
 import 'package:ecommerce_app/features/profile_screen/change_name_screen.dart';
 import 'package:ecommerce_app/features/profile_screen/profile_screen.dart';
@@ -76,6 +78,14 @@ class AppRoute {
         var data = settings.arguments as Map<String, dynamic>;
         return MaterialPageRoute(
             builder: (_) => ChangeGenderScreen(mapArguments: data));
+      case 'changeBirthDayScreen':
+        var data = settings.arguments as Map<String, dynamic>;
+        return MaterialPageRoute(
+            builder: (_) => ChangeBirthDayScreen(mapArguments: data));
+      case 'changeEmailScreen':
+        var data = settings.arguments as Map<String, dynamic>;
+        return MaterialPageRoute(
+            builder: (_) => ChangeEmailScreen(mapArguments: data));
     }
     return null;
   }

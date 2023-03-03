@@ -3,19 +3,21 @@ import 'package:ecommerce_app/core/basics_widgets/custom_button.dart';
 import 'package:ecommerce_app/features/profile_screen/widgets/profile_screen_header.dart';
 import 'package:flutter/material.dart';
 
-class ChangeNameProfile extends StatefulWidget {
+class ChangeEmailScreen extends StatefulWidget {
   final Map<String, dynamic> mapArguments;
 
-  const ChangeNameProfile({Key? key, required this.mapArguments})
-      : super(key: key);
+  const ChangeEmailScreen({
+    Key? key,
+    required this.mapArguments,
+  }) : super(key: key);
 
   @override
-  State<ChangeNameProfile> createState() => _ChangeNameProfileState();
+  State<ChangeEmailScreen> createState() => _ChangeEmailScreenState();
 }
 
-class _ChangeNameProfileState extends State<ChangeNameProfile> {
-  TextEditingController firstNameController = TextEditingController();
-  TextEditingController lastNameController = TextEditingController();
+class _ChangeEmailScreenState extends State<ChangeEmailScreen> {
+  bool isSelected = false;
+  TextEditingController emailController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +36,7 @@ class _ChangeNameProfileState extends State<ChangeNameProfile> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.05,
                 ),
-                const ProfileScreenHeader(title: 'Name'),
+                const ProfileScreenHeader(title: 'Email'),
                 const SizedBox(
                   height: 10,
                 ),
@@ -45,12 +47,12 @@ class _ChangeNameProfileState extends State<ChangeNameProfile> {
                 const Padding(
                   padding: EdgeInsets.only(
                     left: 16.0,
-                    right: 16.0,
+                    right: 16,
                     top: 16.0,
                     bottom: 12.0,
                   ),
                   child: Text(
-                    'First Name',
+                    'Your Email',
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w700,
@@ -64,15 +66,16 @@ class _ChangeNameProfileState extends State<ChangeNameProfile> {
                     right: 16.0,
                   ),
                   child: TextFormField(
-                    controller: firstNameController,
+                    controller: emailController,
                     keyboardType: TextInputType.name,
                     style: const TextStyle(
                       color: Colors.grey,
+                      fontSize: 12,
                       fontWeight: FontWeight.w700,
                     ),
                     decoration: InputDecoration(
                       errorStyle: const TextStyle(height: 0),
-                      hintText: 'First Name',
+                      hintText: 'Your Email',
                       hintStyle: const TextStyle(
                         color: Colors.grey,
                         fontSize: 12,
@@ -89,60 +92,41 @@ class _ChangeNameProfileState extends State<ChangeNameProfile> {
                           color: kPrimaryColor,
                         ),
                       ),
+                      prefixIcon: const Icon(Icons.email_outlined),
                     ),
+                    onChanged: (value)=> (){
+                      setState(() {
+                        widget.mapArguments['Email'] = value;
+                      });
+                    },
+                    // onFieldSubmitted: (value)=> (){
+                    //   setState(() {
+                    //     widget.mapArguments['Email'] = value;
+                    //   });
+                    // } ,
+                    onSaved: (value)=> (){
+                      setState(() {
+                        widget.mapArguments['Email'] = value;
+                      });
+                    },
                   ),
                 ),
                 const Padding(
                   padding: EdgeInsets.only(
                     left: 16.0,
                     right: 16.0,
-                    top: 16.0,
-                    bottom: 12.0,
+                    top: 8.0,
                   ),
                   child: Text(
-                    'Last Name',
+                    'We Will Send verification to your New Email',
                     style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w700,
-                      color: kSecondaryColor,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 12,
+                      color: kPrimaryColor,
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    left: 16.0,
-                    right: 16.0,
-                  ),
-                  child: TextFormField(
-                    controller: lastNameController,
-                    keyboardType: TextInputType.name,
-                    style: const TextStyle(
-                      color: Colors.grey,
-                      fontWeight: FontWeight.w700,
-                    ),
-                    decoration: InputDecoration(
-                      errorStyle: const TextStyle(height: 0),
-                      hintText: 'Last Name',
-                      hintStyle: const TextStyle(
-                        color: Colors.grey,
-                        fontSize: 12,
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(5.0),
-                        borderSide: const BorderSide(
-                          color: Color(0xffEBF0FF),
-                        ),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(5.0),
-                        borderSide: const BorderSide(
-                          color: kPrimaryColor,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 320),
+                const SizedBox(height: 420),
                 Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 16.0,
@@ -150,10 +134,16 @@ class _ChangeNameProfileState extends State<ChangeNameProfile> {
                   ),
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, 'profileScreen');
+                      Navigator.pushNamed(
+                        context,
+                        'profileScreen',
+                        arguments: {
+                          'Email': widget.mapArguments['Email'],
+                        },
+                      );
                     },
                     child: const CustomButton(
-                      title: 'Save',
+                      title: 'Change Email',
                     ),
                   ),
                 ),
@@ -167,8 +157,7 @@ class _ChangeNameProfileState extends State<ChangeNameProfile> {
 
   @override
   void initState() {
-    firstNameController.text = widget.mapArguments['First_name'];
-    lastNameController.text = widget.mapArguments['last_name'];
+    emailController.text = widget.mapArguments['Email'];
     super.initState();
   }
 }

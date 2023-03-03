@@ -112,20 +112,42 @@ class _ProfileScreenState extends State<ProfileScreen> {
               const SizedBox(
                 height: 24,
               ),
-              const ProfileDetailsItem(
-                leadingIcon: Icons.date_range,
-                trailingIcon: CupertinoIcons.forward,
-                title: 'Birthday',
-                description: '12-12-2000',
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    'changeBirthDayScreen',
+                    arguments: {
+                      'birthday': widget.mapArguments!['birthday'] ?? '2012-12-12',
+                    },
+                  );
+                },
+                child: ProfileDetailsItem(
+                  leadingIcon: Icons.date_range,
+                  trailingIcon: CupertinoIcons.forward,
+                  title: 'Birthday',
+                  description: widget.mapArguments!['birthday'] ?? '2012-12-12',
+                ),
               ),
               const SizedBox(
                 height: 24,
               ),
-              const ProfileDetailsItem(
-                leadingIcon: Icons.email_outlined,
-                trailingIcon: CupertinoIcons.forward,
-                title: 'Email',
-                description: 'Derlaxy@yahoo.com',
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    'changeEmailScreen',
+                    arguments: {
+                      'Email': widget.mapArguments!['Email'] ?? 'Derlaxy@yahoo.com',
+                    },
+                  );
+                },
+                child: ProfileDetailsItem(
+                  leadingIcon: Icons.email_outlined,
+                  trailingIcon: CupertinoIcons.forward,
+                  title: 'Email',
+                  description: widget.mapArguments!['Email'] ?? 'Derlaxy@yahoo.com',
+                ),
               ),
               const SizedBox(
                 height: 24,
