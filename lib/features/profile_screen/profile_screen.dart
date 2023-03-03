@@ -172,11 +172,22 @@ class _ProfileScreenState extends State<ProfileScreen> {
               const SizedBox(
                 height: 24,
               ),
-              const ProfileDetailsItem(
-                leadingIcon: Icons.lock_outline_sharp,
-                trailingIcon: CupertinoIcons.forward,
-                title: 'Change Password',
-                description: '•••••••••••••••••',
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    'changePasswordScreen',
+                    arguments: {
+                      'password': widget.mapArguments['password'] ?? '•••••••••••••••••',
+                    },
+                  );
+                },
+                child: ProfileDetailsItem(
+                  leadingIcon: Icons.lock_outline_sharp,
+                  trailingIcon: CupertinoIcons.forward,
+                  title: 'Change Password',
+                  description: widget.mapArguments['password'] ?? '•••••••••••••••••',
+                ),
               ),
             ],
           ),
