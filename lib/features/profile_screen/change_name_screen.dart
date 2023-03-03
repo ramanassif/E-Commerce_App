@@ -1,6 +1,6 @@
 import 'package:ecommerce_app/constants.dart';
 import 'package:ecommerce_app/core/basics_widgets/custom_button.dart';
-import 'package:ecommerce_app/features/profile_screen/widgets/profile_screen_header.dart';
+import 'package:ecommerce_app/features/account_screen/widgets/account_details_header.dart';
 import 'package:flutter/material.dart';
 
 class ChangeNameProfile extends StatefulWidget {
@@ -34,7 +34,7 @@ class _ChangeNameProfileState extends State<ChangeNameProfile> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.05,
                 ),
-                const ProfileScreenHeader(title: 'Name'),
+                const AccountDetailsHeader(title: 'Name'),
                 const SizedBox(
                   height: 10,
                 ),

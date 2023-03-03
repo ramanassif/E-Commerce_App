@@ -2,9 +2,9 @@ import 'package:ecommerce_app/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class ProfileScreenHeader extends StatelessWidget {
+class AccountDetailsHeader extends StatelessWidget {
   final String title;
-  const ProfileScreenHeader({Key? key,required this.title,}) : super(key: key);
+  const AccountDetailsHeader({Key? key,required this.title,}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -71,25 +71,36 @@ class AccountScreenBody extends StatelessWidget {
               top: 12,
               bottom: 16.0,
             ),
-            child: Row(
-              children: const [
-                Icon(
-                  Icons.shopping_basket_outlined,
-                  size: 20,
-                  color: kPrimaryColor,
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                Text(
-                  'Order',
-                  style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w700,
-                    color: kSecondaryColor,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  'orderScreen',
+                  arguments: {
+                    'status': 'shipping',
+                  },
+                );
+              },
+              child: Row(
+                children: const [
+                  Icon(
+                    Icons.shopping_basket_outlined,
+                    size: 20,
+                    color: kPrimaryColor,
                   ),
-                ),
-              ],
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    'Order',
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w700,
+                      color: kSecondaryColor,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           Padding(

@@ -1,6 +1,6 @@
 import 'package:ecommerce_app/constants.dart';
 import 'package:ecommerce_app/core/basics_widgets/custom_button.dart';
-import 'package:ecommerce_app/features/profile_screen/widgets/profile_screen_header.dart';
+import 'package:ecommerce_app/features/account_screen/widgets/account_details_header.dart';
 import 'package:flutter/material.dart';
 
 class ChangeEmailScreen extends StatefulWidget {
@@ -36,7 +36,7 @@ class _ChangeEmailScreenState extends State<ChangeEmailScreen> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.05,
                 ),
-                const ProfileScreenHeader(title: 'Email'),
+                const AccountDetailsHeader(title: 'Email'),
                 const SizedBox(
                   height: 10,
                 ),
