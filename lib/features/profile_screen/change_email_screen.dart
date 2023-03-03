@@ -99,11 +99,6 @@ class _ChangeEmailScreenState extends State<ChangeEmailScreen> {
                         widget.mapArguments['Email'] = value;
                       });
                     },
-                    // onFieldSubmitted: (value)=> (){
-                    //   setState(() {
-                    //     widget.mapArguments['Email'] = value;
-                    //   });
-                    // } ,
                     onSaved: (value)=> (){
                       setState(() {
                         widget.mapArguments['Email'] = value;
