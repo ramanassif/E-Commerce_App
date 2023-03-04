@@ -19,6 +19,7 @@ class AddressScreen extends StatefulWidget {
 class _AddressScreenState extends State<AddressScreen> {
   List<String> shipName = ['Priscekila', 'Ahmad Khaidir'];
   int? currentIndex;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -69,6 +70,10 @@ class _AddressScreenState extends State<AddressScreen> {
                 ),
                 child: GestureDetector(
                   onTap: () {
+                    Navigator.pushNamed(
+                      context,
+                      'addAddressScreen',
+                    );
                   },
                   child: const CustomButton(
                     title: 'Add Address',
