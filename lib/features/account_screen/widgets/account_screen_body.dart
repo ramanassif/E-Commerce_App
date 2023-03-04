@@ -148,25 +148,33 @@ class AccountScreenBody extends StatelessWidget {
               right: 16.0,
               top: 12,
             ),
-            child: Row(
-              children: const [
-                Icon(
-                  Icons.credit_card,
-                  size: 20,
-                  color: kPrimaryColor,
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                Text(
-                  'Payment',
-                  style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w700,
-                    color: kSecondaryColor,
+            child: GestureDetector(
+              onTap: (){
+                Navigator.pushNamed(
+                  context,
+                  'accountPaymentScreen',
+                );
+              },
+              child: Row(
+                children: const [
+                  Icon(
+                    Icons.credit_card,
+                    size: 20,
+                    color: kPrimaryColor,
                   ),
-                ),
-              ],
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    'Payment',
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w700,
+                      color: kSecondaryColor,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
