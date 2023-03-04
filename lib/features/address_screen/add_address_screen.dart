@@ -6,8 +6,11 @@ import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
 class AddAddressScreen extends StatefulWidget {
+  final Map<String, dynamic> mapArguments;
+
   const AddAddressScreen({
     Key? key,
+    required this.mapArguments,
   }) : super(key: key);
 
   @override
@@ -37,6 +40,13 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
   @override
   void initState() {
     countryController.text = countriesList[0];
+    firstNameController.text = widget.mapArguments['first_name'] ?? "";
+    lastNameController.text = widget.mapArguments['last_name'] ?? "";
+    stressAddressController.text = widget.mapArguments['stress_address'] ?? "";
+    cityController.text = widget.mapArguments['city'] ?? "";
+    stateController.text = widget.mapArguments['state'] ?? "";
+    zipCodeController.text = widget.mapArguments['zip_code'] ?? "";
+    phoneNumberController.text = widget.mapArguments['phone_number'] ?? "";
     super.initState();
   }
 
@@ -191,6 +201,7 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                           keyboardType: TextInputType.name,
                           style: const TextStyle(
                             color: Colors.grey,
+                            fontSize: 12,
                             fontWeight: FontWeight.w700,
                           ),
                           decoration: InputDecoration(
@@ -253,6 +264,7 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                           keyboardType: TextInputType.name,
                           style: const TextStyle(
                             color: Colors.grey,
+                            fontSize: 12,
                             fontWeight: FontWeight.w700,
                           ),
                           decoration: InputDecoration(
@@ -315,6 +327,7 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                           keyboardType: TextInputType.name,
                           style: const TextStyle(
                             color: Colors.grey,
+                            fontSize: 12,
                             fontWeight: FontWeight.w700,
                           ),
                           decoration: InputDecoration(
@@ -376,6 +389,7 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                           keyboardType: TextInputType.name,
                           style: const TextStyle(
                             color: Colors.grey,
+                            fontSize: 12,
                             fontWeight: FontWeight.w700,
                           ),
                           decoration: InputDecoration(
@@ -425,6 +439,7 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                           keyboardType: TextInputType.name,
                           style: const TextStyle(
                             color: Colors.grey,
+                            fontSize: 12,
                             fontWeight: FontWeight.w700,
                           ),
                           decoration: InputDecoration(
@@ -487,6 +502,7 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                           keyboardType: TextInputType.name,
                           style: const TextStyle(
                             color: Colors.grey,
+                            fontSize: 12,
                             fontWeight: FontWeight.w700,
                           ),
                           decoration: InputDecoration(
@@ -549,6 +565,7 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                           keyboardType: TextInputType.number,
                           style: const TextStyle(
                             color: Colors.grey,
+                            fontSize: 12,
                             fontWeight: FontWeight.w700,
                           ),
                           decoration: InputDecoration(
@@ -611,6 +628,7 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                           keyboardType: TextInputType.number,
                           style: const TextStyle(
                             color: Colors.grey,
+                            fontSize: 12,
                             fontWeight: FontWeight.w700,
                           ),
                           decoration: InputDecoration(

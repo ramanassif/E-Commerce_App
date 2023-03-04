@@ -113,8 +113,9 @@ class AppRoute {
         return MaterialPageRoute(
             builder: (_) => AddressScreen(mapArguments: data));
       case 'addAddressScreen':
+        var data = settings.arguments as Map<String, dynamic>;
         return MaterialPageRoute(
-            builder: (_) => const AddAddressScreen());
+            builder: (_) => AddAddressScreen(mapArguments: data));
     }
     return null;
   }
