@@ -1,23 +1,20 @@
 import 'package:ecommerce_app/constants.dart';
-import 'package:ecommerce_app/core/data/data.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/sale_list_view/product_item.dart';
+import 'package:ecommerce_app/core/basics_widgets/custom_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
-class SearchResultScreen extends StatefulWidget {
-  final Map<String, dynamic> mapArguments;
+import 'package:flutter_svg/flutter_svg.dart';
 
-  const SearchResultScreen({
-    Key? key,
-    required this.mapArguments,
-  }) : super(key: key);
+class SearchResultFailedScreen extends StatefulWidget {
+  const SearchResultFailedScreen({Key? key}) : super(key: key);
 
   @override
-  State<SearchResultScreen> createState() => _SearchResultScreenState();
+  State<SearchResultFailedScreen> createState() =>
+      _SearchResultFailedScreenState();
 }
 
-class _SearchResultScreenState extends State<SearchResultScreen> {
+class _SearchResultFailedScreenState extends State<SearchResultFailedScreen> {
   bool isSearching = false;
   TextEditingController searchController = TextEditingController();
 
@@ -125,12 +122,6 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
       );
 
   @override
-  void initState() {
-    searchController.text = widget.mapArguments['name'];
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
@@ -189,29 +180,76 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
                     ],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 24.0, right: 24.0),
-                  child: SizedBox(
-                    width: MediaQuery.of(context).size.width,
-                    height: 1000,
-                    child: GridView.builder(
-                      clipBehavior: Clip.none,
-                      scrollDirection: Axis.vertical,
-                      physics: const NeverScrollableScrollPhysics(),
-                      gridDelegate:
-                          const SliverGridDelegateWithMaxCrossAxisExtent(
-                              maxCrossAxisExtent: 200,
-                              childAspectRatio: 0.57,
-                              crossAxisSpacing: 15,
-                              mainAxisSpacing: 20),
-                      itemCount: searchProductsName.length,
-                      itemBuilder: (context, index) => ProductItem(
-                        productName: searchProductsName[index],
-                        productImage: searchProductsImage[index],
-                        newPrice: '\$299,43',
-                        oldPrice: '\$534,33',
-                        offerPercentValue: '24% Off',
-                      ),
+                Container(
+                  color: kWhiteColor,
+                  width: MediaQuery.of(context).size.width,
+                  height: 550,
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          width: 72,
+                          height: 72,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(56),
+                            color: kPrimaryColor,
+                            boxShadow: const [
+                              BoxShadow(
+                                offset: Offset(0, 4),
+                                blurRadius: 5.0,
+                                color: kPrimaryColor,
+                              ),
+                            ],
+                          ),
+                          child: Center(
+                            child: SizedBox(
+                              width: 40,
+                              height: 40,
+                              child: SvgPicture.asset(
+                                color: kWhiteColor,
+                                'assets/icons/close.svg',
+                              ),
+                            ),
+                          ),
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.only(top: 16.0),
+                          child: Text(
+                            'Product Not Found',
+                            style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.w700,
+                              color: kSecondaryColor,
+                            ),
+                          ),
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.only(top: 8.0),
+                          child: Text(
+                            'thank you for shopping using lafyuu',
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.grey,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 16.0,
+                            vertical: 16.0,
+                          ),
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.pushNamed(context, 'homeScreen');
+                            },
+                            child: const CustomButton(
+                              title: 'Back To Home',
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),

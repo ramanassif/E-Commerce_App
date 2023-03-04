@@ -56,6 +56,9 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
                         setState(() {
                           if (searchController.text.isEmpty) {
                             isSearching = false;
+                          } else {
+                            Navigator.pushNamed(
+                                context, 'searchResultFailedScreen');
                           }
                         });
                       },
@@ -190,8 +193,12 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
                             Padding(
                               padding: const EdgeInsets.only(bottom: 32.0),
                               child: GestureDetector(
-                                onTap: (){
-                                  Navigator.pushNamed(context, 'searchResultScreen');
+                                onTap: () {
+                                  Navigator.pushNamed(
+                                      context, 'searchResultScreen',
+                                      arguments: {
+                                        'name': 'Nike Air Max',
+                                      });
                                 },
                                 child: const Text(
                                   'Nike Air Max 270 React ENG',
