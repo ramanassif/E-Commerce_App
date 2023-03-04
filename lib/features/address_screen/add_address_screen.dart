@@ -23,8 +23,16 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
     'American Samoa'
   ];
   bool isSelected = false;
+  bool wrong = false;
   int currentIndex = 0;
   TextEditingController countryController = TextEditingController();
+  TextEditingController firstNameController = TextEditingController();
+  TextEditingController lastNameController = TextEditingController();
+  TextEditingController stressAddressController = TextEditingController();
+  TextEditingController cityController = TextEditingController();
+  TextEditingController stateController = TextEditingController();
+  TextEditingController zipCodeController = TextEditingController();
+  TextEditingController phoneNumberController = TextEditingController();
 
   @override
   void initState() {
@@ -179,6 +187,7 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                           ),
                         ),
                         TextFormField(
+                          controller: firstNameController,
                           keyboardType: TextInputType.name,
                           style: const TextStyle(
                             color: Colors.grey,
@@ -198,8 +207,33 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                                 color: kPrimaryColor,
                               ),
                             ),
+                            errorBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5.0),
+                              borderSide: const BorderSide(
+                                color: Colors.red,
+                              ),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5.0),
+                              borderSide: const BorderSide(
+                                color: Colors.red,
+                              ),
+                            ),
                           ),
                         ),
+                        Visibility(
+                            visible: wrong ? true : false,
+                            child: const Padding(
+                              padding: EdgeInsets.only(top: 8.0),
+                              child: Text(
+                                'Please Fill The Form',
+                                style: TextStyle(
+                                  color: Color(0xffFB7181),
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                            )),
                         const Padding(
                           padding: EdgeInsets.only(
                             top: 24.0,
@@ -215,6 +249,7 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                           ),
                         ),
                         TextFormField(
+                          controller: lastNameController,
                           keyboardType: TextInputType.name,
                           style: const TextStyle(
                             color: Colors.grey,
@@ -234,8 +269,33 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                                 color: kPrimaryColor,
                               ),
                             ),
+                            errorBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5.0),
+                              borderSide: const BorderSide(
+                                color: Colors.red,
+                              ),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5.0),
+                              borderSide: const BorderSide(
+                                color: Colors.red,
+                              ),
+                            ),
                           ),
                         ),
+                        Visibility(
+                            visible: wrong ? true : false,
+                            child: const Padding(
+                              padding: EdgeInsets.only(top: 8.0),
+                              child: Text(
+                                'Please Fill The Form',
+                                style: TextStyle(
+                                  color: Color(0xffFB7181),
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                            )),
                         const Padding(
                           padding: EdgeInsets.only(
                             top: 24.0,
@@ -251,6 +311,7 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                           ),
                         ),
                         TextFormField(
+                          controller: stressAddressController,
                           keyboardType: TextInputType.name,
                           style: const TextStyle(
                             color: Colors.grey,
@@ -270,8 +331,33 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                                 color: kPrimaryColor,
                               ),
                             ),
+                            errorBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5.0),
+                              borderSide: const BorderSide(
+                                color: Colors.red,
+                              ),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5.0),
+                              borderSide: const BorderSide(
+                                color: Colors.red,
+                              ),
+                            ),
                           ),
                         ),
+                        Visibility(
+                            visible: wrong ? true : false,
+                            child: const Padding(
+                              padding: EdgeInsets.only(top: 8.0),
+                              child: Text(
+                                'Please Fill The Form',
+                                style: TextStyle(
+                                  color: Color(0xffFB7181),
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                            )),
                         const Padding(
                           padding: EdgeInsets.only(
                             top: 24.0,
@@ -306,6 +392,18 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                                 color: kPrimaryColor,
                               ),
                             ),
+                            errorBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5.0),
+                              borderSide: const BorderSide(
+                                color: Colors.red,
+                              ),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5.0),
+                              borderSide: const BorderSide(
+                                color: Colors.red,
+                              ),
+                            ),
                           ),
                         ),
                         const Padding(
@@ -323,6 +421,7 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                           ),
                         ),
                         TextFormField(
+                          controller: cityController,
                           keyboardType: TextInputType.name,
                           style: const TextStyle(
                             color: Colors.grey,
@@ -342,8 +441,33 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                                 color: kPrimaryColor,
                               ),
                             ),
+                            errorBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5.0),
+                              borderSide: const BorderSide(
+                                color: Colors.red,
+                              ),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5.0),
+                              borderSide: const BorderSide(
+                                color: Colors.red,
+                              ),
+                            ),
                           ),
                         ),
+                        Visibility(
+                            visible: wrong ? true : false,
+                            child: const Padding(
+                              padding: EdgeInsets.only(top: 8.0),
+                              child: Text(
+                                'Please Fill The Form',
+                                style: TextStyle(
+                                  color: Color(0xffFB7181),
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                            )),
                         const Padding(
                           padding: EdgeInsets.only(
                             top: 24.0,
@@ -359,6 +483,7 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                           ),
                         ),
                         TextFormField(
+                          controller: stateController,
                           keyboardType: TextInputType.name,
                           style: const TextStyle(
                             color: Colors.grey,
@@ -378,8 +503,33 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                                 color: kPrimaryColor,
                               ),
                             ),
+                            errorBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5.0),
+                              borderSide: const BorderSide(
+                                color: Colors.red,
+                              ),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5.0),
+                              borderSide: const BorderSide(
+                                color: Colors.red,
+                              ),
+                            ),
                           ),
                         ),
+                        Visibility(
+                            visible: wrong ? true : false,
+                            child: const Padding(
+                              padding: EdgeInsets.only(top: 8.0),
+                              child: Text(
+                                'Please Fill The Form',
+                                style: TextStyle(
+                                  color: Color(0xffFB7181),
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                            )),
                         const Padding(
                           padding: EdgeInsets.only(
                             top: 24.0,
@@ -395,7 +545,8 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                           ),
                         ),
                         TextFormField(
-                          keyboardType: TextInputType.name,
+                          controller: zipCodeController,
+                          keyboardType: TextInputType.number,
                           style: const TextStyle(
                             color: Colors.grey,
                             fontWeight: FontWeight.w700,
@@ -414,8 +565,33 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                                 color: kPrimaryColor,
                               ),
                             ),
+                            errorBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5.0),
+                              borderSide: const BorderSide(
+                                color: Colors.red,
+                              ),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5.0),
+                              borderSide: const BorderSide(
+                                color: Colors.red,
+                              ),
+                            ),
                           ),
                         ),
+                        Visibility(
+                            visible: wrong ? true : false,
+                            child: const Padding(
+                              padding: EdgeInsets.only(top: 8.0),
+                              child: Text(
+                                'Please Fill The Form',
+                                style: TextStyle(
+                                  color: Color(0xffFB7181),
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                            )),
                         const Padding(
                           padding: EdgeInsets.only(
                             top: 24.0,
@@ -431,7 +607,8 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                           ),
                         ),
                         TextFormField(
-                          keyboardType: TextInputType.name,
+                          controller: phoneNumberController,
+                          keyboardType: TextInputType.number,
                           style: const TextStyle(
                             color: Colors.grey,
                             fontWeight: FontWeight.w700,
@@ -450,14 +627,51 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                                 color: kPrimaryColor,
                               ),
                             ),
+                            errorBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5.0),
+                              borderSide: const BorderSide(
+                                color: Colors.red,
+                              ),
+                            ),
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(5.0),
+                              borderSide: const BorderSide(
+                                color: Colors.red,
+                              ),
+                            ),
                           ),
                         ),
+                        Visibility(
+                            visible: wrong ? true : false,
+                            child: const Padding(
+                              padding: EdgeInsets.only(top: 8.0),
+                              child: Text(
+                                'Please Fill The Form',
+                                style: TextStyle(
+                                  color: Color(0xffFB7181),
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                            )),
                         Padding(
                           padding: const EdgeInsets.symmetric(
                             vertical: 16.0,
                           ),
                           child: GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+                              setState(() {
+                                if (firstNameController.text.isEmpty ||
+                                    lastNameController.text.isEmpty ||
+                                    stressAddressController.text.isEmpty ||
+                                    cityController.text.isEmpty ||
+                                    stateController.text.isEmpty ||
+                                    zipCodeController.text.isEmpty ||
+                                    phoneNumberController.text.isEmpty) {
+                                  wrong = true;
+                                }
+                              });
+                            },
                             child: const CustomButton(
                               title: 'Add Address',
                             ),
