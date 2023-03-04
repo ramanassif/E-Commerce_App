@@ -75,6 +75,24 @@ List<String> favoriteProductImage = [
   'assets/images/product2.png',
 ];
 
+
+List<String> searchProductsName = [
+  'Nike Air Max 270 React ENG',
+  'Nike Air Max 270 React ENG',
+  'Nike Air Max 270 React ENG',
+  'Nike Air Max 270 React ENG',
+  'Nike Air Max 270 React ENG',
+  'Nike Air Max 270 React ENG',
+];
+List<String> searchProductsImage = [
+  'assets/images/product3.png',
+  'assets/images/product6.png',
+  'assets/images/product1.png',
+  'assets/images/product5.png',
+  'assets/images/product6.png',
+  'assets/images/product3.png',
+];
+
 List<Color> colorList = const [
   Color(0xffFFC833),
   Color(0xff40BFFF),

@@ -25,6 +25,7 @@ import 'package:ecommerce_app/features/profile_screen/change_password_screen.dar
 import 'package:ecommerce_app/features/profile_screen/change_phone_number_screen.dart';
 import 'package:ecommerce_app/features/profile_screen/profile_screen.dart';
 import 'package:ecommerce_app/features/review_screen/review_screen.dart';
+import 'package:ecommerce_app/features/search_result_screen/search_result_screen.dart';
 import 'package:ecommerce_app/features/ship_to_screen/ship_to_screen.dart';
 import 'package:ecommerce_app/features/success_screen/success_screen.dart';
 import 'package:ecommerce_app/features/super_flash_sae_screen/super_flash_sale_screen.dart';
@@ -45,6 +46,8 @@ class AppRoute {
         return MaterialPageRoute(builder: (_) => const RegisterScreen());
       case 'homeScreen':
         return MaterialPageRoute(builder: (_) => const HomeScreen());
+      case 'searchResultScreen':
+        return MaterialPageRoute(builder: (_) => const SearchResultScreen());
       case 'superFlashSaleScreen':
         return MaterialPageRoute(builder: (_) => const SuperFlashSale());
       case 'favoriteScreen':
