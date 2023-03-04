@@ -101,10 +101,15 @@ class _SearchResultFailedScreenState extends State<SearchResultFailedScreen> {
                   const SizedBox(
                     width: 5,
                   ),
-                  const Icon(
-                    CupertinoIcons.sort_down,
-                    color: Colors.grey,
-                    size: 30,
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.pushNamed(context, 'sortByScreen');
+                    },
+                    child: const Icon(
+                      CupertinoIcons.sort_down,
+                      color: Colors.grey,
+                      size: 30,
+                    ),
                   ),
                   const SizedBox(
                     width: 10,
@@ -169,12 +174,17 @@ class _SearchResultFailedScreenState extends State<SearchResultFailedScreen> {
                       const SizedBox(
                         width: 10,
                       ),
-                      Transform.rotate(
-                        angle: -math.pi / 2,
-                        child: const Icon(
-                          CupertinoIcons.back,
-                          color: Colors.grey,
-                          size: 16,
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.pushNamed(context, 'categoryScreen');
+                        },
+                        child: Transform.rotate(
+                          angle: -math.pi / 2,
+                          child: const Icon(
+                            CupertinoIcons.back,
+                            color: Colors.grey,
+                            size: 16,
+                          ),
                         ),
                       ),
                     ],
