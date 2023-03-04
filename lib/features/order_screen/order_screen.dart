@@ -57,6 +57,13 @@ class _OrderScreenState extends State<OrderScreen> {
                       setState(() {
                         currentIndex = index;
                       });
+                      Navigator.pushNamed(
+                        context,
+                        'orderDetailsScreen',
+                        arguments: {
+                          'status': 'Shipping',
+                        },
+                      );
                     },
                     child: OrderItemDetails(
                       title: orderName[index],

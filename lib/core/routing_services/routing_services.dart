@@ -6,6 +6,7 @@ import 'package:ecommerce_app/features/notification_screen/screens/notification_
 import 'package:ecommerce_app/features/notification_screen/screens/notification_feed_screen.dart';
 import 'package:ecommerce_app/features/notification_screen/screens/notification_offer_screen.dart';
 import 'package:ecommerce_app/features/notification_screen/screens/notification_screen.dart';
+import 'package:ecommerce_app/features/order_screen/order_details_screen.dart';
 import 'package:ecommerce_app/features/order_screen/order_screen.dart';
 import 'package:ecommerce_app/features/payment_screen/payment_screen.dart';
 import 'package:ecommerce_app/features/product_details_screen/product_details_screen.dart';
@@ -101,6 +102,10 @@ class AppRoute {
         var data = settings.arguments as Map<String, dynamic>;
         return MaterialPageRoute(
             builder: (_) => OrderScreen(mapArguments: data));
+      case 'orderDetailsScreen':
+        var data = settings.arguments as Map<String, dynamic>;
+        return MaterialPageRoute(
+            builder: (_) => OrderDetailsScreen(mapArguments: data));
     }
     return null;
   }
