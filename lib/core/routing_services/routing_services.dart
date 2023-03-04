@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/features/address_screen/address_screen.dart';
 import 'package:ecommerce_app/features/category_screen/category_screen.dart';
 import 'package:ecommerce_app/features/credit_card_payment_screen/credit_card_payment_screen.dart';
 import 'package:ecommerce_app/features/favorite_screen/favorite_screen.dart';
@@ -106,6 +107,10 @@ class AppRoute {
         var data = settings.arguments as Map<String, dynamic>;
         return MaterialPageRoute(
             builder: (_) => OrderDetailsScreen(mapArguments: data));
+      case 'addressScreen':
+        var data = settings.arguments as Map<String, dynamic>;
+        return MaterialPageRoute(
+            builder: (_) => AddressScreen(mapArguments: data));
     }
     return null;
   }
