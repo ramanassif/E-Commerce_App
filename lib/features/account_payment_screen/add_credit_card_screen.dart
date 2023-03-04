@@ -2,7 +2,6 @@ import 'package:ecommerce_app/constants.dart';
 import 'package:ecommerce_app/core/basics_widgets/custom_button.dart';
 import 'package:ecommerce_app/core/basics_widgets/home_Indicator.dart';
 import 'package:ecommerce_app/features/account_payment_screen/widgets/credit_card_header.dart';
-import 'package:ecommerce_app/features/credit_card_payment_screen/widgets/credit_card_payment_screen_header.dart';
 import 'package:flutter/material.dart';
 
 class AddCreditCardScreen extends StatefulWidget {
@@ -13,6 +12,10 @@ class AddCreditCardScreen extends StatefulWidget {
 }
 
 class _AddCreditCardScreenState extends State<AddCreditCardScreen> {
+  String cardHolderName = 'Lailyfa Febrina';
+  Color firstCardColor = kPrimaryColor;
+  Color secondCardColor = const Color(0xff5C61F4);
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -36,216 +39,237 @@ class _AddCreditCardScreenState extends State<AddCreditCardScreen> {
               ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 190,
-                  decoration: BoxDecoration(
-                    color: kPrimaryColor,
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(24.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Stack(
-                              clipBehavior: Clip.none,
-                              children: [
-                                CircleAvatar(
-                                  radius: 12,
-                                  backgroundColor:
-                                  kSecondaryColor.withOpacity(0.4),
-                                ),
-                                Positioned(
-                                  left: 13,
-                                  child: CircleAvatar(
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, 'editCreditCardScreen',
+                        arguments: {
+                          'cardHolderName': cardHolderName,
+                          'color': firstCardColor,
+                        });
+                  },
+                  child: Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 190,
+                    decoration: BoxDecoration(
+                      color: firstCardColor,
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(24.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Stack(
+                                clipBehavior: Clip.none,
+                                children: [
+                                  CircleAvatar(
                                     radius: 12,
                                     backgroundColor:
-                                    kSecondaryColor.withOpacity(0.4),
+                                        kSecondaryColor.withOpacity(0.4),
                                   ),
+                                  Positioned(
+                                    left: 13,
+                                    child: CircleAvatar(
+                                      radius: 12,
+                                      backgroundColor:
+                                          kSecondaryColor.withOpacity(0.4),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 30,
+                          ),
+                          Row(
+                            children: const [
+                              Text(
+                                '6326     9124     8124    9875',
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w700,
+                                  color: kWhiteColor,
                                 ),
-                              ],
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 30,
-                        ),
-                        Row(
-                          children: const [
-                            Text(
-                              '6326     9124     8124    9875',
-                              style: TextStyle(
-                                fontSize: 24,
-                                fontWeight: FontWeight.w700,
-                                color: kWhiteColor,
+                              )
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          Row(
+                            children: const [
+                              Text(
+                                'CARD HOLDER',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 10,
+                                  color: kWhiteColor,
+                                ),
                               ),
-                            )
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 15,
-                        ),
-                        Row(
-                          children: const [
-                            Text(
-                              'CARD HOLDER',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 10,
-                                color: kWhiteColor,
+                              SizedBox(
+                                width: 37,
                               ),
-                            ),
-                            SizedBox(
-                              width: 37,
-                            ),
-                            Text(
-                              'CARD SAVE',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 10,
-                                color: kWhiteColor,
+                              Text(
+                                'CARD SAVE',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 10,
+                                  color: kWhiteColor,
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 6,
-                        ),
-                        Row(
-                          children: const [
-                            Text(
-                              'Lailyfa Febrina',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 10,
-                                color: kWhiteColor,
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 6,
+                          ),
+                          Row(
+                            children: const [
+                              Text(
+                                'Lailyfa Febrina',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 10,
+                                  color: kWhiteColor,
+                                ),
                               ),
-                            ),
-                            SizedBox(
-                              width: 35,
-                            ),
-                            Text(
-                              '19/2042',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 10,
-                                color: kWhiteColor,
+                              SizedBox(
+                                width: 35,
                               ),
-                            ),
-                          ],
-                        ),
-                      ],
+                              Text(
+                                '19/2042',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 10,
+                                  color: kWhiteColor,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 16.0,right: 16.0,),
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 190,
-                  decoration: BoxDecoration(
-                    color: const Color(0xff5C61F4),
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(24.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Stack(
-                              clipBehavior: Clip.none,
-                              children: [
-                                CircleAvatar(
-                                  radius: 12,
-                                  backgroundColor:
-                                  kSecondaryColor.withOpacity(0.4),
-                                ),
-                                Positioned(
-                                  left: 13,
-                                  child: CircleAvatar(
+                padding: const EdgeInsets.only(
+                  left: 16.0,
+                  right: 16.0,
+                ),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, 'editCreditCardScreen',
+                        arguments: {
+                          'cardHolderName': cardHolderName,
+                          'color': secondCardColor,
+                        });
+                  },
+                  child: Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 190,
+                    decoration: BoxDecoration(
+                      color: secondCardColor,
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(24.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Stack(
+                                clipBehavior: Clip.none,
+                                children: [
+                                  CircleAvatar(
                                     radius: 12,
                                     backgroundColor:
-                                    kSecondaryColor.withOpacity(0.4),
+                                        kSecondaryColor.withOpacity(0.4),
                                   ),
+                                  Positioned(
+                                    left: 13,
+                                    child: CircleAvatar(
+                                      radius: 12,
+                                      backgroundColor:
+                                          kSecondaryColor.withOpacity(0.4),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 30,
+                          ),
+                          Row(
+                            children: const [
+                              Text(
+                                '6326     9124     8124    9875',
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w700,
+                                  color: kWhiteColor,
                                 ),
-                              ],
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 30,
-                        ),
-                        Row(
-                          children: const [
-                            Text(
-                              '6326     9124     8124    9875',
-                              style: TextStyle(
-                                fontSize: 24,
-                                fontWeight: FontWeight.w700,
-                                color: kWhiteColor,
+                              )
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          Row(
+                            children: const [
+                              Text(
+                                'CARD HOLDER',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 10,
+                                  color: kWhiteColor,
+                                ),
                               ),
-                            )
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 15,
-                        ),
-                        Row(
-                          children: const [
-                            Text(
-                              'CARD HOLDER',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 10,
-                                color: kWhiteColor,
+                              SizedBox(
+                                width: 37,
                               ),
-                            ),
-                            SizedBox(
-                              width: 37,
-                            ),
-                            Text(
-                              'CARD SAVE',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 10,
-                                color: kWhiteColor,
+                              Text(
+                                'CARD SAVE',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 10,
+                                  color: kWhiteColor,
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 6,
-                        ),
-                        Row(
-                          children: const [
-                            Text(
-                              'Lailyfa Febrina',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 10,
-                                color: kWhiteColor,
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 6,
+                          ),
+                          Row(
+                            children: const [
+                              Text(
+                                'Lailyfa Febrina',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 10,
+                                  color: kWhiteColor,
+                                ),
                               ),
-                            ),
-                            SizedBox(
-                              width: 35,
-                            ),
-                            Text(
-                              '19/2042',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 10,
-                                color: kWhiteColor,
+                              SizedBox(
+                                width: 35,
                               ),
-                            ),
-                          ],
-                        ),
-                      ],
+                              Text(
+                                '19/2042',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 10,
+                                  color: kWhiteColor,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),

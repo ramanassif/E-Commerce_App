@@ -1,6 +1,7 @@
 import 'package:ecommerce_app/features/account_payment_screen/account_payment_screen.dart';
 import 'package:ecommerce_app/features/account_payment_screen/add_card_screen.dart';
 import 'package:ecommerce_app/features/account_payment_screen/add_credit_card_screen.dart';
+import 'package:ecommerce_app/features/account_payment_screen/edit_credit_card_screen.dart';
 import 'package:ecommerce_app/features/address_screen/add_address_screen.dart';
 import 'package:ecommerce_app/features/address_screen/address_screen.dart';
 import 'package:ecommerce_app/features/category_screen/category_screen.dart';
@@ -124,14 +125,17 @@ class AppRoute {
         return MaterialPageRoute(
             builder: (_) => const DeleteAddressConfirmation());
       case 'accountPaymentScreen':
-        return MaterialPageRoute(
-            builder: (_) => const AccountPaymentScreen());
+        return MaterialPageRoute(builder: (_) => const AccountPaymentScreen());
       case 'addCreditCardScreen':
-        return MaterialPageRoute(
-            builder: (_) => const AddCreditCardScreen());
+        return MaterialPageRoute(builder: (_) => const AddCreditCardScreen());
       case 'addCardScreen':
+        return MaterialPageRoute(builder: (_) => const AddCardScreen());
+      case 'editCreditCardScreen':
+        var data = settings.arguments as Map<String, dynamic>;
         return MaterialPageRoute(
-            builder: (_) => const AddCardScreen());
+            builder: (_) => EditCreditCardScreen(
+                  mapArguments: data,
+                ));
     }
     return null;
   }
