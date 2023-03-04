@@ -14,6 +14,7 @@ class AddCardScreen extends StatefulWidget {
 class _AddCardScreenState extends State<AddCardScreen> {
   int securityCode = 1219;
   bool wrongCode = false;
+  bool addSuccess = false;
   TextEditingController securityCodeController = TextEditingController();
 
   @override
@@ -67,6 +68,121 @@ class _AddCardScreenState extends State<AddCardScreen> {
                           ),
                         ),
                       ],
+                    ),
+                  ),
+                ),
+                Visibility(
+                  visible: addSuccess ? true : false,
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                      left: 16.0,
+                      right: 16.0,
+                      top: 16.0,
+                    ),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: 190,
+                      decoration: BoxDecoration(
+                        color: kPrimaryColor,
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(24.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Stack(
+                                  clipBehavior: Clip.none,
+                                  children: [
+                                    CircleAvatar(
+                                      radius: 12,
+                                      backgroundColor:
+                                          kSecondaryColor.withOpacity(0.4),
+                                    ),
+                                    Positioned(
+                                      left: 13,
+                                      child: CircleAvatar(
+                                        radius: 12,
+                                        backgroundColor:
+                                            kSecondaryColor.withOpacity(0.4),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 30,
+                            ),
+                            Row(
+                              children: const [
+                                Text(
+                                  '6326     9124     8124    9875',
+                                  style: TextStyle(
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.w700,
+                                    color: kWhiteColor,
+                                  ),
+                                )
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 15,
+                            ),
+                            Row(
+                              children: const [
+                                Text(
+                                  'CARD HOLDER',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 10,
+                                    color: kWhiteColor,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 37,
+                                ),
+                                Text(
+                                  'CARD SAVE',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 10,
+                                    color: kWhiteColor,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 6,
+                            ),
+                            Row(
+                              children: const [
+                                Text(
+                                  'Lailyfa Febrina',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 10,
+                                    color: kWhiteColor,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 35,
+                                ),
+                                Text(
+                                  '19/2042',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 10,
+                                    color: kWhiteColor,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -335,7 +451,7 @@ class _AddCardScreenState extends State<AddCardScreen> {
                   ),
                 ),
                 SizedBox(
-                  height: wrongCode? 180: 220,
+                  height: wrongCode ? 180 : addSuccess? 25 : 220,
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(
@@ -347,8 +463,10 @@ class _AddCardScreenState extends State<AddCardScreen> {
                         if (securityCodeController.text !=
                             securityCode.toString()) {
                           wrongCode = true;
+                          addSuccess = false;
                         } else {
                           wrongCode = false;
+                          addSuccess = true;
                         }
                       });
                     },
