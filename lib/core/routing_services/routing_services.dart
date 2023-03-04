@@ -2,6 +2,7 @@ import 'package:ecommerce_app/features/address_screen/add_address_screen.dart';
 import 'package:ecommerce_app/features/address_screen/address_screen.dart';
 import 'package:ecommerce_app/features/category_screen/category_screen.dart';
 import 'package:ecommerce_app/features/credit_card_payment_screen/credit_card_payment_screen.dart';
+import 'package:ecommerce_app/features/delete_address_confirmation/delete_address_confirmation.dart';
 import 'package:ecommerce_app/features/favorite_screen/favorite_screen.dart';
 import 'package:ecommerce_app/features/home_screen/home_screen.dart';
 import 'package:ecommerce_app/features/notification_screen/screens/notification_activity_screen.dart';
@@ -116,6 +117,9 @@ class AppRoute {
         var data = settings.arguments as Map<String, dynamic>;
         return MaterialPageRoute(
             builder: (_) => AddAddressScreen(mapArguments: data));
+      case 'deleteAddressScreen':
+        return MaterialPageRoute(
+            builder: (_) => const DeleteAddressConfirmation());
     }
     return null;
   }

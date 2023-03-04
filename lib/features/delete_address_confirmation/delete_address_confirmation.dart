@@ -3,8 +3,8 @@ import 'package:ecommerce_app/core/basics_widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class SuccessScreen extends StatelessWidget {
-  const SuccessScreen({Key? key}) : super(key: key);
+class DeleteAddressConfirmation extends StatelessWidget {
+  const DeleteAddressConfirmation({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,26 +23,30 @@ class SuccessScreen extends StatelessWidget {
                   height: 72,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(56),
-                    color: kPrimaryColor,
+                    color: const Color(0xffFB7181),
                     boxShadow: const [
                       BoxShadow(
                         offset: Offset(0, 4),
                         blurRadius: 5.0,
-                        color: kPrimaryColor,
+                        color: Color(0xffFB7181),
                       ),
                     ],
                   ),
                   child: Center(
-                    child: SvgPicture.asset(
-                      color: kWhiteColor,
-                      'assets/icons/success.svg',
+                    child: SizedBox(
+                      width: 30,
+                      height: 30,
+                      child: SvgPicture.asset(
+                        color: kWhiteColor,
+                        'assets/icons/warning.svg',
+                      ),
                     ),
                   ),
                 ),
                 const Padding(
                   padding: EdgeInsets.only(top: 16.0),
                   child: Text(
-                    'Success',
+                    'Confirmation',
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.w700,
@@ -53,7 +57,7 @@ class SuccessScreen extends StatelessWidget {
                 const Padding(
                   padding: EdgeInsets.only(top: 8.0),
                   child: Text(
-                    'thank you for shopping using lafyuu',
+                    'Are you sure wanna delete address',
                     style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
@@ -68,10 +72,41 @@ class SuccessScreen extends StatelessWidget {
                   ),
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, 'homeScreen');
+                      Navigator.pop(context);
                     },
                     child: const CustomButton(
-                      title: 'Back To Order',
+                      title: 'Delete',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 16.0,
+                    right: 16.0,
+                    top: 8.0,
+                  ),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: 57,
+                      decoration: BoxDecoration(
+                        color: kWhiteColor,
+                        borderRadius: BorderRadius.circular(5),
+                        border: Border.all(color: kLightColor),
+                      ),
+                      child: const Center(
+                        child: Text(
+                          'Cancel',
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                 ),

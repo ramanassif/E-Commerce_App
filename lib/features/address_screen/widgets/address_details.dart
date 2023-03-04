@@ -129,10 +129,15 @@ class _AddressDetailsState extends State<AddressDetails> {
                   const SizedBox(
                     width: 30,
                   ),
-                  const Icon(
-                    Icons.delete_outline,
-                    color: Colors.grey,
-                    size: 30,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, 'deleteAddressScreen');
+                    },
+                    child: const Icon(
+                      Icons.delete_outline,
+                      color: Colors.grey,
+                      size: 30,
+                    ),
                   ),
                 ],
               ),

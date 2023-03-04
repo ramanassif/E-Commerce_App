@@ -4,7 +4,6 @@ import 'package:ecommerce_app/constants.dart';
 import 'package:ecommerce_app/core/basics_widgets/app_logo.dart';
 import 'package:ecommerce_app/core/basics_widgets/generic_loader.dart';
 import 'package:ecommerce_app/core/basics_widgets/home_Indicator.dart';
-import 'package:ecommerce_app/features/login_screen/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -21,8 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
       child: Scaffold(
         body: Container(
           color: kPrimaryColor,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+          child: ListView(
             children: [
               Padding(
                 padding:
@@ -39,7 +37,7 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
               Padding(
                 padding:
-                    EdgeInsets.only(top: MediaQuery.of(context).size.height / 4.2),
+                    EdgeInsets.only(left:120,right: 120,top: MediaQuery.of(context).size.height / 4.2),
                 child: const HomeIndicator(
                   color: kWhiteColor,
                 ),
