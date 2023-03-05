@@ -1,6 +1,6 @@
 import 'package:ecommerce_app/constants.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/offer_banner/offer_banner.dart';
-import 'package:ecommerce_app/features/home_screen/widgets/home_screen_widgets/recommended_product_banner/recommended_product_banner.dart';
+import 'package:ecommerce_app/features/home_page/home_screen/widgets/home_screen_widgets/offer_banner/offer_banner.dart';
+import 'package:ecommerce_app/features/home_page/home_screen/widgets/home_screen_widgets/recommended_product_banner/recommended_product_banner.dart';
 import 'package:ecommerce_app/features/offer_screen/widgets/offer_screen_header.dart';
 import 'package:flutter/material.dart';
 

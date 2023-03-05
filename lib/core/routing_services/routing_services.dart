@@ -1,41 +1,41 @@
-import 'package:ecommerce_app/features/account_payment_screen/account_payment_screen.dart';
-import 'package:ecommerce_app/features/account_payment_screen/add_card_screen.dart';
-import 'package:ecommerce_app/features/account_payment_screen/add_credit_card_screen.dart';
-import 'package:ecommerce_app/features/account_payment_screen/edit_credit_card_screen.dart';
-import 'package:ecommerce_app/features/address_screen/add_address_screen.dart';
-import 'package:ecommerce_app/features/address_screen/address_screen.dart';
-import 'package:ecommerce_app/features/category_screen/category_screen.dart';
-import 'package:ecommerce_app/features/credit_card_payment_screen/credit_card_payment_screen.dart';
-import 'package:ecommerce_app/features/delete_address_confirmation/delete_address_confirmation.dart';
-import 'package:ecommerce_app/features/favorite_screen/favorite_screen.dart';
-import 'package:ecommerce_app/features/home_screen/home_screen.dart';
-import 'package:ecommerce_app/features/notification_screen/screens/notification_activity_screen.dart';
-import 'package:ecommerce_app/features/notification_screen/screens/notification_feed_screen.dart';
-import 'package:ecommerce_app/features/notification_screen/screens/notification_offer_screen.dart';
-import 'package:ecommerce_app/features/notification_screen/screens/notification_screen.dart';
-import 'package:ecommerce_app/features/order_screen/order_details_screen.dart';
-import 'package:ecommerce_app/features/order_screen/order_screen.dart';
-import 'package:ecommerce_app/features/payment_screen/payment_screen.dart';
-import 'package:ecommerce_app/features/product_details_screen/product_details_screen.dart';
-import 'package:ecommerce_app/features/profile_screen/change_birthday_screen.dart';
-import 'package:ecommerce_app/features/profile_screen/change_email_screen.dart';
-import 'package:ecommerce_app/features/profile_screen/change_gender_screen.dart';
-import 'package:ecommerce_app/features/profile_screen/change_name_screen.dart';
-import 'package:ecommerce_app/features/profile_screen/change_password_screen.dart';
-import 'package:ecommerce_app/features/profile_screen/change_phone_number_screen.dart';
-import 'package:ecommerce_app/features/profile_screen/profile_screen.dart';
-import 'package:ecommerce_app/features/review_screen/review_screen.dart';
+import 'package:ecommerce_app/features/account/account_payment_screen/account_payment_screen.dart';
+import 'package:ecommerce_app/features/account/account_payment_screen/add_card_screen.dart';
+import 'package:ecommerce_app/features/account/account_payment_screen/add_credit_card_screen.dart';
+import 'package:ecommerce_app/features/account/account_payment_screen/edit_credit_card_screen.dart';
+import 'package:ecommerce_app/features/account/address_screen/add_address_screen.dart';
+import 'package:ecommerce_app/features/account/address_screen/address_screen.dart';
+import 'package:ecommerce_app/features/account/delete_address_confirmation/delete_address_confirmation.dart';
+import 'package:ecommerce_app/features/account/order_screen/order_details_screen.dart';
+import 'package:ecommerce_app/features/account/order_screen/order_screen.dart';
+import 'package:ecommerce_app/features/account/profile_screen/change_birthday_screen.dart';
+import 'package:ecommerce_app/features/account/profile_screen/change_email_screen.dart';
+import 'package:ecommerce_app/features/account/profile_screen/change_gender_screen.dart';
+import 'package:ecommerce_app/features/account/profile_screen/change_name_screen.dart';
+import 'package:ecommerce_app/features/account/profile_screen/change_password_screen.dart';
+import 'package:ecommerce_app/features/account/profile_screen/change_phone_number_screen.dart';
+import 'package:ecommerce_app/features/account/profile_screen/profile_screen.dart';
+import 'package:ecommerce_app/features/cart_page/credit_card_payment_screen/credit_card_payment_screen.dart';
+import 'package:ecommerce_app/features/cart_page/payment_screen/payment_screen.dart';
+import 'package:ecommerce_app/features/cart_page/ship_to_screen/ship_to_screen.dart';
+import 'package:ecommerce_app/features/cart_page/success_screen/success_screen.dart';
+import 'package:ecommerce_app/features/home_page/category_screen/category_screen.dart';
+import 'package:ecommerce_app/features/home_page/favorite_screen/favorite_screen.dart';
+import 'package:ecommerce_app/features/home_page/home_screen/home_screen.dart';
+import 'package:ecommerce_app/features/home_page/notification_screen/screens/notification_activity_screen.dart';
+import 'package:ecommerce_app/features/home_page/notification_screen/screens/notification_feed_screen.dart';
+import 'package:ecommerce_app/features/home_page/notification_screen/screens/notification_offer_screen.dart';
+import 'package:ecommerce_app/features/home_page/notification_screen/screens/notification_screen.dart';
+import 'package:ecommerce_app/features/home_page/product_details_screen/product_details_screen.dart';
+import 'package:ecommerce_app/features/home_page/review_screen/review_screen.dart';
+import 'package:ecommerce_app/features/home_page/super_flash_sae_screen/super_flash_sale_screen.dart';
+import 'package:ecommerce_app/features/home_page/write_review_screen/write_review_screen.dart';
 import 'package:ecommerce_app/features/search_result_screen/filter_search_screen.dart';
 import 'package:ecommerce_app/features/search_result_screen/search_result_failed_screen.dart';
 import 'package:ecommerce_app/features/search_result_screen/search_result_screen.dart';
 import 'package:ecommerce_app/features/search_result_screen/sort_by_screen.dart';
-import 'package:ecommerce_app/features/ship_to_screen/ship_to_screen.dart';
-import 'package:ecommerce_app/features/success_screen/success_screen.dart';
-import 'package:ecommerce_app/features/super_flash_sae_screen/super_flash_sale_screen.dart';
 import 'package:ecommerce_app/features/login_screen/login_screen.dart';
 import 'package:ecommerce_app/features/register_screen/register_screen.dart';
 import 'package:ecommerce_app/features/splash_screen/splash_screen.dart';
-import 'package:ecommerce_app/features/write_review_screen/write_review_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppRoute {
@@ -51,9 +51,13 @@ class AppRoute {
         return MaterialPageRoute(builder: (_) => const HomeScreen());
       case 'searchResultScreen':
         var data = settings.arguments as Map<String, dynamic>;
-        return MaterialPageRoute(builder: (_) => SearchResultScreen(mapArguments: data,));
+        return MaterialPageRoute(
+            builder: (_) => SearchResultScreen(
+                  mapArguments: data,
+                ));
       case 'searchResultFailedScreen':
-        return MaterialPageRoute(builder: (_) => const SearchResultFailedScreen());
+        return MaterialPageRoute(
+            builder: (_) => const SearchResultFailedScreen());
       case 'sortByScreen':
         return MaterialPageRoute(builder: (_) => const SortByScreen());
       case 'filterSearchScreen':
