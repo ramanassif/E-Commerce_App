@@ -23,7 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: GestureDetector(
-        onTap: (){
+        onTap: () {
           FocusManager.instance.primaryFocus?.unfocus();
         },
         child: Scaffold(
@@ -92,12 +92,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 Center(
                   child: GestureDetector(
                     onTap: () {
-                      // if (signInFormKey.currentState!.validate()) {
-                      //   signInFormKey.currentState!.save();
-                      // }
-                      Navigator.pushNamed(
-                          context,
-                          'homeScreen');
+                      if (signInFormKey.currentState!.validate()) {
+                        signInFormKey.currentState!.save();
+                        Navigator.pushNamed(context, 'homeScreen');
+                      }
                     },
                     child: const Padding(
                       padding:
@@ -159,7 +157,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: const Text(
                       'Forgot Password?',
                       textAlign: TextAlign.center,
-
                       style: TextStyle(
                         color: kPrimaryColor,
                         fontSize: 12,
@@ -174,9 +171,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(
-                          context,
-                          'registerScreen');
+                      Navigator.pushNamed(context, 'registerScreen');
                     },
                     child: Center(
                       child: RichText(
@@ -186,10 +181,11 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           children: [
                             TextSpan(
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                ),
-                                text: 'Don\'t have a account? ',),
+                              style: TextStyle(
+                                color: Colors.grey,
+                              ),
+                              text: 'Don\'t have a account? ',
+                            ),
                             TextSpan(
                               style: TextStyle(
                                 color: kPrimaryColor,
