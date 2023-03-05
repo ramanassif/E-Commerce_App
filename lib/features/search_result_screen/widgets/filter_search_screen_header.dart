@@ -1,31 +1,33 @@
-import 'package:flutter/cupertino.dart';
 import 'package:ecommerce_app/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-class SortByScreenHeader extends StatelessWidget {
-  const SortByScreenHeader({Key? key}) : super(key: key);
+class FilterSearchScreenHeader extends StatelessWidget {
+  const FilterSearchScreenHeader({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(
-        left: 8.0,
+        left: 16.0,
         right: 8.0,
       ),
       child: Row(
         children: [
-          IconButton(
-            onPressed: () {
+          GestureDetector(
+            onTap: () {
               Navigator.pop(context);
             },
-            icon: const Icon(
-              CupertinoIcons.back,
+            child: SvgPicture.asset(
+              width: 20,
+              height: 20,
               color: Colors.grey,
-              size: 20,
+              'assets/icons/close.svg',
             ),
           ),
+          const SizedBox(width: 19,),
           const Text(
-            'Sort By',
+            'Filter Search',
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w700,

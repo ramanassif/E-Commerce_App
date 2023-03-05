@@ -114,10 +114,15 @@ class _SearchResultFailedScreenState extends State<SearchResultFailedScreen> {
                   const SizedBox(
                     width: 10,
                   ),
-                  const Icon(
-                    Icons.filter_alt_outlined,
-                    color: kPrimaryColor,
-                    size: 30,
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.pushNamed(context, 'filterSearchScreen');
+                    },
+                    child: const Icon(
+                      Icons.filter_alt_outlined,
+                      color: kPrimaryColor,
+                      size: 30,
+                    ),
                   ),
                 ],
               ),
