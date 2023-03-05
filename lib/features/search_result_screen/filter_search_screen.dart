@@ -1,6 +1,5 @@
 import 'package:ecommerce_app/constants.dart';
 import 'package:ecommerce_app/core/basics_widgets/custom_button.dart';
-import 'package:ecommerce_app/core/basics_widgets/home_Indicator.dart';
 import 'package:ecommerce_app/features/search_result_screen/widgets/filter_search_screen_header.dart';
 import 'package:flutter/material.dart';
 
@@ -918,18 +917,6 @@ class _FilterSearchScreenState extends State<FilterSearchScreen> {
                       title: 'Apply',
                     ),
                   ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 115.0),
-                  child: HomeIndicator(
-                    color: kLightColor,
-                  ),
-                ),
-                const SizedBox(
-                  height: 5,
                 ),
               ],
             ),

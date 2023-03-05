@@ -1,7 +1,6 @@
 import 'package:ecommerce_app/constants.dart';
 import 'package:ecommerce_app/core/basics_widgets/app_logo.dart';
 import 'package:ecommerce_app/core/basics_widgets/custom_button.dart';
-import 'package:ecommerce_app/core/basics_widgets/home_Indicator.dart';
 import 'package:ecommerce_app/core/basics_widgets/form_error.dart';
 import 'package:ecommerce_app/features/login_screen/widgets/login_way.dart';
 import 'package:flutter/material.dart';
@@ -35,7 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
               scrollDirection: Axis.vertical,
               children: [
                 SizedBox(
-                  height: MediaQuery.of(context).size.height / 7,
+                  height: MediaQuery.of(context).size.height / 7.5,
                 ),
                 const AppLogo(
                   firstColor: kPrimaryColor,
@@ -197,20 +196,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                     ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                    top: signInErrors.isEmpty
-                        ? 60
-                        : signInErrors.length == 1
-                            ? 40
-                            : 20,
-                    left: 115,
-                    right: 115,
-                  ),
-                  child: const HomeIndicator(
-                    color: Color(0xffD1D6E8),
                   ),
                 ),
               ],

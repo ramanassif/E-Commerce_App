@@ -1,6 +1,5 @@
 import 'package:ecommerce_app/constants.dart';
 import 'package:ecommerce_app/core/basics_widgets/custom_button.dart';
-import 'package:ecommerce_app/core/basics_widgets/home_Indicator.dart';
 import 'package:ecommerce_app/features/account/account_payment_screen/widgets/credit_card_header.dart';
 import 'package:flutter/material.dart';
 
@@ -474,18 +473,6 @@ class _AddCardScreenState extends State<AddCardScreen> {
                       title: 'Add Card',
                     ),
                   ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 115.0),
-                  child: HomeIndicator(
-                    color: kLightColor,
-                  ),
-                ),
-                const SizedBox(
-                  height: 5,
                 ),
               ],
             ),

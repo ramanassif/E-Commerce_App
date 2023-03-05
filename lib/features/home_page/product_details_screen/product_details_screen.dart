@@ -1,6 +1,5 @@
 import 'package:ecommerce_app/constants.dart';
 import 'package:ecommerce_app/core/basics_widgets/custom_button.dart';
-import 'package:ecommerce_app/core/basics_widgets/home_indicator.dart';
 import 'package:ecommerce_app/core/data/data.dart';
 import 'package:ecommerce_app/features/helper_widgets/five_dots.dart';
 import 'package:ecommerce_app/features/helper_widgets/person_review.dart';
@@ -434,12 +433,6 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 padding: EdgeInsets.symmetric(horizontal: 16.0,),
                 child: CustomButton(title: 'Add To Cart',),
               ),
-              const SizedBox(height: 25,),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 115.0),
-                child: HomeIndicator(color: kLightColor,),
-              ),
-              const SizedBox(height: 5,),
             ],
           ),
         ),

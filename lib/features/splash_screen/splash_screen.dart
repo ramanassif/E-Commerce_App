@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:ecommerce_app/constants.dart';
 import 'package:ecommerce_app/core/basics_widgets/app_logo.dart';
 import 'package:ecommerce_app/core/basics_widgets/generic_loader.dart';
-import 'package:ecommerce_app/core/basics_widgets/home_Indicator.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -24,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
             children: [
               Padding(
                 padding:
-                    EdgeInsets.only(top: MediaQuery.of(context).size.height / 2.9),
+                    EdgeInsets.only(top: MediaQuery.of(context).size.height / 2.5),
                 child: const AppLogo(
                   firstColor: kWhiteColor,
                   secondColor: kPrimaryColor,
@@ -34,13 +33,6 @@ class _SplashScreenState extends State<SplashScreen> {
                 padding:
                     EdgeInsets.only(top: MediaQuery.of(context).size.height / 4.2),
                 child: const GenericLoader(),
-              ),
-              Padding(
-                padding:
-                    EdgeInsets.only(left:120,right: 120,top: MediaQuery.of(context).size.height / 4.2),
-                child: const HomeIndicator(
-                  color: kWhiteColor,
-                ),
               ),
             ],
           ),

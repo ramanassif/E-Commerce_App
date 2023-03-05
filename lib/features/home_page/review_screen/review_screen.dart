@@ -1,6 +1,5 @@
 import 'package:ecommerce_app/constants.dart';
 import 'package:ecommerce_app/core/basics_widgets/custom_button.dart';
-import 'package:ecommerce_app/core/basics_widgets/home_indicator.dart';
 import 'package:ecommerce_app/features/helper_widgets/person_review.dart';
 import 'package:ecommerce_app/features/home_page/review_screen/widgets/reviews_list.dart';
 import 'package:ecommerce_app/features/home_page/write_review_screen/widgets/write_review_header.dart';
@@ -274,18 +273,6 @@ class _ReviewScreenState extends State<ReviewScreen> {
                     title: 'Write Review',
                   ),
                 ),
-              ),
-              const SizedBox(
-                height: 25,
-              ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 115.0),
-                child: HomeIndicator(
-                  color: kLightColor,
-                ),
-              ),
-              const SizedBox(
-                height: 5,
               ),
             ],
           ),

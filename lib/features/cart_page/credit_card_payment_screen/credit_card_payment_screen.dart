@@ -1,6 +1,5 @@
 import 'package:ecommerce_app/constants.dart';
 import 'package:ecommerce_app/core/basics_widgets/custom_button.dart';
-import 'package:ecommerce_app/core/basics_widgets/home_indicator.dart';
 import 'package:ecommerce_app/features/cart_page/credit_card_payment_screen/widgets/credit_card_payment_screen_header.dart';
 import 'package:ecommerce_app/features/helper_widgets/five_dots.dart';
 import 'package:flutter/material.dart';
@@ -153,18 +152,6 @@ class CreditCardPaymentScreen extends StatelessWidget {
                     title: 'Pay \$766.86',
                   ),
                 ),
-              ),
-              const SizedBox(
-                height: 35,
-              ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 115.0),
-                child: HomeIndicator(
-                  color: kLightColor,
-                ),
-              ),
-              const SizedBox(
-                height: 5,
               ),
             ],
           ),

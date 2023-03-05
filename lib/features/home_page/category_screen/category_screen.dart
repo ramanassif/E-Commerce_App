@@ -1,5 +1,4 @@
 import 'package:ecommerce_app/constants.dart';
-import 'package:ecommerce_app/core/basics_widgets/home_indicator.dart';
 import 'package:ecommerce_app/core/data/data.dart';
 import 'package:ecommerce_app/features/home_page/category_screen/widgets/category_item.dart';
 import 'package:ecommerce_app/features/home_page/category_screen/widgets/category_screen_header.dart';
@@ -42,18 +41,6 @@ class CategoryScreen extends StatelessWidget {
                     categoryScreenItemIcon: categoryListIcon[index],
                   ),
                 ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 115.0),
-                child: HomeIndicator(
-                  color: kLightColor,
-                ),
-              ),
-              const SizedBox(
-                height: 5,
               ),
             ],
           ),
