@@ -71,15 +71,40 @@ class CreditCardPaymentScreen extends StatelessWidget {
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.8,
                           child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: const [
                               Text(
-                                '6326    9124    8124    9875',
+                                '6326',
                                 style: TextStyle(
                                   fontSize: 24,
                                   fontWeight: FontWeight.w700,
                                   color: kWhiteColor,
                                 ),
-                              )
+                              ),
+                              Text(
+                                '9124',
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w700,
+                                  color: kWhiteColor,
+                                ),
+                              ),
+                              Text(
+                                '8124',
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w700,
+                                  color: kWhiteColor,
+                                ),
+                              ),
+                              Text(
+                                '9875',
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w700,
+                                  color: kWhiteColor,
+                                ),
+                              ),
                             ],
                           ),
                         ),
@@ -143,8 +168,10 @@ class CreditCardPaymentScreen extends StatelessWidget {
               const FiveDots(),
               const Spacer(),
               Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16.0,
+                padding: const EdgeInsets.only(
+                  left: 16.0,
+                  right: 16.0,
+                  bottom: 16.0,
                 ),
                 child: GestureDetector(
                   onTap: () {
@@ -155,7 +182,6 @@ class CreditCardPaymentScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.02),
             ],
           ),
         ),

@@ -32,63 +32,69 @@ class OrderProduct extends StatelessWidget {
         ),
         child: Row(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(
-                left: 16.0,
-              ),
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
+            Expanded(
+              flex: 1,
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: 16.0,
                 ),
-                child: Image.asset(productImage, width: 72, height: 72),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Image.asset(productImage, width: 72, height: 72),
+                ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      left: 16.0,
-                      right: 16.0,
-                    ),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const SizedBox(
-                          width: 138,
-                          child: Text(
-                            'Nike Air Zoom Pegasus 36 Miami',
-                            style: TextStyle(
-                                color: kSecondaryColor,
-                                fontSize: 12,
-                                fontWeight: FontWeight.w700),
-                          ),
+            Expanded(
+              flex: 3,
+              child: Padding(
+                padding: const EdgeInsets.only(top: 16.0),
+                child: SizedBox(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          left: 16.0,
+                          right: 16.0,
                         ),
-                        const SizedBox(
-                          width: 60,
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Expanded(
+                              flex: 3,
+                              child: SizedBox(
+                                child: Text(
+                                  'Nike Air Zoom Pegasus 36 Miami',
+                                  style: TextStyle(
+                                      color: kSecondaryColor,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w700),
+                                ),
+                              ),
+                            ),
+                            const Spacer(),
+                            Expanded(
+                              flex: 1,
+                              child: GestureDetector(
+                                onTap: () {},
+                                child: Icon(
+                                  favoriteIcon,
+                                  color: color,
+                                  size: 30,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                        GestureDetector(
-                          onTap: () {},
-                          child: Icon(
-                            favoriteIcon,
-                            color: color,
-                            size: 30,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 16.0, right: 16.0),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: const [
-                        Text(
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 16.0, right: 16.0),
+                        child: Text(
                           '\$299,43',
                           style: TextStyle(
                             color: kPrimaryColor,
@@ -96,10 +102,10 @@ class OrderProduct extends StatelessWidget {
                             fontWeight: FontWeight.w700,
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
             ),
           ],

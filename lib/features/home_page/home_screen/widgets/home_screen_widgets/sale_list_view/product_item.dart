@@ -7,6 +7,7 @@ class ProductItem extends StatelessWidget {
   final String newPrice;
   final String oldPrice;
   final String offerPercentValue;
+
   const ProductItem({
     super.key,
     required this.productName,

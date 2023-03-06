@@ -6,29 +6,32 @@ class ShipToScreenHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 16.0,
-      ),
-      child: Row(
-        children: [
-          const Text(
-            'Ship To',
-            style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w700,
-                color: kSecondaryColor),
-          ),
-          const Spacer(),
-          GestureDetector(
-            onTap: () {},
-            child: const Icon(
-              Icons.add,
-              size: 24,
-              color: kPrimaryColor,
+    return SizedBox(
+      width: MediaQuery.of(context).size.width,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 16.0,
+        ),
+        child: Row(
+          children: [
+            const Text(
+              'Ship To',
+              style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w700,
+                  color: kSecondaryColor),
             ),
-          ),
-        ],
+            const Spacer(),
+            GestureDetector(
+              onTap: () {},
+              child: const Icon(
+                Icons.add,
+                size: 24,
+                color: kPrimaryColor,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -17,7 +17,7 @@ class AddressScreen extends StatefulWidget {
 }
 
 class _AddressScreenState extends State<AddressScreen> {
-  List<String> addressName = ['Priscekila Priscekila', 'Ahmad Khaidir'];
+  List<String> addressName = ['Priscekila Priscekila', 'Ahmad Khaidir', 'Ahmad Khaidir'];
   int? currentIndex;
 
   @override
@@ -28,8 +28,7 @@ class _AddressScreenState extends State<AddressScreen> {
           color: kWhiteColor,
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          child: ListView(
-            scrollDirection: Axis.vertical,
+          child: Column(
             children: [
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.05,
@@ -44,7 +43,7 @@ class _AddressScreenState extends State<AddressScreen> {
               ),
               SizedBox(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 0.7,
+                height: MediaQuery.of(context).size.height * 0.71,
                 child: ListView.builder(
                   itemCount: addressName.length,
                   itemBuilder: (context, index) => GestureDetector(
@@ -62,9 +61,7 @@ class _AddressScreenState extends State<AddressScreen> {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 30,
-              ),
+              const Spacer(),
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 16.0,
@@ -74,7 +71,7 @@ class _AddressScreenState extends State<AddressScreen> {
                   onTap: () {
                     Navigator.pushNamed(context, 'addAddressScreen',
                         arguments: {
-                          'first_name': 'Rama',
+                          'first_name': '',
                         });
                   },
                   child: const CustomButton(

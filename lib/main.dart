@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:desktop_window/desktop_window.dart';
 import 'package:ecommerce_app/core/routing_services/routing_services.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
@@ -19,6 +20,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      scrollBehavior: const MaterialScrollBehavior().copyWith(
+        dragDevices: {
+          PointerDeviceKind.touch,
+          PointerDeviceKind.mouse,
+        },
+      ),
       debugShowCheckedModeBanner: false,
       title: 'E-Commerce App',
       theme: ThemeData(

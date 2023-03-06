@@ -93,13 +93,14 @@ class _ExploreScreenBodyState extends State<ExploreScreenBody> {
                     ),
                   ),
                 ),
+                const Spacer(),
                 Visibility(
                   visible: isSearching ? false : true,
-                  child: IconButton(
-                    onPressed: () {
+                  child: GestureDetector(
+                    onTap: () {
                       Navigator.pushNamed(context, 'favoriteScreen');
                     },
-                    icon: const Icon(
+                    child: const Icon(
                       CupertinoIcons.heart,
                       color: Colors.grey,
                       size: 30,
@@ -134,15 +135,12 @@ class _ExploreScreenBodyState extends State<ExploreScreenBody> {
                 ),
                 Visibility(
                   visible: isSearching ? true : false,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 10.0),
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.keyboard_voice_outlined,
-                        color: Colors.grey,
-                        size: 25,
-                      ),
+                  child: const Padding(
+                    padding: EdgeInsets.only(left: 10.0),
+                    child: Icon(
+                      Icons.keyboard_voice_outlined,
+                      color: Colors.grey,
+                      size: 25,
                     ),
                   ),
                 ),

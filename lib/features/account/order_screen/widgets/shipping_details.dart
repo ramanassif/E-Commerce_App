@@ -90,6 +90,7 @@ class ShippingDetails extends StatelessWidget {
               ),
               const SizedBox(height: 12,),
               Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
                   Text(
                     'Address',

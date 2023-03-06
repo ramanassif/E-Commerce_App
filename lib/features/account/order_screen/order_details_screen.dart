@@ -54,7 +54,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                   children: [
                     CircleAvatar(
                       backgroundColor: kPrimaryColor,
-                      radius: 12,
+                      radius: MediaQuery.of(context).size.width * 0.03,
                       child: Center(
                         child: SvgPicture.asset(
                           color: kWhiteColor,
@@ -65,13 +65,13 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                       ),
                     ),
                     Container(
-                      width: 80,
+                      width: MediaQuery.of(context).size.width * 0.2,
                       height: 1,
                       color: kPrimaryColor,
                     ),
                     CircleAvatar(
                       backgroundColor: kPrimaryColor,
-                      radius: 12,
+                      radius: MediaQuery.of(context).size.width * 0.03,
                       child: Center(
                         child: SvgPicture.asset(
                           color: kWhiteColor,
@@ -82,13 +82,13 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                       ),
                     ),
                     Container(
-                      width: 80,
+                      width: MediaQuery.of(context).size.width * 0.2,
                       height: 1,
                       color: kPrimaryColor,
                     ),
                     CircleAvatar(
                       backgroundColor: kPrimaryColor,
-                      radius: 12,
+                      radius: MediaQuery.of(context).size.width * 0.03,
                       child: Center(
                         child: SvgPicture.asset(
                           color: kWhiteColor,
@@ -99,13 +99,13 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                       ),
                     ),
                     Container(
-                      width: 80,
+                      width: MediaQuery.of(context).size.width * 0.2,
                       height: 1,
                       color: kLightColor,
                     ),
                     CircleAvatar(
                       backgroundColor: kLightColor,
-                      radius: 12,
+                      radius: MediaQuery.of(context).size.width * 0.03,
                       child: Center(
                         child: SvgPicture.asset(
                           color: kWhiteColor,
@@ -120,9 +120,10 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 14.0,
+                  horizontal: 16.0,
                 ),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: const [
                     Text(
                       'Packing',
@@ -132,9 +133,6 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                         fontWeight: FontWeight.w400,
                       ),
                     ),
-                    SizedBox(
-                      width: 55,
-                    ),
                     Text(
                       'Shipping',
                       style: TextStyle(
@@ -143,9 +141,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                         fontWeight: FontWeight.w400,
                       ),
                     ),
-                    SizedBox(
-                      width: 55,
-                    ),
+
                     Text(
                       'Arriving',
                       style: TextStyle(
@@ -154,9 +150,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                         fontWeight: FontWeight.w400,
                       ),
                     ),
-                    SizedBox(
-                      width: 50,
-                    ),
+
                     Text(
                       'Success',
                       style: TextStyle(

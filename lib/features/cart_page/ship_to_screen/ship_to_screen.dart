@@ -23,8 +23,8 @@ class _ShipToScreenState extends State<ShipToScreen> {
           color: kWhiteColor,
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          child: ListView(
-            scrollDirection: Axis.vertical,
+          child: Column(
+
             children: [
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.05,
@@ -39,7 +39,7 @@ class _ShipToScreenState extends State<ShipToScreen> {
               ),
               SizedBox(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 0.75,
+                height: MediaQuery.of(context).size.height * 0.71,
                 child: ListView.builder(
                   itemCount: shipName.length,
                   itemBuilder: (context, index) => GestureDetector(
@@ -55,12 +55,10 @@ class _ShipToScreenState extends State<ShipToScreen> {
                   ),
                 ),
               ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.001,
-              ),
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 16.0,
+                  vertical: 16.0,
                 ),
                 child: GestureDetector(
                   onTap: () {
@@ -71,8 +69,6 @@ class _ShipToScreenState extends State<ShipToScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.03,),
-
             ],
           ),
         ),

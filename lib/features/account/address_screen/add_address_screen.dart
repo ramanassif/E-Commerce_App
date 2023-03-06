@@ -660,21 +660,22 @@ class _AddAddressScreenState extends State<AddAddressScreen> {
                           ),
                         ),
                         Visibility(
-                            visible: wrong ? true : false,
-                            child: const Padding(
-                              padding: EdgeInsets.only(top: 8.0),
-                              child: Text(
-                                'Please Fill The Form',
-                                style: TextStyle(
-                                  color: Color(0xffFB7181),
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w700,
-                                ),
+                          visible: wrong ? true : false,
+                          child: const Padding(
+                            padding: EdgeInsets.only(top: 8.0),
+                            child: Text(
+                              'Please Fill The Form',
+                              style: TextStyle(
+                                color: Color(0xffFB7181),
+                                fontSize: 12,
+                                fontWeight: FontWeight.w700,
                               ),
-                            )),
+                            ),
+                          ),
+                        ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(
-                            vertical: 16.0,
+                          padding: const EdgeInsets.only(
+                            top: 16.0,
                           ),
                           child: GestureDetector(
                             onTap: () {

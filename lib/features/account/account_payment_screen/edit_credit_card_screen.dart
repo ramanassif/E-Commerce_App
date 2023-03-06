@@ -86,15 +86,40 @@ class _EditCreditCardScreenState extends State<EditCreditCardScreen> {
                             height: 30,
                           ),
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: const [
                               Text(
-                                '6326     9124     8124    9875',
+                                '6326',
                                 style: TextStyle(
                                   fontSize: 24,
                                   fontWeight: FontWeight.w700,
                                   color: kWhiteColor,
                                 ),
-                              )
+                              ),
+                              Text(
+                                '9124',
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w700,
+                                  color: kWhiteColor,
+                                ),
+                              ),
+                              Text(
+                                '8124',
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w700,
+                                  color: kWhiteColor,
+                                ),
+                              ),
+                              Text(
+                                '9875',
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w700,
+                                  color: kWhiteColor,
+                                ),
+                              ),
                             ],
                           ),
                           const SizedBox(
