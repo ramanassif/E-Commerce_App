@@ -7,43 +7,46 @@ class CreditCardPaymentHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 16.0,
-      ),
-      child: Row(
-        children: [
-          GestureDetector(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: const Icon(
-              CupertinoIcons.back,
-              size: 24,
-              color: Colors.grey,
+    return SizedBox(
+      width: MediaQuery.of(context).size.width,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 16.0,
+        ),
+        child: Row(
+          children: [
+            GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: const Icon(
+                CupertinoIcons.back,
+                size: 24,
+                color: Colors.grey,
+              ),
             ),
-          ),
-          const SizedBox(
-            width: 10,
-          ),
-          const Text(
-            'Choose Card',
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w700,
-              color: kSecondaryColor,
+            const SizedBox(
+              width: 10,
             ),
-          ),
-          const Spacer(),
-          GestureDetector(
-            onTap: () {},
-            child: const Icon(
-              Icons.add,
-              size: 24,
-              color: kPrimaryColor,
+            const Text(
+              'Choose Card',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w700,
+                color: kSecondaryColor,
+              ),
             ),
-          ),
-        ],
+            const Spacer(),
+            GestureDetector(
+              onTap: () {},
+              child: const Icon(
+                Icons.add,
+                size: 24,
+                color: kPrimaryColor,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

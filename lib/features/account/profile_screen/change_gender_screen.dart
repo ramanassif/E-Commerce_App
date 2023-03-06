@@ -18,43 +18,23 @@ class ChangeGenderScreen extends StatefulWidget {
 }
 
 class _ChangeGenderScreenState extends State<ChangeGenderScreen> {
-  // List<String> genderList = [];
-  // String? selectItem;
   bool isSelected = false;
-
-  @override
-  void initState() {
-    // selectItem = widget.mapArguments['Gender'];
-    // genderList.add(widget.mapArguments['Gender']);
-    // if (genderList.first == 'Male') {
-    //   genderList.add('Female');
-    // } else {
-    //   genderList.add('Male');
-    // }
-    // if (genderList[0] == 'Male') {
-    //   genderList[1] = 'Female';
-    // } else {
-    //   genderList[1] = ' Male';
-    // }
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: GestureDetector(
           onTap: () {
             FocusManager.instance.primaryFocus?.unfocus();
-            // setState(() {
-            //   isSelected = false;
-            // });
           },
           child: Container(
             color: kWhiteColor,
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
-            child: ListView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.05,
@@ -252,7 +232,7 @@ class _ChangeGenderScreenState extends State<ChangeGenderScreen> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 300),
+                const Spacer(),
                 Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 16.0,
@@ -273,32 +253,7 @@ class _ChangeGenderScreenState extends State<ChangeGenderScreen> {
                     ),
                   ),
                 ),
-                // Padding(
-                //   padding: const EdgeInsets.symmetric(horizontal: 16.0,),
-                //   child: SizedBox(
-                //     width: MediaQuery.of(context).size.width,
-                //     child: DropdownButton<String>(
-                //       value: selectItem,
-                //       items: genderList
-                //           .map(
-                //             (item) => DropdownMenuItem(
-                //               value: item,
-                //               child: Text(
-                //                 item,
-                //                 style: const TextStyle(
-                //                   fontSize: 12,
-                //                   fontWeight: FontWeight.w700,
-                //                 ),
-                //               ),
-                //             ),
-                //           )
-                //           .toList(),
-                //       onChanged: (item) => setState(() {
-                //         selectItem = item;
-                //       }),
-                //     ),
-                //   ),
-                // ),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.01),
               ],
             ),
           ),

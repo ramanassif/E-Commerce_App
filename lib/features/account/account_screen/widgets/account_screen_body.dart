@@ -12,7 +12,8 @@ class AccountScreenBody extends StatelessWidget {
       color: kWhiteColor,
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
-      child: ListView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.05,

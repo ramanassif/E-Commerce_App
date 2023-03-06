@@ -433,6 +433,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 padding: EdgeInsets.symmetric(horizontal: 16.0,),
                 child: CustomButton(title: 'Add To Cart',),
               ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.03,),
             ],
           ),
         ),

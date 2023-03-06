@@ -23,6 +23,7 @@ class _ChangeEmailScreenState extends State<ChangeEmailScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: GestureDetector(
           onTap: () {
             FocusManager.instance.primaryFocus?.unfocus();
@@ -31,7 +32,8 @@ class _ChangeEmailScreenState extends State<ChangeEmailScreen> {
             color: kWhiteColor,
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
-            child: ListView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.05,
@@ -94,7 +96,7 @@ class _ChangeEmailScreenState extends State<ChangeEmailScreen> {
                       ),
                       prefixIcon: const Icon(Icons.email_outlined),
                     ),
-                    onEditingComplete: (){
+                    onEditingComplete: () {
                       setState(() {
                         widget.mapArguments['Email'] = emailController.text;
                       });
@@ -116,7 +118,7 @@ class _ChangeEmailScreenState extends State<ChangeEmailScreen> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 420),
+                const Spacer(),
                 Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 16.0,
@@ -137,6 +139,7 @@ class _ChangeEmailScreenState extends State<ChangeEmailScreen> {
                     ),
                   ),
                 ),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.01),
               ],
             ),
           ),

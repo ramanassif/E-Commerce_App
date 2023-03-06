@@ -31,6 +31,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: GestureDetector(
           onTap: () {
             FocusManager.instance.primaryFocus?.unfocus();
@@ -39,7 +40,8 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
             color: kWhiteColor,
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
-            child: ListView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.05,
@@ -117,14 +119,15 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                         ),
                         prefixIcon: const Icon(Icons.lock_outline_sharp),
                       ),
-                      onEditingComplete: (){
-                        if(oldPasswordController.text !=oldPassword){
+                      onEditingComplete: () {
+                        if (oldPasswordController.text != oldPassword) {
                           setState(() {
                             wrongPassword = true;
                           });
                         }
                         setState(() {
-                          widget.mapArguments['password'] = oldPasswordController.text;
+                          widget.mapArguments['password'] =
+                              oldPasswordController.text;
                         });
                       },
                     ),
@@ -195,9 +198,10 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                       ),
                       prefixIcon: const Icon(Icons.lock_outline_sharp),
                     ),
-                    onEditingComplete: (){
+                    onEditingComplete: () {
                       setState(() {
-                        widget.mapArguments['password'] = oldPasswordController.text;
+                        widget.mapArguments['password'] =
+                            oldPasswordController.text;
                       });
                     },
                   ),
@@ -253,14 +257,16 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                       ),
                       prefixIcon: const Icon(Icons.lock_outline_sharp),
                     ),
-                    onEditingComplete: (){
+                    onEditingComplete: () {
                       setState(() {
-                        widget.mapArguments['password'] = oldPasswordController.text;
+                        widget.mapArguments['password'] =
+                            oldPasswordController.text;
                       });
                     },
                   ),
                 ),
-                const SizedBox(height: 210),
+                const Spacer(),
+                //SizedBox(height: MediaQuery.of(context).size.height * 0.3),
                 Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 16.0,
@@ -281,6 +287,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                     ),
                   ),
                 ),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.01),
               ],
             ),
           ),

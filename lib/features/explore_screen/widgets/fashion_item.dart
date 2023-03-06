@@ -14,42 +14,49 @@ class FashionItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(right: 16.0,bottom: 16.0,),
-      child: Column(
-        children: [
-          Container(
-            width: 70,
-            height: 70,
-            decoration: BoxDecoration(
-              color: kWhiteColor,
-              borderRadius: BorderRadius.circular(66),
-              border: Border.all(
-                color: kLightColor,
+    return LayoutBuilder(
+      builder: (context, constrains) => Padding(
+        padding: EdgeInsets.only(
+          right: constrains.maxWidth < 500 ? 8.0 : 16.0,
+          bottom: 16.0,
+        ),
+        child: Column(
+          children: [
+            Container(
+              width: 70,
+              height: 70,
+              decoration: BoxDecoration(
+                color: kWhiteColor,
+                borderRadius: BorderRadius.circular(66),
+                border: Border.all(
+                  color: kLightColor,
+                ),
               ),
-            ),
-            child: Center(
-              child: SizedBox(
-                width: 25,
-                height: 25,
-                child: SvgPicture.asset(
-                  color: kPrimaryColor,
-                  icon,
+              child: Center(
+                child: SizedBox(
+                  width: 25,
+                  height: 25,
+                  child: SvgPicture.asset(
+                    color: kPrimaryColor,
+                    icon,
+                  ),
                 ),
               ),
             ),
-          ),
-          const SizedBox(height: 5,),
-          Text(
-            title,
-            textAlign: TextAlign.center,
-            style: const TextStyle(
-              color: Colors.grey,
-              fontSize: 10,
-              fontWeight: FontWeight.w400,
+            const SizedBox(
+              height: 5,
             ),
-          ),
-        ],
+            Text(
+              title,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                color: Colors.grey,
+                fontSize: 10,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

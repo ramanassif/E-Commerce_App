@@ -16,7 +16,7 @@ class ChangeBirthDayScreen extends StatefulWidget {
 
 class _ChangeBirthDayScreenState extends State<ChangeBirthDayScreen> {
   bool isSelected = false;
-  DateTime date =DateTime.now();
+  DateTime date = DateTime.now();
 
   pickedDateFun() async {
     DateTime? pickedDate = await showDatePicker(
@@ -24,14 +24,13 @@ class _ChangeBirthDayScreenState extends State<ChangeBirthDayScreen> {
         initialDate: DateTime.now(),
         firstDate: DateTime(2000),
         lastDate: DateTime(2030));
-    if(pickedDate != null){
+    if (pickedDate != null) {
       setState(() {
         date = pickedDate;
         String formattedDate = DateFormat('yyyy-MM-dd').format(date);
         widget.mapArguments['birthday'] = formattedDate;
       });
-    }
-    else {
+    } else {
       print('It\'s null or something is wrong');
     }
   }
@@ -40,6 +39,7 @@ class _ChangeBirthDayScreenState extends State<ChangeBirthDayScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: GestureDetector(
           onTap: () {
             FocusManager.instance.primaryFocus?.unfocus();
@@ -48,7 +48,8 @@ class _ChangeBirthDayScreenState extends State<ChangeBirthDayScreen> {
             color: kWhiteColor,
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
-            child: ListView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.05,
@@ -126,7 +127,7 @@ class _ChangeBirthDayScreenState extends State<ChangeBirthDayScreen> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 450),
+                const Spacer(),
                 Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 16.0,
@@ -147,6 +148,7 @@ class _ChangeBirthDayScreenState extends State<ChangeBirthDayScreen> {
                     ),
                   ),
                 ),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.01),
               ],
             ),
           ),

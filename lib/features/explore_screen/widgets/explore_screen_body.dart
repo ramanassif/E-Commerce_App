@@ -17,6 +17,7 @@ class _ExploreScreenBodyState extends State<ExploreScreenBody> {
   _appBar(height) => PreferredSize(
         preferredSize: Size(MediaQuery.of(context).size.width, height + 100),
         child: Container(
+          width: MediaQuery.of(context).size.width,
           color: kWhiteColor,
           child: Padding(
             padding: const EdgeInsets.only(
@@ -25,130 +26,127 @@ class _ExploreScreenBodyState extends State<ExploreScreenBody> {
               left: 16.0,
               right: 16.0,
             ),
-            child: Container(
-              color: kWhiteColor,
-              child: Row(
-                children: [
-                  Container(
-                    color: kWhiteColor,
-                    width: isSearching
-                        ? MediaQuery.of(context).size.width * 0.77
-                        : MediaQuery.of(context).size.width * 0.7,
-                    height: 50,
-                    child: TextFormField(
-                      controller: searchController,
-                      keyboardType: TextInputType.name,
-                      style: const TextStyle(
+            child: Row(
+              children: [
+                Container(
+                  color: kWhiteColor,
+                  width: isSearching
+                      ? MediaQuery.of(context).size.width * 0.77
+                      : MediaQuery.of(context).size.width * 0.7,
+                  height: 50,
+                  child: TextFormField(
+                    controller: searchController,
+                    keyboardType: TextInputType.name,
+                    style: const TextStyle(
+                      color: Colors.grey,
+                      fontWeight: FontWeight.w700,
+                    ),
+                    onChanged: (value) => setState(() {
+                      isSearching = true;
+                    }),
+                    onEditingComplete: () {
+                      setState(() {
+                        if (searchController.text.isEmpty) {
+                          isSearching = false;
+                        }
+                      });
+                    },
+                    decoration: InputDecoration(
+                      errorStyle: const TextStyle(height: 0),
+                      hintText: 'Search Product',
+                      hintStyle: const TextStyle(
+                        fontWeight: FontWeight.w400,
                         color: Colors.grey,
-                        fontWeight: FontWeight.w700,
+                        fontSize: 12,
                       ),
-                      onChanged: (value) => setState(() {
-                        isSearching = true;
-                      }),
-                      onEditingComplete: () {
-                        setState(() {
-                          if (searchController.text.isEmpty) {
-                            isSearching = false;
-                          }
-                        });
-                      },
-                      decoration: InputDecoration(
-                        errorStyle: const TextStyle(height: 0),
-                        hintText: 'Search Product',
-                        hintStyle: const TextStyle(
-                          fontWeight: FontWeight.w400,
-                          color: Colors.grey,
-                          fontSize: 12,
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                        borderSide: const BorderSide(
+                          color: Color(0xffEBF0FF),
                         ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                          borderSide: const BorderSide(
-                            color: Color(0xffEBF0FF),
-                          ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                          borderSide: const BorderSide(
-                            color: kPrimaryColor,
-                          ),
-                        ),
-                        errorBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                          borderSide: const BorderSide(
-                            color: Colors.red,
-                          ),
-                        ),
-                        focusedErrorBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                          borderSide: const BorderSide(
-                            color: Colors.red,
-                          ),
-                        ),
-                        prefixIcon: const Icon(Icons.search),
-                        prefixIconColor: MaterialStateColor.resolveWith(
-                            (states) => states.contains(MaterialState.focused)
-                                ? kPrimaryColor
-                                : states.contains(MaterialState.error)
-                                    ? Colors.red
-                                    : kPrimaryColor),
                       ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                        borderSide: const BorderSide(
+                          color: kPrimaryColor,
+                        ),
+                      ),
+                      errorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                        borderSide: const BorderSide(
+                          color: Colors.red,
+                        ),
+                      ),
+                      focusedErrorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                        borderSide: const BorderSide(
+                          color: Colors.red,
+                        ),
+                      ),
+                      prefixIcon: const Icon(Icons.search),
+                      prefixIconColor: MaterialStateColor.resolveWith(
+                          (states) => states.contains(MaterialState.focused)
+                              ? kPrimaryColor
+                              : states.contains(MaterialState.error)
+                                  ? Colors.red
+                                  : kPrimaryColor),
                     ),
                   ),
-                  Visibility(
-                    visible: isSearching ? false : true,
+                ),
+                Visibility(
+                  visible: isSearching ? false : true,
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, 'favoriteScreen');
+                    },
+                    icon: const Icon(
+                      CupertinoIcons.heart,
+                      color: Colors.grey,
+                      size: 30,
+                    ),
+                  ),
+                ),
+                Visibility(
+                  visible: isSearching ? false : true,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, 'notificationScreen');
+                    },
+                    child: Stack(
+                      clipBehavior: Clip.none,
+                      alignment: Alignment.topRight,
+                      children: const [
+                        Icon(
+                          Icons.notifications_outlined,
+                          color: Colors.grey,
+                          size: 30,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(right: 2.0),
+                          child: CircleAvatar(
+                            backgroundColor: Colors.red,
+                            radius: 5,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Visibility(
+                  visible: isSearching ? true : false,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
                     child: IconButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, 'favoriteScreen');
-                      },
+                      onPressed: () {},
                       icon: const Icon(
-                        CupertinoIcons.heart,
+                        Icons.keyboard_voice_outlined,
                         color: Colors.grey,
-                        size: 30,
+                        size: 25,
                       ),
                     ),
                   ),
-                  Visibility(
-                    visible: isSearching ? false : true,
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.pushNamed(context, 'notificationScreen');
-                      },
-                      child: Stack(
-                        clipBehavior: Clip.none,
-                        alignment: Alignment.topRight,
-                        children: const [
-                          Icon(
-                            Icons.notifications_outlined,
-                            color: Colors.grey,
-                            size: 30,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(right: 2.0),
-                            child: CircleAvatar(
-                              backgroundColor: Colors.red,
-                              radius: 5,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Visibility(
-                    visible: isSearching ? true : false,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 10.0),
-                      child: IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.keyboard_voice_outlined,
-                          color: Colors.grey,
-                          size: 25,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
@@ -336,6 +334,9 @@ class _ExploreScreenBodyState extends State<ExploreScreenBody> {
                           fontSize: 14,
                         ),
                       ),
+                    ),
+                    const SizedBox(
+                      height: 15,
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(

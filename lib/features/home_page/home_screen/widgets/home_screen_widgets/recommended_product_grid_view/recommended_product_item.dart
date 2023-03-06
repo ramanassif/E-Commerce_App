@@ -66,14 +66,17 @@ class RecommendedProductItem extends StatelessWidget {
               const SizedBox(
                 height: 4,
               ),
-              Row(
-                children: const [
-                  ReviewStar(color: Colors.yellow,size: 16,),
-                  ReviewStar(color: Colors.yellow,size: 16,),
-                  ReviewStar(color: Colors.yellow,size: 16,),
-                  ReviewStar(color: Colors.yellow,size: 16,),
-                  ReviewStar(color: kLightColor,size: 16,),
-                ],
+              SizedBox(
+                height: 15,
+                child: Row(
+                  children: const [
+                    ReviewStar(color: Colors.yellow,size: 16,),
+                    ReviewStar(color: Colors.yellow,size: 16,),
+                    ReviewStar(color: Colors.yellow,size: 16,),
+                    ReviewStar(color: Colors.yellow,size: 16,),
+                    ReviewStar(color: kLightColor,size: 16,),
+                  ],
+                ),
               ),
               const SizedBox(
                 height: 15,

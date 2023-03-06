@@ -68,9 +68,12 @@ class _OfferScreenState extends State<OfferScreen> {
           const SizedBox(
             height: 15,
           ),
-          const RecommendedProductBanner(
-            title: '90% Off Super Mega Sale',
-            description: 'Special birthday Lafyuu',
+          const Padding(
+            padding: EdgeInsets.only(left: 24,right: 24),
+            child: RecommendedProductBanner(
+              title: '90% Off Super Mega Sale',
+              description: 'Special birthday Lafyuu',
+            ),
           ),
           const SizedBox(
             height: 15,

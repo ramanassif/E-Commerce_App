@@ -9,6 +9,7 @@ class HomeScreenHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: MediaQuery.of(context).size.width,
       color: kWhiteColor,
       child: Padding(
         padding: const EdgeInsets.only(
@@ -17,53 +18,50 @@ class HomeScreenHeader extends StatelessWidget {
           left: 16.0,
           right: 16.0,
         ),
-        child: Container(
-          color: kWhiteColor,
-          child: Row(
-            children: [
-              Container(
-                color: kWhiteColor,
-                width: MediaQuery.of(context).size.width * 0.7,
-                height: 50,
-                child: const SearchTextField(),
+        child: Row(
+          children: [
+            Container(
+              color: kWhiteColor,
+              width: MediaQuery.of(context).size.width * 0.7,
+              height: 50,
+              child: const SearchTextField(),
+            ),
+            IconButton(
+              onPressed: () {
+                Navigator.pushNamed(
+                    context,
+                    'favoriteScreen');
+              },
+              icon: const Icon(
+                CupertinoIcons.heart,
+                color: Colors.grey,
+                size: 30,
               ),
-              IconButton(
-                onPressed: () {
-                  Navigator.pushNamed(
-                      context,
-                      'favoriteScreen');
-                },
-                icon: const Icon(
-                  CupertinoIcons.heart,
-                  color: Colors.grey,
-                  size: 30,
-                ),
-              ),
-              GestureDetector(
-                onTap: (){
-                  Navigator.pushNamed(context, 'notificationScreen');
-                },
-                child: Stack(
-                  clipBehavior: Clip.none,
-                  alignment: Alignment.topRight,
-                  children: const [
-                    Icon(
-                      Icons.notifications_outlined,
-                      color: Colors.grey,
-                      size: 30,
+            ),
+            GestureDetector(
+              onTap: (){
+                Navigator.pushNamed(context, 'notificationScreen');
+              },
+              child: Stack(
+                clipBehavior: Clip.none,
+                alignment: Alignment.topRight,
+                children: const [
+                  Icon(
+                    Icons.notifications_outlined,
+                    color: Colors.grey,
+                    size: 30,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(right: 2.0),
+                    child: CircleAvatar(
+                      backgroundColor: Colors.red,
+                      radius: 5,
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(right: 2.0),
-                      child: CircleAvatar(
-                        backgroundColor: Colors.red,
-                        radius: 5,
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

@@ -23,6 +23,7 @@ class _ChangePhoneNumberScreenState extends State<ChangePhoneNumberScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: GestureDetector(
           onTap: () {
             FocusManager.instance.primaryFocus?.unfocus();
@@ -31,7 +32,8 @@ class _ChangePhoneNumberScreenState extends State<ChangePhoneNumberScreen> {
             color: kWhiteColor,
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
-            child: ListView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.05,
@@ -52,7 +54,7 @@ class _ChangePhoneNumberScreenState extends State<ChangePhoneNumberScreen> {
                     bottom: 12.0,
                   ),
                   child: Text(
-                    'Your Email',
+                    'Phone Number',
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w700,
@@ -67,7 +69,7 @@ class _ChangePhoneNumberScreenState extends State<ChangePhoneNumberScreen> {
                   ),
                   child: TextFormField(
                     controller: phoneNumberController,
-                    keyboardType: TextInputType.name,
+                    keyboardType: TextInputType.phone,
                     style: const TextStyle(
                       color: Colors.grey,
                       fontSize: 12,
@@ -101,7 +103,7 @@ class _ChangePhoneNumberScreenState extends State<ChangePhoneNumberScreen> {
                     },
                   ),
                 ),
-                const SizedBox(height: 420),
+                const Spacer(),
                 Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 16.0,
@@ -122,6 +124,7 @@ class _ChangePhoneNumberScreenState extends State<ChangePhoneNumberScreen> {
                     ),
                   ),
                 ),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.01),
               ],
             ),
           ),

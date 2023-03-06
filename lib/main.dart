@@ -8,7 +8,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // SharedPreferences.setMockInitialValues({});
   if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
-    await DesktopWindow.setWindowSize(const Size(400, 650));
+    await DesktopWindow.setWindowSize(const Size(410, 650));
   }
   runApp(const MyApp());
 }
@@ -16,7 +16,6 @@ void main() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

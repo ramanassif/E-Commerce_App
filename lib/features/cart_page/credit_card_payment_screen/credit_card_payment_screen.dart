@@ -11,11 +11,12 @@ class CreditCardPaymentScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Container(
           color: kWhiteColor,
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          child: ListView(
+          child: Column(
             children: [
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.05,
@@ -67,17 +68,20 @@ class CreditCardPaymentScreen extends StatelessWidget {
                         const SizedBox(
                           height: 30,
                         ),
-                        Row(
-                          children: const [
-                            Text(
-                              '6326     9124     8124    9875',
-                              style: TextStyle(
-                                fontSize: 24,
-                                fontWeight: FontWeight.w700,
-                                color: kWhiteColor,
-                              ),
-                            )
-                          ],
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.8,
+                          child: Row(
+                            children: const [
+                              Text(
+                                '6326     9124     8124    9875',
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w700,
+                                  color: kWhiteColor,
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                         const SizedBox(
                           height: 15,
@@ -137,9 +141,7 @@ class CreditCardPaymentScreen extends StatelessWidget {
                 ),
               ),
               const FiveDots(),
-              const SizedBox(
-                height: 300,
-              ),
+              const Spacer(),
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 16.0,
@@ -153,6 +155,7 @@ class CreditCardPaymentScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.02),
             ],
           ),
         ),
