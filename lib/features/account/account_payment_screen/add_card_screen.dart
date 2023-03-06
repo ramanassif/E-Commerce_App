@@ -20,6 +20,7 @@ class _AddCardScreenState extends State<AddCardScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: GestureDetector(
           onTap: () {
             FocusManager.instance.primaryFocus?.unfocus();
@@ -118,7 +119,7 @@ class _AddCardScreenState extends State<AddCardScreen> {
                             Row(
                               children: const [
                                 Text(
-                                  '6326     9124     8124    9875',
+                                  '6326    9124    8124    9875',
                                   style: TextStyle(
                                     fontSize: 24,
                                     fontWeight: FontWeight.w700,
@@ -450,7 +451,11 @@ class _AddCardScreenState extends State<AddCardScreen> {
                   ),
                 ),
                 SizedBox(
-                  height: wrongCode ? 180 : addSuccess? 25 : 220,
+                  height: wrongCode
+                      ? 180
+                      : addSuccess
+                          ? 25
+                          : 220,
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(
@@ -474,6 +479,7 @@ class _AddCardScreenState extends State<AddCardScreen> {
                     ),
                   ),
                 ),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.01),
               ],
             ),
           ),

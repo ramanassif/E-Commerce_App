@@ -8,7 +8,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // SharedPreferences.setMockInitialValues({});
   if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
-    await DesktopWindow.setWindowSize(const Size(410, 650));
+    await DesktopWindow.setWindowSize(const Size(400, 650));
   }
   runApp(const MyApp());
 }

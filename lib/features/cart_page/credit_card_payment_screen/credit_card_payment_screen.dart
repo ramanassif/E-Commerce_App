@@ -73,7 +73,7 @@ class CreditCardPaymentScreen extends StatelessWidget {
                           child: Row(
                             children: const [
                               Text(
-                                '6326     9124     8124    9875',
+                                '6326    9124    8124    9875',
                                 style: TextStyle(
                                   fontSize: 24,
                                   fontWeight: FontWeight.w700,

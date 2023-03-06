@@ -86,7 +86,7 @@ class _AddCreditCardScreenState extends State<AddCreditCardScreen> {
                           Row(
                             children: const [
                               Text(
-                                '6326     9124     8124    9875',
+                                '6326    9124     8124    9875',
                                 style: TextStyle(
                                   fontSize: 24,
                                   fontWeight: FontWeight.w700,
@@ -206,7 +206,7 @@ class _AddCreditCardScreenState extends State<AddCreditCardScreen> {
                           Row(
                             children: const [
                               Text(
-                                '6326     9124     8124    9875',
+                                '6326    9124     8124    9875',
                                 style: TextStyle(
                                   fontSize: 24,
                                   fontWeight: FontWeight.w700,
@@ -273,9 +273,7 @@ class _AddCreditCardScreenState extends State<AddCreditCardScreen> {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 145,
-              ),
+              const SizedBox(height: 45,),
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 16.0,
@@ -289,6 +287,7 @@ class _AddCreditCardScreenState extends State<AddCreditCardScreen> {
                   ),
                 ),
               ),
+              SizedBox(height: MediaQuery.of(context).size.height * 0.01),
             ],
           ),
         ),
