@@ -24,7 +24,6 @@ class _ShipToScreenState extends State<ShipToScreen> {
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
           child: Column(
-
             children: [
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.05,
@@ -39,7 +38,7 @@ class _ShipToScreenState extends State<ShipToScreen> {
               ),
               SizedBox(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 0.71,
+                height: MediaQuery.of(context).size.height * 0.74,
                 child: ListView.builder(
                   itemCount: shipName.length,
                   itemBuilder: (context, index) => GestureDetector(
@@ -55,10 +54,12 @@ class _ShipToScreenState extends State<ShipToScreen> {
                   ),
                 ),
               ),
+              const Spacer(),
               Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16.0,
-                  vertical: 16.0,
+                padding: const EdgeInsets.only(
+                  left: 16.0,
+                  right: 16.0,
+                  bottom: 16.0,
                 ),
                 child: GestureDetector(
                   onTap: () {
