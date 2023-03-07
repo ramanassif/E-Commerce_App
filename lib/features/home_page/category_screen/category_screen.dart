@@ -15,25 +15,27 @@ class CategoryScreen extends StatelessWidget {
           color: kWhiteColor,
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          child: ListView(
+          child: Column(
             children: [
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.02,
+              Column(
+                children: [
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.02,
+                  ),
+                  const CategoryScreenHeader(),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.005,
+                  ),
+                  const Divider(
+                    thickness: 1,
+                    color: Color(0xffEBF0FF),
+                  ),
+                ],
               ),
-              const CategoryScreenHeader(),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.005,
+              const SizedBox(
+                height: 12,
               ),
-              const Divider(
-                thickness: 1,
-                color: Color(0xffEBF0FF),
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.007,
-              ),
-              SizedBox(
-                width: double.infinity,
-                height: MediaQuery.of(context).size.height * 0.8,
+              Expanded(
                 child: ListView.builder(
                   itemCount: categoryList.length,
                   itemBuilder: (context, index) => CategoryScreenItem(
