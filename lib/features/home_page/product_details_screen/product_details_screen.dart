@@ -13,7 +13,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
-  const ProductDetailsScreen({Key? key}) : super(key: key);
+  final Map<String, dynamic> mapArguments;
+  const ProductDetailsScreen({Key? key,required this.mapArguments,}) : super(key: key);
 
   @override
   State<ProductDetailsScreen> createState() => _ProductDetailsScreenState();
@@ -41,8 +42,8 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height / 3,
                 child: Image.asset(
-                  'assets/images/product_details.png',
-                  fit: BoxFit.fill,
+                  widget.mapArguments['product_image'],
+                  fit: BoxFit.cover,
                 ),
               ),
               const SizedBox(
@@ -56,23 +57,23 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     SizedBox(
                       width: 300,
                       height: 60,
                       child: Text(
-                        'Nike Air Zoom Pegasus 36 Miami',
+                        widget.mapArguments['product_name'],
                         textAlign: TextAlign.start,
                         maxLines: 2,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: kSecondaryColor,
                           fontSize: 20,
                           fontWeight: FontWeight.w700,
                         ),
                       ),
                     ),
-                    Spacer(),
-                    Icon(
+                    const Spacer(),
+                    const Icon(
                       CupertinoIcons.heart,
                       color: Colors.grey,
                       size: 25,

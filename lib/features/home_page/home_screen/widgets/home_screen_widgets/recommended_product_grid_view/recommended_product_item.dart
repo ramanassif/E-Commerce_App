@@ -22,7 +22,10 @@ class RecommendedProductItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, 'productDetailsScreen');
+        Navigator.pushNamed(context, 'productDetailsScreen',arguments: {
+          'product_image': productImage,
+          'product_name': productName,
+        });
       },
       child: Container(
         width: 170,

@@ -67,7 +67,8 @@ class AppRoute {
       case 'favoriteScreen':
         return MaterialPageRoute(builder: (_) => const FavoriteScreen());
       case 'productDetailsScreen':
-        return MaterialPageRoute(builder: (_) => const ProductDetailsScreen());
+        var data = settings.arguments as Map<String, dynamic>;
+        return MaterialPageRoute(builder: (_) => ProductDetailsScreen(mapArguments: data,));
       case 'reviewsScreen':
         return MaterialPageRoute(builder: (_) => const ReviewScreen());
       case 'writeReview':
