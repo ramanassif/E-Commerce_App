@@ -430,9 +430,11 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
               const SizedBox(
                 height: 15,
               ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.0,),
-                child: CustomButton(title: 'Add To Cart',),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0,),
+                child: GestureDetector(onTap:(){
+                  Navigator.pushNamed(context, 'cartScreen');
+                },child: const CustomButton(title: 'Add To Cart',)),
               ),
               SizedBox(height: MediaQuery.of(context).size.height * 0.03,),
             ],

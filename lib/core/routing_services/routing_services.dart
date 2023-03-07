@@ -14,6 +14,7 @@ import 'package:ecommerce_app/features/account/profile_screen/change_name_screen
 import 'package:ecommerce_app/features/account/profile_screen/change_password_screen.dart';
 import 'package:ecommerce_app/features/account/profile_screen/change_phone_number_screen.dart';
 import 'package:ecommerce_app/features/account/profile_screen/profile_screen.dart';
+import 'package:ecommerce_app/features/cart_page/cart_screen/widgets/cart_screen_body.dart';
 import 'package:ecommerce_app/features/cart_page/credit_card_payment_screen/credit_card_payment_screen.dart';
 import 'package:ecommerce_app/features/cart_page/payment_screen/payment_screen.dart';
 import 'package:ecommerce_app/features/cart_page/ship_to_screen/ship_to_screen.dart';
@@ -86,6 +87,8 @@ class AppRoute {
             builder: (_) => const NotificationActivityScreen());
       case 'categoryScreen':
         return MaterialPageRoute(builder: (_) => const CategoryScreen());
+      case 'cartScreen':
+        return MaterialPageRoute(builder: (_) => const CartScreenBody());
       case 'shipToScreen':
         return MaterialPageRoute(builder: (_) => const ShipToScreen());
       case 'paymentScreen':
