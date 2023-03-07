@@ -442,12 +442,10 @@ class _EditCreditCardScreenState extends State<EditCreditCardScreen> {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 30,
-                ),
                 Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 16.0,
+                    vertical: 16.0,
                   ),
                   child: GestureDetector(
                     onTap: () {

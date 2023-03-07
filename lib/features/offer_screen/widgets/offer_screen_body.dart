@@ -18,7 +18,7 @@ class _OfferScreenState extends State<OfferScreen> {
       color: kWhiteColor,
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
-      child: ListView(
+      child: Column(
         children: [
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.05,
@@ -31,52 +31,49 @@ class _OfferScreenState extends State<OfferScreen> {
             thickness: 1,
             color: Color(0xffEBF0FF),
           ),
-          const SizedBox(
-            height: 15,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 24.0,
-            ),
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              height: 80,
-              decoration: BoxDecoration(
-                color: kPrimaryColor,
-                borderRadius: BorderRadius.circular(5),
-              ),
-              child: const Padding(
-                padding: EdgeInsets.all(16.0),
-                child: SizedBox(
-                  width: 80,
-                  child: Text(
-                    'Use “MEGSL” Cupon For\nGet 90%off',
-                    style: TextStyle(
-                      color: kWhiteColor,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 16,
+          SizedBox(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height * 0.75,
+            child: ListView(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 24.0,right: 24.0,top: 8,),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 80,
+                    decoration: BoxDecoration(
+                      color: kPrimaryColor,
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: const Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: SizedBox(
+                        width: 80,
+                        child: Text(
+                          'Use “MEGSL” Cupon For\nGet 90%off',
+                          style: TextStyle(
+                            color: kWhiteColor,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                 ),
-              ),
+                const SizedBox(
+                  height: 15,
+                ),
+                const OfferBanner(),
+                const SizedBox(
+                  height: 15,
+                ),
+                const RecommendedProductBanner(
+                  title: '90% Off Super Mega Sale',
+                  description: 'Special birthday Lafyuu',
+                ),
+              ],
             ),
-          ),
-          const SizedBox(
-            height: 15,
-          ),
-          const OfferBanner(),
-          const SizedBox(
-            height: 15,
-          ),
-          const Padding(
-            padding: EdgeInsets.only(left: 24,right: 24),
-            child: RecommendedProductBanner(
-              title: '90% Off Super Mega Sale',
-              description: 'Special birthday Lafyuu',
-            ),
-          ),
-          const SizedBox(
-            height: 15,
           ),
         ],
       ),
