@@ -21,6 +21,11 @@ class OrderDetailsScreen extends StatefulWidget {
 }
 
 class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
+  bool isPacking = true;
+  bool isShipping = false;
+  bool isArriving = false;
+  bool isSuccess = false;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -52,66 +57,102 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    CircleAvatar(
-                      backgroundColor: kPrimaryColor,
-                      radius: MediaQuery.of(context).size.width * 0.03,
-                      child: Center(
-                        child: SvgPicture.asset(
-                          color: kWhiteColor,
-                          'assets/icons/success.svg',
-                          width: 15,
-                          height: 15,
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          isShipping = false;
+                          isArriving = false;
+                          isSuccess = false;
+                        });
+                      },
+                      child: CircleAvatar(
+                        backgroundColor: kPrimaryColor,
+                        radius: MediaQuery.of(context).size.width * 0.03,
+                        child: Center(
+                          child: SvgPicture.asset(
+                            color: kWhiteColor,
+                            'assets/icons/success.svg',
+                            width: 15,
+                            height: 15,
+                          ),
                         ),
                       ),
                     ),
                     Container(
                       width: MediaQuery.of(context).size.width * 0.2,
                       height: 1,
-                      color: kPrimaryColor,
+                      color: isShipping ? kPrimaryColor : kLightColor,
                     ),
-                    CircleAvatar(
-                      backgroundColor: kPrimaryColor,
-                      radius: MediaQuery.of(context).size.width * 0.03,
-                      child: Center(
-                        child: SvgPicture.asset(
-                          color: kWhiteColor,
-                          'assets/icons/success.svg',
-                          width: 15,
-                          height: 15,
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          isShipping = true;
+                          isArriving = false;
+                          isSuccess = false;
+                        });
+                      },
+                      child: CircleAvatar(
+                        backgroundColor:
+                            isShipping ? kPrimaryColor : kLightColor,
+                        radius: MediaQuery.of(context).size.width * 0.03,
+                        child: Center(
+                          child: SvgPicture.asset(
+                            color: kWhiteColor,
+                            'assets/icons/success.svg',
+                            width: 15,
+                            height: 15,
+                          ),
                         ),
                       ),
                     ),
                     Container(
                       width: MediaQuery.of(context).size.width * 0.2,
                       height: 1,
-                      color: kPrimaryColor,
+                      color: isArriving ? kPrimaryColor : kLightColor,
                     ),
-                    CircleAvatar(
-                      backgroundColor: kPrimaryColor,
-                      radius: MediaQuery.of(context).size.width * 0.03,
-                      child: Center(
-                        child: SvgPicture.asset(
-                          color: kWhiteColor,
-                          'assets/icons/success.svg',
-                          width: 15,
-                          height: 15,
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          isArriving = true;
+                          isSuccess = false;
+                        });
+                      },
+                      child: CircleAvatar(
+                        backgroundColor:
+                            isArriving ? kPrimaryColor : kLightColor,
+                        radius: MediaQuery.of(context).size.width * 0.03,
+                        child: Center(
+                          child: SvgPicture.asset(
+                            color: kWhiteColor,
+                            'assets/icons/success.svg',
+                            width: 15,
+                            height: 15,
+                          ),
                         ),
                       ),
                     ),
                     Container(
                       width: MediaQuery.of(context).size.width * 0.2,
                       height: 1,
-                      color: kLightColor,
+                      color: isSuccess ? kPrimaryColor : kLightColor,
                     ),
-                    CircleAvatar(
-                      backgroundColor: kLightColor,
-                      radius: MediaQuery.of(context).size.width * 0.03,
-                      child: Center(
-                        child: SvgPicture.asset(
-                          color: kWhiteColor,
-                          'assets/icons/success.svg',
-                          width: 15,
-                          height: 15,
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          isSuccess = true;
+                        });
+                      },
+                      child: CircleAvatar(
+                        backgroundColor:
+                            isSuccess ? kPrimaryColor : kLightColor,
+                        radius: MediaQuery.of(context).size.width * 0.03,
+                        child: Center(
+                          child: SvgPicture.asset(
+                            color: kWhiteColor,
+                            'assets/icons/success.svg',
+                            width: 15,
+                            height: 15,
+                          ),
                         ),
                       ),
                     ),
@@ -141,7 +182,6 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                         fontWeight: FontWeight.w400,
                       ),
                     ),
-
                     Text(
                       'Arriving',
                       style: TextStyle(
@@ -150,7 +190,6 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                         fontWeight: FontWeight.w400,
                       ),
                     ),
-
                     Text(
                       'Success',
                       style: TextStyle(
