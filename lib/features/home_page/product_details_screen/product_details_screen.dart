@@ -14,13 +14,19 @@ import 'package:flutter/material.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
   final Map<String, dynamic> mapArguments;
-  const ProductDetailsScreen({Key? key,required this.mapArguments,}) : super(key: key);
+
+  const ProductDetailsScreen({
+    Key? key,
+    required this.mapArguments,
+  }) : super(key: key);
 
   @override
   State<ProductDetailsScreen> createState() => _ProductDetailsScreenState();
 }
 
 class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
+  bool isFavorite = false;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -73,10 +79,20 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                       ),
                     ),
                     const Spacer(),
-                    const Icon(
-                      CupertinoIcons.heart,
-                      color: Colors.grey,
-                      size: 25,
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          isFavorite = !isFavorite;
+                        });
+                      },
+                      child: Icon(
+                        isFavorite
+                            ? CupertinoIcons.heart_fill
+                            : CupertinoIcons.heart,
+                        color:
+                            isFavorite ? const Color(0xffFB7181) : Colors.grey,
+                        size: 25,
+                      ),
                     ),
                   ],
                 ),
@@ -88,11 +104,26 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Row(
                   children: const [
-                    ReviewStar(color: Colors.yellow,size: 16,),
-                    ReviewStar(color: Colors.yellow,size: 16,),
-                    ReviewStar(color: Colors.yellow,size: 16,),
-                    ReviewStar(color: Colors.yellow,size: 16,),
-                    ReviewStar(color: kLightColor,size: 16,),
+                    ReviewStar(
+                      color: Colors.yellow,
+                      size: 16,
+                    ),
+                    ReviewStar(
+                      color: Colors.yellow,
+                      size: 16,
+                    ),
+                    ReviewStar(
+                      color: Colors.yellow,
+                      size: 16,
+                    ),
+                    ReviewStar(
+                      color: Colors.yellow,
+                      size: 16,
+                    ),
+                    ReviewStar(
+                      color: kLightColor,
+                      size: 16,
+                    ),
                   ],
                 ),
               ),
@@ -277,10 +308,8 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 height: 15,
               ),
               GestureDetector(
-                onTap: (){
-                  Navigator.pushNamed(
-                      context,
-                      'reviewsScreen');
+                onTap: () {
+                  Navigator.pushNamed(context, 'reviewsScreen');
                 },
                 child: const TitleAndMore(
                   title: 'Review Product',
@@ -297,11 +326,26 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                   height: 20,
                   child: Row(
                     children: const [
-                      ReviewStar(color: Colors.yellow,size: 16,),
-                      ReviewStar(color: Colors.yellow,size: 16,),
-                      ReviewStar(color: Colors.yellow,size: 16,),
-                      ReviewStar(color: Colors.yellow,size: 16,),
-                      ReviewStar(color: kLightColor,size: 16,),
+                      ReviewStar(
+                        color: Colors.yellow,
+                        size: 16,
+                      ),
+                      ReviewStar(
+                        color: Colors.yellow,
+                        size: 16,
+                      ),
+                      ReviewStar(
+                        color: Colors.yellow,
+                        size: 16,
+                      ),
+                      ReviewStar(
+                        color: Colors.yellow,
+                        size: 16,
+                      ),
+                      ReviewStar(
+                        color: kLightColor,
+                        size: 16,
+                      ),
                       SizedBox(
                         width: 5,
                       ),
@@ -331,7 +375,10 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
               const SizedBox(
                 height: 10,
               ),
-              const PersonReview(personName: 'James Lawson',personImage: 'assets/images/profile_picture.png',),
+              const PersonReview(
+                personName: 'James Lawson',
+                personImage: 'assets/images/profile_picture.png',
+              ),
               const SizedBox(
                 height: 10,
               ),
@@ -431,12 +478,20 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 height: 15,
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0,),
-                child: GestureDetector(onTap:(){
-                  Navigator.pushNamed(context, 'cartScreen');
-                },child: const CustomButton(title: 'Add To Cart',)),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16.0,
+                ),
+                child: GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, 'cartScreen');
+                    },
+                    child: const CustomButton(
+                      title: 'Add To Cart',
+                    )),
               ),
-              SizedBox(height: MediaQuery.of(context).size.height * 0.03,),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.03,
+              ),
             ],
           ),
         ),
