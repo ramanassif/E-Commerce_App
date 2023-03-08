@@ -2,17 +2,20 @@ import 'package:ecommerce_app/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class ProductDetails extends StatelessWidget {
+class ProductDetails extends StatefulWidget {
   final String productImage;
-  final IconData favoriteIcon;
-  final Color color;
 
   const ProductDetails({
     Key? key,
     required this.productImage,
-    required this.favoriteIcon,
-    required this.color,
   }) : super(key: key);
+
+  @override
+  State<ProductDetails> createState() => _ProductDetailsState();
+}
+
+class _ProductDetailsState extends State<ProductDetails> {
+  bool isFavorite = false;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +47,8 @@ class ProductDetails extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
                   ),
-                  child: Image.asset(productImage, width: 72, height: 72),
+                  child:
+                      Image.asset(widget.productImage, width: 72, height: 72),
                 ),
               ),
             ),
@@ -83,10 +87,18 @@ class ProductDetails extends StatelessWidget {
                             Expanded(
                               flex: 1,
                               child: GestureDetector(
-                                onTap: () {},
+                                onTap: () {
+                                  setState(() {
+                                    isFavorite = !isFavorite;
+                                  });
+                                },
                                 child: Icon(
-                                  favoriteIcon,
-                                  color: color,
+                                  isFavorite
+                                      ? CupertinoIcons.heart_fill
+                                      : CupertinoIcons.heart,
+                                  color: isFavorite
+                                      ? const Color(0xffFB7181)
+                                      : Colors.grey,
                                   size: 30,
                                 ),
                               ),

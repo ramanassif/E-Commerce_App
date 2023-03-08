@@ -4,7 +4,6 @@ import 'package:ecommerce_app/core/basics_widgets/form_error.dart';
 import 'package:ecommerce_app/features/cart_page/cart_screen/widgets/cart_screen_header.dart';
 import 'package:ecommerce_app/features/cart_page/cart_screen/widgets/product_details.dart';
 import 'package:ecommerce_app/features/cart_page/cart_screen/widgets/total_price.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CartScreenBody extends StatefulWidget {
@@ -50,13 +49,10 @@ class _CartScreenBodyState extends State<CartScreenBody> {
                   child: ListView(
                     children: [
                       const ProductDetails(
-                          productImage: 'assets/images/product3.png',
-                          favoriteIcon: CupertinoIcons.heart_fill,
-                          color: Color(0xffFB7181)),
+                        productImage: 'assets/images/product3.png',
+                      ),
                       const ProductDetails(
                         productImage: 'assets/images/product6.png',
-                        favoriteIcon: CupertinoIcons.heart,
-                        color: Colors.grey,
                       ),
                       const SizedBox(
                         height: 10,
