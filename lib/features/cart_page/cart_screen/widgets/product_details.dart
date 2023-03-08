@@ -16,6 +16,7 @@ class ProductDetails extends StatefulWidget {
 
 class _ProductDetailsState extends State<ProductDetails> {
   bool isFavorite = false;
+  int numOfProduct = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -144,23 +145,30 @@ class _ProductDetailsState extends State<ProductDetails> {
                               flex: 1,
                               child: Row(
                                 children: [
-                                  Container(
-                                    width: 32,
-                                    height: 24,
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                        color: kLightColor,
+                                  GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        numOfProduct--;
+                                      });
+                                    },
+                                    child: Container(
+                                      width: 32,
+                                      height: 24,
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                          color: kLightColor,
+                                        ),
+                                        borderRadius: const BorderRadius.only(
+                                          topLeft: Radius.circular(5),
+                                          bottomLeft: Radius.circular(5),
+                                        ),
                                       ),
-                                      borderRadius: const BorderRadius.only(
-                                        topLeft: Radius.circular(5),
-                                        bottomLeft: Radius.circular(5),
-                                      ),
-                                    ),
-                                    child: const Center(
-                                      child: Icon(
-                                        CupertinoIcons.minus,
-                                        color: Colors.grey,
-                                        size: 15,
+                                      child: const Center(
+                                        child: Icon(
+                                          CupertinoIcons.minus,
+                                          color: Colors.grey,
+                                          size: 15,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -170,10 +178,12 @@ class _ProductDetailsState extends State<ProductDetails> {
                                     decoration: const BoxDecoration(
                                       color: kLightColor,
                                     ),
-                                    child: const Center(
+                                    child: Center(
                                       child: Text(
-                                        '1',
-                                        style: TextStyle(
+                                        numOfProduct > 1
+                                            ? numOfProduct.toString()
+                                            : '1',
+                                        style: const TextStyle(
                                           color: kSecondaryColor,
                                           fontSize: 12,
                                           fontWeight: FontWeight.w400,
@@ -181,23 +191,30 @@ class _ProductDetailsState extends State<ProductDetails> {
                                       ),
                                     ),
                                   ),
-                                  Container(
-                                    width: 32,
-                                    height: 24,
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                        color: kLightColor,
+                                  GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        numOfProduct++;
+                                      });
+                                    },
+                                    child: Container(
+                                      width: 32,
+                                      height: 24,
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                          color: kLightColor,
+                                        ),
+                                        borderRadius: const BorderRadius.only(
+                                          topRight: Radius.circular(5),
+                                          bottomRight: Radius.circular(5),
+                                        ),
                                       ),
-                                      borderRadius: const BorderRadius.only(
-                                        topRight: Radius.circular(5),
-                                        bottomRight: Radius.circular(5),
-                                      ),
-                                    ),
-                                    child: const Center(
-                                      child: Icon(
-                                        CupertinoIcons.plus,
-                                        color: Colors.grey,
-                                        size: 15,
+                                      child: const Center(
+                                        child: Icon(
+                                          CupertinoIcons.plus,
+                                          color: Colors.grey,
+                                          size: 15,
+                                        ),
                                       ),
                                     ),
                                   ),
