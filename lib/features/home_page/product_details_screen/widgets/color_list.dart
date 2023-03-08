@@ -3,7 +3,13 @@ import 'package:flutter/material.dart';
 
 class ColorList extends StatelessWidget {
   final Color color;
-  const ColorList({Key? key,required this.color,}) : super(key: key);
+  final bool isSelected;
+
+  const ColorList({
+    Key? key,
+    required this.color,
+    required this.isSelected,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +19,18 @@ class ColorList extends StatelessWidget {
         width: 50,
         height: 50,
         decoration: BoxDecoration(
-          border: Border.all(color: kLightColor,),
+          border: Border.all(
+            color: kLightColor,
+          ),
           color: color,
           borderRadius: BorderRadius.circular(50),
+        ),
+        child: Visibility(
+          visible: isSelected ? true : false,
+          child: const Icon(
+            Icons.check,
+            color: Colors.white,
+          ),
         ),
       ),
     );

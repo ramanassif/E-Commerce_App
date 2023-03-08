@@ -26,6 +26,8 @@ class ProductDetailsScreen extends StatefulWidget {
 
 class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   bool isFavorite = false;
+  int currentSizeIndex = 0;
+  int currentColorIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -162,7 +164,15 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                   height: 50,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) => const SizeCircle(),
+                    itemBuilder: (context, index) => GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          currentSizeIndex = index;
+                        });
+                      },
+                      child: SizeCircle(
+                          isSelected: currentSizeIndex == index ? true : false),
+                    ),
                     itemCount: 10,
                   ),
                 ),
@@ -189,8 +199,16 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                   height: 50,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) => ColorList(
-                      color: colorList[index],
+                    itemBuilder: (context, index) => GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          currentColorIndex = index;
+                        });
+                      },
+                      child: ColorList(
+                        color: colorList[index],
+                        isSelected: currentColorIndex == index ? true : false,
+                      ),
                     ),
                     itemCount: colorList.length,
                   ),
