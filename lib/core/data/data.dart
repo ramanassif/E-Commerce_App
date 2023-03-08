@@ -62,20 +62,6 @@ List<String> superFlashProductImage = [
   'assets/images/product6.png',
 ];
 
-List<String> favoriteProduct = [
-  'Nike Air Max 270 React ENG',
-  'Nike Air Max 270 React ENG',
-  'Nike Air Max 270 React ENG',
-  'Nike Air Max 270 React ENG',
-];
-List<String> favoriteProductImage = [
-  'assets/images/product4.png',
-  'assets/images/product5.png',
-  'assets/images/product1.png',
-  'assets/images/product2.png',
-];
-
-
 List<String> searchProductsName = [
   'Nike Air Max 270 React ENG',
   'Nike Air Max 270 React ENG',
