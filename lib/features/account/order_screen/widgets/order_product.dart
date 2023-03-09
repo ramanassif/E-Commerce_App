@@ -1,17 +1,21 @@
 import 'package:ecommerce_app/constants.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class OrderProduct extends StatelessWidget {
+class OrderProduct extends StatefulWidget {
   final String productImage;
-  final IconData favoriteIcon;
-  final Color color;
 
   const OrderProduct({
     Key? key,
     required this.productImage,
-    required this.favoriteIcon,
-    required this.color,
   }) : super(key: key);
+
+  @override
+  State<OrderProduct> createState() => _OrderProductState();
+}
+
+class _OrderProductState extends State<OrderProduct> {
+  bool isFavorite = false;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +46,8 @@ class OrderProduct extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
                   ),
-                  child: Image.asset(productImage, width: 72, height: 72),
+                  child:
+                      Image.asset(widget.productImage, width: 72, height: 72),
                 ),
               ),
             ),
@@ -78,10 +83,18 @@ class OrderProduct extends StatelessWidget {
                             Expanded(
                               flex: 1,
                               child: GestureDetector(
-                                onTap: () {},
+                                onTap: () {
+                                  setState(() {
+                                    isFavorite = !isFavorite;
+                                  });
+                                },
                                 child: Icon(
-                                  favoriteIcon,
-                                  color: color,
+                                  isFavorite
+                                      ? CupertinoIcons.heart_fill
+                                      : CupertinoIcons.heart,
+                                  color: isFavorite
+                                      ? const Color(0xffFB7181)
+                                      : Colors.grey,
                                   size: 30,
                                 ),
                               ),

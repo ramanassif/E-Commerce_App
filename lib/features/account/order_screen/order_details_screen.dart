@@ -219,16 +219,12 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
               ),
               const OrderProduct(
                 productImage: 'assets/images/product3.png',
-                favoriteIcon: CupertinoIcons.heart_fill,
-                color: Color(0xffFB7181),
               ),
               const SizedBox(
                 height: 8,
               ),
               const OrderProduct(
                 productImage: 'assets/images/product6.png',
-                favoriteIcon: CupertinoIcons.heart,
-                color: Colors.grey,
               ),
               const Padding(
                 padding: EdgeInsets.only(
