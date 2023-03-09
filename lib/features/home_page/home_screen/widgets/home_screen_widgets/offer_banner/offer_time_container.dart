@@ -28,6 +28,5 @@ class OfferTimeContainer extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }

@@ -20,6 +20,6 @@ class AccountScreenHeader extends StatelessWidget {
           Spacer(),
         ],
       ),
-    );;
+    );
   }
 }

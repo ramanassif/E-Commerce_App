@@ -31,7 +31,7 @@ class _ChangeBirthDayScreenState extends State<ChangeBirthDayScreen> {
         widget.mapArguments['birthday'] = formattedDate;
       });
     } else {
-      print('It\'s null or something is wrong');
+      debugPrint('It\'s null or something is wrong');
     }
   }
 

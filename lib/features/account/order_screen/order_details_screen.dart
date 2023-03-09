@@ -4,7 +4,6 @@ import 'package:ecommerce_app/features/account/account_screen/widgets/account_de
 import 'package:ecommerce_app/features/account/order_screen/widgets/order_product.dart';
 import 'package:ecommerce_app/features/account/order_screen/widgets/payment_details.dart';
 import 'package:ecommerce_app/features/account/order_screen/widgets/shipping_details.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
