@@ -2,12 +2,12 @@ import 'package:ecommerce_app/constants.dart';
 import 'package:flutter/material.dart';
 
 class ShipToDetails extends StatefulWidget {
-  final String title;
+  final String firstName;
   final bool isSelected;
 
   const ShipToDetails({
     Key? key,
-    required this.title,
+    required this.firstName,
     required this.isSelected,
   }) : super(key: key);
 
@@ -28,7 +28,8 @@ class _ShipToDetailsState extends State<ShipToDetails> {
         width: MediaQuery.of(context).size.width,
         height: 240,
         decoration: BoxDecoration(
-          border: Border.all(color: widget.isSelected? kPrimaryColor : kLightColor),
+          border: Border.all(
+              color: widget.isSelected ? kPrimaryColor : kLightColor),
           borderRadius: BorderRadius.circular(5),
         ),
         child: Padding(
@@ -37,7 +38,7 @@ class _ShipToDetailsState extends State<ShipToDetails> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                widget.title,
+                widget.firstName,
                 style: const TextStyle(
                   color: kSecondaryColor,
                   fontSize: 14,
@@ -71,27 +72,35 @@ class _ShipToDetailsState extends State<ShipToDetails> {
               ),
               Row(
                 children: [
-                  Container(
-                    width: 77,
-                    height: 57,
-                    decoration: BoxDecoration(
-                      color: kPrimaryColor,
-                      borderRadius: BorderRadius.circular(5),
-                      boxShadow: const [
-                        BoxShadow(
-                          offset: Offset(0, 4),
-                          blurRadius: 5.0,
-                          color: kPrimaryColor,
-                        ),
-                      ],
-                    ),
-                    child: const Center(
-                      child: Text(
-                        'Edit',
-                        style: TextStyle(
-                          color: kWhiteColor,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w700,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, 'addAddressScreen',
+                          arguments: {
+                            'first_name': widget.firstName,
+                          });
+                    },
+                    child: Container(
+                      width: 77,
+                      height: 57,
+                      decoration: BoxDecoration(
+                        color: kPrimaryColor,
+                        borderRadius: BorderRadius.circular(5),
+                        boxShadow: const [
+                          BoxShadow(
+                            offset: Offset(0, 4),
+                            blurRadius: 5.0,
+                            color: kPrimaryColor,
+                          ),
+                        ],
+                      ),
+                      child: const Center(
+                        child: Text(
+                          'Edit',
+                          style: TextStyle(
+                            color: kWhiteColor,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
                       ),
                     ),

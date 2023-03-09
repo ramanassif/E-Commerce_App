@@ -18,10 +18,10 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
     'Nike Air Max 270 React ENG',
   ];
   List<String> favoriteProductImage = [
-    'assets/images/product4.png',
-    'assets/images/product5.png',
-    'assets/images/product1.png',
-    'assets/images/product2.png',
+    'assets/images/shoes.png',
+    'assets/images/shoes.png',
+    'assets/images/shoes.png',
+    'assets/images/shoes.png',
   ];
   @override
   Widget build(BuildContext context) {

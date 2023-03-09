@@ -20,6 +20,7 @@ class HomeScreenBody extends StatefulWidget {
 class _HomeScreenBodyState extends State<HomeScreenBody> {
   bool isSearching = false;
   TextEditingController searchController = TextEditingController();
+  int currentIndex = 0;
 
   _appBar(height) => PreferredSize(
         preferredSize: Size(MediaQuery.of(context).size.width, height + 100),
@@ -287,11 +288,24 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.005,
                     ),
-                    const OfferBanner(),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      height: 206,
+                      child: PageView.builder(
+                          onPageChanged: (value) {
+                            setState(() {
+                              currentIndex = value;
+                            });
+                          },
+                          itemCount: 5,
+                          itemBuilder: (context, index) => const OfferBanner()),
+                    ),
                     const SizedBox(
                       height: 5,
                     ),
-                    const FiveDots(),
+                    FiveDots(
+                      currentIndex: currentIndex,
+                    ),
                     const SizedBox(
                       height: 20,
                     ),

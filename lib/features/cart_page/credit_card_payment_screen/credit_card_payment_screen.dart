@@ -4,8 +4,16 @@ import 'package:ecommerce_app/features/cart_page/credit_card_payment_screen/widg
 import 'package:ecommerce_app/features/helper_widgets/five_dots.dart';
 import 'package:flutter/material.dart';
 
-class CreditCardPaymentScreen extends StatelessWidget {
+class CreditCardPaymentScreen extends StatefulWidget {
   const CreditCardPaymentScreen({Key? key}) : super(key: key);
+
+  @override
+  State<CreditCardPaymentScreen> createState() =>
+      _CreditCardPaymentScreenState();
+}
+
+class _CreditCardPaymentScreenState extends State<CreditCardPaymentScreen> {
+  int currentCardIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -31,141 +39,154 @@ class CreditCardPaymentScreen extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: Container(
+                child: SizedBox(
                   width: MediaQuery.of(context).size.width,
                   height: 190,
-                  decoration: BoxDecoration(
-                    color: kPrimaryColor,
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(24.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
+                  child: PageView.builder(
+                    onPageChanged: (value) {
+                      setState(() {
+                        currentCardIndex = value;
+                      });
+                    },
+                    itemCount: 5,
+                    itemBuilder: (context, index) => Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: 190,
+                      decoration: BoxDecoration(
+                        color: kPrimaryColor,
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(24.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Stack(
-                              clipBehavior: Clip.none,
+                            Row(
                               children: [
-                                CircleAvatar(
-                                  radius: 12,
-                                  backgroundColor:
-                                      kSecondaryColor.withOpacity(0.4),
+                                Stack(
+                                  clipBehavior: Clip.none,
+                                  children: [
+                                    CircleAvatar(
+                                      radius: 12,
+                                      backgroundColor:
+                                          kSecondaryColor.withOpacity(0.4),
+                                    ),
+                                    Positioned(
+                                      left: 13,
+                                      child: CircleAvatar(
+                                        radius: 12,
+                                        backgroundColor:
+                                            kSecondaryColor.withOpacity(0.4),
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                                Positioned(
-                                  left: 13,
-                                  child: CircleAvatar(
-                                    radius: 12,
-                                    backgroundColor:
-                                        kSecondaryColor.withOpacity(0.4),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 30,
+                            ),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.8,
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: const [
+                                  Text(
+                                    '6326',
+                                    style: TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.w700,
+                                      color: kWhiteColor,
+                                    ),
+                                  ),
+                                  Text(
+                                    '9124',
+                                    style: TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.w700,
+                                      color: kWhiteColor,
+                                    ),
+                                  ),
+                                  Text(
+                                    '8124',
+                                    style: TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.w700,
+                                      color: kWhiteColor,
+                                    ),
+                                  ),
+                                  Text(
+                                    '9875',
+                                    style: TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.w700,
+                                      color: kWhiteColor,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 15,
+                            ),
+                            Row(
+                              children: const [
+                                Text(
+                                  'CARD HOLDER',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 10,
+                                    color: kWhiteColor,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 37,
+                                ),
+                                Text(
+                                  'CARD SAVE',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 10,
+                                    color: kWhiteColor,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 6,
+                            ),
+                            Row(
+                              children: const [
+                                Text(
+                                  'Lailyfa Febrina',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 10,
+                                    color: kWhiteColor,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 35,
+                                ),
+                                Text(
+                                  '19/2042',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 10,
+                                    color: kWhiteColor,
                                   ),
                                 ),
                               ],
                             ),
                           ],
                         ),
-                        const SizedBox(
-                          height: 30,
-                        ),
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.8,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
-                              Text(
-                                '6326',
-                                style: TextStyle(
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.w700,
-                                  color: kWhiteColor,
-                                ),
-                              ),
-                              Text(
-                                '9124',
-                                style: TextStyle(
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.w700,
-                                  color: kWhiteColor,
-                                ),
-                              ),
-                              Text(
-                                '8124',
-                                style: TextStyle(
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.w700,
-                                  color: kWhiteColor,
-                                ),
-                              ),
-                              Text(
-                                '9875',
-                                style: TextStyle(
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.w700,
-                                  color: kWhiteColor,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 15,
-                        ),
-                        Row(
-                          children: const [
-                            Text(
-                              'CARD HOLDER',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 10,
-                                color: kWhiteColor,
-                              ),
-                            ),
-                            SizedBox(
-                              width: 37,
-                            ),
-                            Text(
-                              'CARD SAVE',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 10,
-                                color: kWhiteColor,
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 6,
-                        ),
-                        Row(
-                          children: const [
-                            Text(
-                              'Lailyfa Febrina',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 10,
-                                color: kWhiteColor,
-                              ),
-                            ),
-                            SizedBox(
-                              width: 35,
-                            ),
-                            Text(
-                              '19/2042',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 10,
-                                color: kWhiteColor,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
+                      ),
                     ),
                   ),
                 ),
               ),
-              const FiveDots(),
+              FiveDots(currentIndex: currentCardIndex),
               const Spacer(),
               Padding(
                 padding: const EdgeInsets.only(

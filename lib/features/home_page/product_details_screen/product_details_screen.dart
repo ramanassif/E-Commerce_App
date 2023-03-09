@@ -28,6 +28,21 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   bool isFavorite = false;
   int currentSizeIndex = 0;
   int currentColorIndex = 0;
+  int currentImageIndex = 0;
+
+  late List<String> productImages;
+
+  @override
+  void initState() {
+    productImages = [
+      widget.mapArguments['product_image'],
+      widget.mapArguments['product_image'],
+      widget.mapArguments['product_image'],
+      widget.mapArguments['product_image'],
+      widget.mapArguments['product_image'],
+    ];
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,15 +64,27 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
               SizedBox(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height / 3,
-                child: Image.asset(
-                  widget.mapArguments['product_image'],
-                  fit: BoxFit.cover,
+                child: PageView.builder(
+                  onPageChanged: (value) {
+                    setState(() {
+                      currentImageIndex = value;
+                    });
+                  },
+                  itemCount: productImages.length,
+                  itemBuilder: (context, index) => SizedBox(
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height / 3,
+                    child: Image.asset(
+                      productImages[index],
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ),
               ),
               const SizedBox(
                 height: 5,
               ),
-              const FiveDots(),
+              FiveDots(currentIndex: currentImageIndex),
               const SizedBox(
                 height: 5,
               ),

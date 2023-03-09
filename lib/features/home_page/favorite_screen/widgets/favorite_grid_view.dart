@@ -1,5 +1,4 @@
 import 'package:ecommerce_app/constants.dart';
-import 'package:ecommerce_app/core/data/data.dart';
 import 'package:ecommerce_app/features/helper_widgets/review_star.dart';
 import 'package:flutter/material.dart';
 

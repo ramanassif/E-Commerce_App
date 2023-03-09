@@ -48,7 +48,7 @@ class _ShipToScreenState extends State<ShipToScreen> {
                       });
                     },
                     child: ShipToDetails(
-                      title: shipName[index],
+                      firstName: shipName[index],
                       isSelected: currentIndex == index ? true : false,
                     ),
                   ),

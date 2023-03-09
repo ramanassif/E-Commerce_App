@@ -22,9 +22,9 @@ List<String> productNameFlashSale = [
   'FS - Nike Air Max 270 React...',
 ];
 List<String> productImageFlashSale = [
-  'assets/images/product1.png',
-  'assets/images/product2.png',
-  'assets/images/product3.png',
+  'assets/images/shoes.png',
+  'assets/images/shoes.png',
+  'assets/images/shoes.png',
 ];
 List<String> productNameMegaSale = [
   'MS - Nike Air Max 270 React...',
@@ -32,9 +32,9 @@ List<String> productNameMegaSale = [
   'MS - Nike Air Max 270 React...',
 ];
 List<String> productImageMegaSale = [
-  'assets/images/product4.png',
-  'assets/images/product5.png',
-  'assets/images/product4.png',
+  'assets/images/shoes.png',
+  'assets/images/shoes.png',
+  'assets/images/shoes.png',
 ];
 
 List<String> recommendedProduct = [
@@ -44,10 +44,10 @@ List<String> recommendedProduct = [
   'Nike Air Max 270 React ENG',
 ];
 List<String> recommendedProductImage = [
-  'assets/images/product6.png',
-  'assets/images/product5.png',
-  'assets/images/product7.png',
-  'assets/images/product3.png',
+  'assets/images/shoes.png',
+  'assets/images/shoes.png',
+  'assets/images/shoes.png',
+  'assets/images/shoes.png',
 ];
 List<String> superFlashProduct = [
   'Nike Air Max 270 React ENG',
@@ -56,10 +56,10 @@ List<String> superFlashProduct = [
   'Nike Air Max 270 React ENG',
 ];
 List<String> superFlashProductImage = [
-  'assets/images/product5.png',
-  'assets/images/product4.png',
-  'assets/images/product7.png',
-  'assets/images/product6.png',
+  'assets/images/shoes.png',
+  'assets/images/shoes.png',
+  'assets/images/shoes.png',
+  'assets/images/shoes.png',
 ];
 
 List<String> searchProductsName = [
@@ -71,12 +71,12 @@ List<String> searchProductsName = [
   'Nike Air Max 270 React ENG',
 ];
 List<String> searchProductsImage = [
-  'assets/images/product3.png',
-  'assets/images/product6.png',
-  'assets/images/product1.png',
-  'assets/images/product5.png',
-  'assets/images/product6.png',
-  'assets/images/product3.png',
+  'assets/images/shoes.png',
+  'assets/images/shoes.png',
+  'assets/images/shoes.png',
+  'assets/images/shoes.png',
+  'assets/images/shoes.png',
+  'assets/images/shoes.png',
 ];
 
 List<Color> colorList = const [
