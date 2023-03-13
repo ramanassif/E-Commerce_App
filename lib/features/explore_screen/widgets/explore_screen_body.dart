@@ -90,6 +90,23 @@ class _ExploreScreenBodyState extends State<ExploreScreenBody> {
                               : states.contains(MaterialState.error)
                                   ? Colors.red
                                   : kPrimaryColor),
+                      suffixIcon: Visibility(
+                        visible: isSearching ? true : false,
+                        child: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              isSearching = false;
+                              searchController.clear();
+                              FocusManager.instance.primaryFocus?.unfocus();
+                            });
+                          },
+                          child: const Icon(
+                            CupertinoIcons.clear,
+                            size: 14,
+                          ),
+                        ),
+                      ),
+                      suffixIconColor: Colors.grey,
                     ),
                   ),
                 ),
