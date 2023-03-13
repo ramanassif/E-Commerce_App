@@ -49,9 +49,15 @@ class _HomeScreenBodyState extends State<HomeScreenBody> {
                       color: Colors.grey,
                       fontWeight: FontWeight.w700,
                     ),
-                    onChanged: (value) => setState(() {
-                      isSearching = true;
-                    }),
+                    onChanged: (value) {
+                      setState(() {
+                        if (value.isNotEmpty) {
+                          isSearching = true;
+                        } else {
+                          isSearching = false;
+                        }
+                      });
+                    },
                     onEditingComplete: () {
                       setState(() {
                         if (searchController.text.isEmpty) {
