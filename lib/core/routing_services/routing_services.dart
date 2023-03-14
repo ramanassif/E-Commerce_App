@@ -88,7 +88,8 @@ class AppRoute {
       case 'categoryScreen':
         return MaterialPageRoute(builder: (_) => const CategoryScreen());
       case 'cartScreen':
-        return MaterialPageRoute(builder: (_) => const CartScreenBody());
+        var data = settings.arguments as Map<String, dynamic>;
+        return MaterialPageRoute(builder: (_) => CartScreenBody(mapArguments: data,));
       case 'shipToScreen':
         return MaterialPageRoute(builder: (_) => const ShipToScreen());
       case 'paymentScreen':

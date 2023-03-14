@@ -528,7 +528,15 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 ),
                 child: GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, 'cartScreen');
+                      Navigator.pushNamed(
+                        context,
+                        'cartScreen',
+                        arguments: {
+                          'cart_product1': false,
+                          'cart_product2': false,
+                          'new_cart_product': true,
+                        },
+                      );
                     },
                     child: const CustomButton(
                       title: 'Add To Cart',

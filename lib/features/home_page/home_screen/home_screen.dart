@@ -19,10 +19,17 @@ class _HomeScreenState extends State<HomeScreen> {
   List pages = [
     const HomeScreenBody(),
     const ExploreScreenBody(),
-    const CartScreenBody(),
+    const CartScreenBody(
+      mapArguments: {
+        'cart_product1': true,
+        'cart_product2': true,
+        'new_cart_product': false,
+      },
+    ),
     const OfferScreen(),
     const AccountScreenBody(),
   ];
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -42,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   GestureDetector(
-                    onTap: (){
+                    onTap: () {
                       setState(() {
                         selectedTab = 0;
                       });
@@ -52,12 +59,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         Icon(
                           Icons.home_outlined,
                           size: 30,
-                          color: selectedTab==0? kPrimaryColor : Colors.grey,
+                          color: selectedTab == 0 ? kPrimaryColor : Colors.grey,
                         ),
                         Text(
                           'Home',
                           style: TextStyle(
-                            color: selectedTab==0? kPrimaryColor : Colors.grey,
+                            color:
+                                selectedTab == 0 ? kPrimaryColor : Colors.grey,
                             fontSize: 10,
                             fontWeight: FontWeight.w700,
                           ),
@@ -66,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   GestureDetector(
-                    onTap: (){
+                    onTap: () {
                       setState(() {
                         selectedTab = 1;
                       });
@@ -76,12 +84,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         Icon(
                           CupertinoIcons.search,
                           size: 30,
-                          color: selectedTab==1? kPrimaryColor : Colors.grey,
+                          color: selectedTab == 1 ? kPrimaryColor : Colors.grey,
                         ),
                         Text(
                           'Explore',
                           style: TextStyle(
-                            color: selectedTab==1? kPrimaryColor : Colors.grey,
+                            color:
+                                selectedTab == 1 ? kPrimaryColor : Colors.grey,
                             fontSize: 10,
                             fontWeight: FontWeight.w700,
                           ),
@@ -90,7 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   GestureDetector(
-                    onTap: (){
+                    onTap: () {
                       setState(() {
                         selectedTab = 2;
                       });
@@ -104,7 +113,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             Icon(
                               CupertinoIcons.cart,
                               size: 30,
-                              color: selectedTab==2? kPrimaryColor : Colors.grey,
+                              color: selectedTab == 2
+                                  ? kPrimaryColor
+                                  : Colors.grey,
                             ),
                             const Positioned(
                               top: -5,
@@ -126,7 +137,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         Text(
                           'Cart',
                           style: TextStyle(
-                            color: selectedTab==2? kPrimaryColor : Colors.grey,
+                            color:
+                                selectedTab == 2 ? kPrimaryColor : Colors.grey,
                             fontSize: 10,
                             fontWeight: FontWeight.w700,
                           ),
@@ -135,7 +147,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   GestureDetector(
-                    onTap: (){
+                    onTap: () {
                       setState(() {
                         selectedTab = 3;
                       });
@@ -145,12 +157,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         Icon(
                           Icons.local_offer_outlined,
                           size: 30,
-                          color: selectedTab==3? kPrimaryColor : Colors.grey,
+                          color: selectedTab == 3 ? kPrimaryColor : Colors.grey,
                         ),
                         Text(
                           'Offer',
                           style: TextStyle(
-                            color: selectedTab==3? kPrimaryColor : Colors.grey,
+                            color:
+                                selectedTab == 3 ? kPrimaryColor : Colors.grey,
                             fontSize: 10,
                             fontWeight: FontWeight.w700,
                           ),
@@ -159,7 +172,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   GestureDetector(
-                    onTap: (){
+                    onTap: () {
                       setState(() {
                         selectedTab = 4;
                       });
@@ -169,12 +182,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         Icon(
                           Icons.person_2_outlined,
                           size: 30,
-                          color: selectedTab==4? kPrimaryColor : Colors.grey,
+                          color: selectedTab == 4 ? kPrimaryColor : Colors.grey,
                         ),
                         Text(
                           'Account',
                           style: TextStyle(
-                            color: selectedTab==4? kPrimaryColor : Colors.grey,
+                            color:
+                                selectedTab == 4 ? kPrimaryColor : Colors.grey,
                             fontSize: 10,
                             fontWeight: FontWeight.w700,
                           ),
