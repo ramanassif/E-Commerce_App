@@ -23,7 +23,15 @@ class ShipToScreenHeader extends StatelessWidget {
             ),
             const Spacer(),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  'addAddressScreen',
+                  arguments: {
+                    'first_name': '',
+                  },
+                );
+              },
               child: const Icon(
                 Icons.add,
                 size: 24,
