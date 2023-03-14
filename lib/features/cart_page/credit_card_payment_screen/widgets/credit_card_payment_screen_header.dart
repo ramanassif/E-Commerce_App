@@ -38,7 +38,9 @@ class CreditCardPaymentHeader extends StatelessWidget {
             ),
             const Spacer(),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, 'addCardScreen');
+              },
               child: const Icon(
                 Icons.add,
                 size: 24,
