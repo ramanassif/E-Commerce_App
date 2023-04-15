@@ -1,16 +1,41 @@
-# ecommerce_app
+# E-Commerce App
 
-A new Flutter project.
+This application is used to shopping online.
 
-## Getting Started
+## Features:
 
-This project is a starting point for a Flutter application.
+- Sign in or Create a new account.
+- Display products, where the user can browse the products, search for a specific product.
+- Choose the product, add it to the cart, and perform the payment process via electronic payment services.
+- It is also possible to select products to be added to the favourites products list.
+- Full cross-platform support Android - ios - windows - macos - linux
 
-A few resources to get you started if this is your first Flutter project:
+## Screenshots:
+<table>
+  <tr>
+    <td><img src="https://github.com/ramanassif/E-Commerce_App/blob/master/screenshots/mockup1.png" width=500></td>
+    <td><img src="https://github.com/ramanassif/E-Commerce_App/blob/master/screenshots/mockup2.png" width=500></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/ramanassif/E-Commerce_App/blob/master/screenshots/mockup3.png" width=500></td>
+    <td><img src="https://github.com/ramanassif/E-Commerce_App/blob/master/screenshots/mockup4.png" width=500></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/ramanassif/E-Commerce_App/blob/master/screenshots/mockup5.png" width=500></td>
+    <td><img src="https://github.com/ramanassif/E-Commerce_App/blob/master/screenshots/mockup6.png" width=500></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/ramanassif/E-Commerce_App/blob/master/screenshots/mockup7.png" width=500></td>
+    <td><img src="https://github.com/ramanassif/E-Commerce_App/blob/master/screenshots/mockup8.png" width=500></td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/ramanassif/E-Commerce_App/blob/master/screenshots/mockup9.png" width=500></td>
+    <td><img src="https://github.com/ramanassif/E-Commerce_App/blob/master/screenshots/mockup10.png" width=500></td>
+  </tr>
+ </table>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## More Information:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The link of the application design on Figma: https://www.figma.com/file/sW38YbbZhmf2By4ZimVCNd/E-Commerce-App-Kit?node-id=0%3A1&t=KfEepxSbYXEusDS0-1
+
+The link to download the application: https://drive.google.com/file/d/1TKp4MzYjfDYRkIu1j7mZJpwgfjaZrMk5/view?usp=sharing
